@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- OTA downloaded APK files in private app storage -->
+    <files-path name="ota_apks" path="ota/" />
+</paths>

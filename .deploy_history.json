@@ -1,0 +1,102 @@
+{
+  "backend": [
+    {
+      "ts": "2026-06-17T21:03:48",
+      "ok": true,
+      "duration": 23.8,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T20:29:50",
+      "ok": true,
+      "duration": 22.6,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T20:10:39",
+      "ok": true,
+      "duration": 8.0,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T19:52:55",
+      "ok": true,
+      "duration": 25.1,
+      "error": ""
+    }
+  ],
+  "dashboard": [
+    {
+      "ts": "2026-06-17T21:04:37",
+      "ok": true,
+      "duration": 48.7,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T20:30:40",
+      "ok": true,
+      "duration": 50.2,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T20:11:26",
+      "ok": true,
+      "duration": 46.4,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T19:53:48",
+      "ok": true,
+      "duration": 52.8,
+      "error": ""
+    }
+  ],
+  "frontend": [
+    {
+      "ts": "2026-06-17T20:11:36",
+      "ok": true,
+      "duration": 10.7,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T19:54:08",
+      "ok": true,
+      "duration": 20.0,
+      "error": ""
+    }
+  ],
+  "frontend_velho": [
+    {
+      "ts": "2026-06-17T21:04:57",
+      "ok": true,
+      "duration": 20.0,
+      "error": ""
+    },
+    {
+      "ts": "2026-06-17T20:31:00",
+      "ok": true,
+      "duration": 19.9,
+      "error": ""
+    }
+  ],
+  "frontend_novo": [
+    {
+      "ts": "2026-06-18T00:17:50",
+      "ok": false,
+      "duration": 11.8,
+      "error": "\n ⛅️ wrangler 4.101.0\n────────────────────\n\n\u001b[31mX \u001b[41;31m[\u001b[41;97mERROR\u001b[41;31m]\u001b[0m \u001b[1mThis command cannot be run in a non-interactive context\u001b[0m\n\n\n🪵  Logs were written to \"C:\\Users\\Philippe\\AppData\\Roaming\\xdg.config\\.wrangler\\logs\\wrangler-2026-06-18_03-17-44_631.log\"\n"
+    },
+    {
+      "ts": "2026-06-17T21:05:06",
+      "ok": false,
+      "duration": 8.9,
+      "error": "\n ⛅️ wrangler 4.101.0\n────────────────────\n\n\u001b[31mX \u001b[41;31m[\u001b[41;97mERROR\u001b[41;31m]\u001b[0m \u001b[1mThis command cannot be run in a non-interactive context\u001b[0m\n\n\n🪵  Logs were written to \"C:\\Users\\Philippe\\AppData\\Roaming\\xdg.config\\.wrangler\\logs\\wrangler-2026-06-18_00-04-59_499.log\"\n"
+    },
+    {
+      "ts": "2026-06-17T20:31:02",
+      "ok": false,
+      "duration": 1.6,
+      "error": "node:internal/modules/cjs/loader:1478\n  throw err;\n  ^\n\nError: Cannot find module 'C:\\Users\\Philippe\\AppData\\Roaming\\npm\\node_modules\\wrangler\\bin\\wrangler.js'\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1475:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1048:"
+    }
+  ]
+}

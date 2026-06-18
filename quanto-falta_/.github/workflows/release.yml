@@ -1,0 +1,263 @@
+name: Release — Build, Sign & Deploy
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'  # Only v1.2.3 tags
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false  # Never cancel releases
+
+jobs:
+  # ── 1. Android Build & Sign ────────────────────────────────
+  android-build:
+    name: Android Build & Sign
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      versionCode: ${{ steps.version.outputs.versionCode }}
+      versionName: ${{ steps.version.outputs.versionName }}
+      apkSha256: ${{ steps.hash.outputs.sha256 }}
+      apkSizeBytes: ${{ steps.hash.outputs.sizeBytes }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG="${{ github.ref_name }}"  # e.g. v1.2.3
+          VERSION_NAME="${TAG#v}"        # 1.2.3
+          # versionCode = YYYYMMDD + 2-digit build counter (auto-incremented)
+          DATE=$(date +%Y%m%d)
+          RUN=$(printf '%02d' ${{ github.run_number }})
+          VERSION_CODE="${DATE}${RUN}"
+          echo "versionCode=$VERSION_CODE" >> "$GITHUB_OUTPUT"
+          echo "versionName=$VERSION_NAME" >> "$GITHUB_OUTPUT"
+          echo "Version: $VERSION_NAME ($VERSION_CODE)"
+
+      - name: Write keystore from secret
+        env:
+          KEYSTORE_BASE64: ${{ secrets.RELEASE_KEYSTORE_BASE64 }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 --decode > /tmp/release.keystore
+
+      - name: Build release APK
+        env:
+          KEYSTORE_PATH: /tmp/release.keystore
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          OTA_BASE_URL: ${{ secrets.OTA_BASE_URL }}
+        run: |
+          ./gradlew assemblePlayStoreRelease \
+            -PversionCode="${{ steps.version.outputs.versionCode }}" \
+            -PversionName="${{ steps.version.outputs.versionName }}" \
+            -PotaBaseUrl="$OTA_BASE_URL" \
+            --no-daemon --stacktrace
+
+      - name: Verify APK signature
+        run: |
+          APK=$(find app/build/outputs/apk/playStore/release -name "*.apk" | head -1)
+          echo "APK: $APK"
+          $ANDROID_SDK_ROOT/build-tools/$(ls $ANDROID_SDK_ROOT/build-tools | tail -1)/apksigner verify --verbose "$APK"
+
+      - name: Compute SHA-256 and size
+        id: hash
+        run: |
+          APK=$(find app/build/outputs/apk/playStore/release -name "*.apk" | head -1)
+          SHA256=$(sha256sum "$APK" | awk '{print $1}')
+          SIZE=$(stat -c%s "$APK")
+          echo "sha256=$SHA256" >> "$GITHUB_OUTPUT"
+          echo "sizeBytes=$SIZE" >> "$GITHUB_OUTPUT"
+          echo "SHA256: $SHA256"
+          echo "Size: $SIZE bytes"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: app/build/outputs/apk/playStore/release/*.apk
+          retention-days: 30
+
+  # ── 2. Backend deploy ─────────────────────────────────────
+  deploy-backend:
+    name: Deploy Cloudflare Worker
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: android-build
+
+    steps:
+      - name: Checkout server repo
+        uses: actions/checkout@v4
+        with:
+          path: server
+          repository: phdev13/QuantoFalta  # Adjust if server is a separate repo
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: server/backend/package-lock.json
+
+      - name: Install backend dependencies
+        working-directory: server/backend
+        run: npm ci
+
+      - name: Deploy Worker
+        working-directory: server/backend
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler deploy --env production
+
+      - name: Run D1 migrations
+        working-directory: server/backend
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler d1 migrations apply quanto-falta-db --env production --remote
+
+  # ── 3. Upload APK to R2 ───────────────────────────────────
+  upload-apk:
+    name: Upload APK to R2
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [android-build, deploy-backend]
+
+    steps:
+      - name: Checkout server
+        uses: actions/checkout@v4
+
+      - name: Download APK artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-apk
+          path: ./apk
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install wrangler
+        run: npm install -g wrangler
+
+      - name: Upload APK to R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          APK=$(find ./apk -name "*.apk" | head -1)
+          R2_KEY="apks/v${{ needs.android-build.outputs.versionCode }}/QuantoFalta-${{ needs.android-build.outputs.versionName }}.apk"
+          echo "Uploading to R2: $R2_KEY"
+          wrangler r2 object put "quanto-falta-apks/$R2_KEY" \
+            --file="$APK" \
+            --content-type="application/vnd.android.package-archive"
+
+      - name: Publish version to API
+        env:
+          WORKER_URL: ${{ secrets.OTA_BASE_URL }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_INITIAL_PASSWORD }}
+          VERSION_CODE: ${{ needs.android-build.outputs.versionCode }}
+          VERSION_NAME: ${{ needs.android-build.outputs.versionName }}
+          APK_SHA256: ${{ needs.android-build.outputs.apkSha256 }}
+          APK_SIZE: ${{ needs.android-build.outputs.apkSizeBytes }}
+        run: |
+          R2_KEY="apks/v${VERSION_CODE}/QuantoFalta-${VERSION_NAME}.apk"
+          TAG="${{ github.ref_name }}"
+
+          # Extract changelog from git tag annotation
+          CHANGELOG=$(git tag -l --format='%(contents)' "$TAG" | head -20 || echo "")
+
+          curl -sS -X POST "$WORKER_URL/admin/api/publish-version" \
+            -H "Content-Type: application/json" \
+            -H "X-Admin-Key: $ADMIN_PASSWORD" \
+            -d "{
+              \"versionCode\": $VERSION_CODE,
+              \"versionName\": \"$VERSION_NAME\",
+              \"releaseChannel\": \"stable\",
+              \"apkR2Key\": \"$R2_KEY\",
+              \"apkSizeBytes\": $APK_SIZE,
+              \"sha256\": \"$APK_SHA256\",
+              \"rolloutPercentage\": 10,
+              \"title\": \"Quanto Falta? $VERSION_NAME\",
+              \"changelog\": [$(echo "$CHANGELOG" | head -10 | sed 's/^/\"/' | sed 's/$/\"/' | tr '\n' ',' | sed 's/,$//')]
+            }"
+
+  # ── 4. Dashboard deploy ───────────────────────────────────
+  deploy-dashboard:
+    name: Deploy Dashboard to Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: deploy-backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: backend/dashboard/package-lock.json
+
+      - name: Install dashboard dependencies
+        working-directory: backend/dashboard
+        run: npm ci
+
+      - name: Build dashboard
+        working-directory: backend/dashboard
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        working-directory: backend/dashboard
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler pages deploy dist --project-name=quanto-falta-dashboard --branch=main
+
+  # ── 5. GitHub Release ─────────────────────────────────────
+  github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: [android-build, upload-apk]
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download APK
+        uses: actions/download-artifact@v4
+        with:
+          name: release-apk
+          path: ./release-apk
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Quanto Falta? ${{ needs.android-build.outputs.versionName }}"
+          body: |
+            ## Quanto Falta? ${{ needs.android-build.outputs.versionName }}
+
+            **Version Code:** `${{ needs.android-build.outputs.versionCode }}`
+            **SHA-256:** `${{ needs.android-build.outputs.apkSha256 }}`
+
+            > ⚠️ Este APK está disponível para instalação via OTA no app.
+            > O rollout inicial é de 10% — ajuste no painel admin.
+          files: ./release-apk/*.apk
+          draft: false
+          prerelease: false
+          generate_release_notes: true

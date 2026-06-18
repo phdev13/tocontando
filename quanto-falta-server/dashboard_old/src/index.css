@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@theme {
+  /* HSL Palette */
+  --color-primary: #8B5CF6; /* Violet */
+  --color-primary-hover: #A78BFA;
+  --color-primary-glow: rgba(139, 92, 246, 0.5);
+
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Deep Dark Backgrounds */
+  --color-bg-base: #05050A; /* Extremely dark blue/black */
+  
+  /* Glassmorphism surfaces */
+  --color-surface: rgba(18, 18, 26, 0.6); 
+  --color-surface-hover: rgba(26, 26, 36, 0.8);
+  --color-surface-elevated: rgba(30, 30, 42, 0.85);
+
+  /* Borders */
+  --color-border-default: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Typography */
+  --font-outfit: 'Outfit', 'Inter', sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Text Colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #94A3B8;
+  --color-text-tertiary: #64748B;
+
+  /* Aliases for old variables */
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --bg-surface-elevated: var(--color-surface-elevated);
+  --bg-surface-hover: var(--color-surface-hover);
+  --primary: var(--color-primary);
+  --border-default: var(--color-border-default);
+  --radius-md: 0.5rem;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+  }
+
+  body {
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    background-color: #030308;
+    background-image: 
+      radial-gradient(ellipse 80% 80% at 50% -20%, rgba(139, 92, 246, 0.12) 0%, rgba(0, 0, 0, 0) 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit);
+    letter-spacing: -0.02em;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-elevated);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-tertiary);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: var(--color-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border-default);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .glass-panel-elevated {
+    background: var(--color-surface-elevated);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--color-border-hover);
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #FFFFFF 0%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Trend Badges */
+  .trend-badge {
+    @apply flex items-center gap-1 px-1.5 py-0.5 rounded text-xs font-semibold;
+  }
+  .trend-up {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--color-success);
+  }
+  .trend-down {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--color-danger);
+  }
+  
+  /* Custom Tooltip */
+  .custom-tooltip {
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-border-hover);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply max-w-[1400px] mx-auto p-4 md:p-8 w-full;
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  .page-header {
+    @apply flex justify-between items-start mb-8 flex-wrap gap-4;
+  }
+
+  .page-title {
+    @apply text-4xl font-bold tracking-tight;
+    background: linear-gradient(135deg, #FFFFFF 0%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-subtitle {
+    @apply text-text-secondary text-sm mt-2 font-medium;
+  }
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, rgba(255,255,255,0.05) 4%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.05) 36%);
+  background-size: 1000px 100%;
+}

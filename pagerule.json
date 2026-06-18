@@ -1,0 +1,21 @@
+{
+  "targets": [
+    {
+      "target": "url",
+      "constraint": {
+        "operator": "matches",
+        "value": "www.tocontando.com.br/*"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "forwarding_url",
+      "value": {
+        "url": "https://tocontando.com.br/$1",
+        "status_code": 301
+      }
+    }
+  ],
+  "status": "active"
+}

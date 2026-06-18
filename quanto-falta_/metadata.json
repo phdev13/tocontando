@@ -1,0 +1,6 @@
+{
+  "name": "Tô Contando",
+  "description": "Contagens regressivas para o que importa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

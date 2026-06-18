@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Compartilhando um Momento - Tô Contando</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/share.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+    <div id="dynamic-bg" class="share-bg"></div>
+
+    <main class="share-wrapper">
+        <header class="share-header">
+            <div class="logo">
+                <img src="https://tocontando.com.br/assets/icon.png" alt="Tô Contando Logo" style="width: 24px; border-radius: 6px;">
+                <span>Tô Contando</span>
+            </div>
+        </header>
+
+        <div id="loading" class="state-container">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="error" class="state-container hidden">
+            <h1>Ops!</h1>
+            <p>Este evento não foi encontrado ou expirou.</p>
+            <a href="/" class="btn-primary">Criar meu próprio evento</a>
+        </div>
+
+        <div id="event-view" class="event-card glass-panel hidden">
+            <div class="event-cover" id="event-cover">
+                <div class="cover-overlay"></div>
+                <div class="event-icon-wrapper" id="event-icon-wrapper">
+                    <span class="material-icons-round" id="event-icon">event</span>
+                </div>
+            </div>
+
+            <div class="event-content">
+                <p class="eyebrow">A contagem começou</p>
+                <h1 id="event-title" class="event-title">...</h1>
+                <p id="event-date" class="event-date">...</p>
+
+                <div class="countdown-display" id="countdown-wrapper">
+                    <div class="countdown-value" id="time-left">0</div>
+                    <div class="countdown-unit" id="time-unit">dias</div>
+                </div>
+
+                <div id="celebration-msg" class="celebration-msg hidden">
+                    <span class="material-icons-round">celebration</span>
+                    <p>O grande dia chegou!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-bottom">
+            <p>Crie sua própria contagem regressiva</p>
+            <a href="https://play.google.com/store/apps/details?id=com.phdev.quantofalta" target="_blank" class="btn-download">
+                Baixar o App Grátis
+            </a>
+        </div>
+    </main>
+
+    <script src="/api.js"></script>
+    <script src="/share.js"></script>
+</body>
+</html>

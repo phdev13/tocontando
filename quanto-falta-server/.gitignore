@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+dist/
+.env
+*.keystore
+my-upload-key.jks
+debug.keystore
+.DS_Store

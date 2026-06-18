@@ -1,0 +1,37 @@
+COMPARAÇÃO DE RECURSOS - QUANTO FALTA?
+=======================================
+Aqui está a análise completa baseada diretamente no código do aplicativo (PremiumFeature.kt).
+
+---------------------------------------
+PLANO GRATUITO
+---------------------------------------
+A versão gratuita oferece a essência do aplicativo de forma funcional, offline e sem anúncios.
+
+- Até 5 eventos ativos simultaneamente
+- Acesso à paleta básica (4 cores exclusivas)
+- Acesso a 21 ícones básicos (categoria "Básicos")
+- Widget simples para tela inicial
+- Lembretes automáticos e padrão
+- Compartilhamento nativo de link web
+- 100% offline (os dados são salvos direto no celular)
+- Backup manual (gerar arquivo JSON local)
+- Sem anúncios! Nunca.
+
+
+---------------------------------------
+PREMIUM VITALÍCIO (COMPRA ÚNICA)
+---------------------------------------
+O pacote Premium desbloqueia ferramentas de personalização avançadas, proteção de dados, nuvem e tira limites.
+
+- Eventos Ilimitados (Crie quantos eventos quiser)
+- Sincronização em Nuvem (Cloud Backup automático entre todos os seus dispositivos)
+- Foto de Capa Exclusiva (Coloque suas próprias imagens de capa nos Cards Premium)
+- Paleta Completa (Acesso a todas as dezenas de cores do app)
+- Todos os Ícones (Acesso a centenas de ícones para todas as situações)
+- Proteção por Biometria (Tranque seus eventos com Face ID ou Impressão Digital)
+- Lembretes Avançados (Configure múltiplos lembretes progressivos conforme a data chega)
+- Contadores Avançados (Veja os segundos, minutos e horas passando em tempo real)
+- Histórico e Estatísticas (Timeline completa para relembrar o que já passou e eventos arquivados)
+- Exportação Avançada (Crie imagens lindíssimas no formato de Stories ou Wallpapers do celular)
+- Widgets Premium (Estilos avançados e suporte para múltiplos eventos na home screen)
+- Pagamento Único Vitalício (Sem mensalidade, pague uma vez e seu login Google ou código garante pra sempre)

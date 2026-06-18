@@ -1,0 +1,71 @@
+name = "quanto-falta-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+routes = [
+  { pattern = "admin.quantofalta.shop/admin/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
+  { pattern = "admin.quantofalta.shop/api/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
+  { pattern = "api.quantofalta.shop/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
+  { pattern = "admin.tocontando.com.br/admin/*", zone_id = "9fcabeb1b3892351b5112e3e04954e5c" },
+  { pattern = "admin.tocontando.com.br/api/*", zone_id = "9fcabeb1b3892351b5112e3e04954e5c" },
+  { pattern = "api.tocontando.com.br/*", zone_id = "9fcabeb1b3892351b5112e3e04954e5c" }
+]
+
+[triggers]
+crons = ["0 4 * * *"] # Roda todos os dias as 4AM UTC
+
+[vars]
+ENVIRONMENT = "production"
+APP_PACKAGE_NAME = "com.phdev.quantofalta"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "quanto_falta_db"
+database_id = "5a977b4f-34d1-4d04-a3ce-8ecfb9591bae"
+
+[[r2_buckets]]
+binding = "PERFORMANCE_TRACES"
+bucket_name = "quanto-falta-performance-traces"
+
+# Secrets — NEVER commit values, set via CLI:
+#   npx wrangler secret put API_SIGNING_SECRET
+#   npx wrangler secret put FEEDBACK_ENCRYPTION_KEY
+#   npx wrangler secret put GITHUB_PAT
+#   npx wrangler secret put CF_ACCESS_TEAM_DOMAIN
+#   npx wrangler secret put CF_ACCESS_AUDIENCE
+
+# ── Preview environment ──────────────────────────────────
+[env.preview]
+name = "quanto-falta-api-preview"
+workers_dev = true
+
+[env.preview.vars]
+ENVIRONMENT = "preview"
+APP_PACKAGE_NAME = "com.phdev.quantofalta"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "quanto_falta_preview_db"
+database_id = "REPLACE_WITH_PREVIEW_D1_DATABASE_ID"
+
+[[env.preview.r2_buckets]]
+binding = "PERFORMANCE_TRACES"
+bucket_name = "quanto-falta-performance-traces-preview"
+
+# ── Production environment ───────────────────────────────
+[env.production]
+name = "quanto-falta-api"
+[env.production.vars]
+ENVIRONMENT = "production"
+APP_PACKAGE_NAME = "com.phdev.quantofalta"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "quanto_falta_db"
+database_id = "5a977b4f-34d1-4d04-a3ce-8ecfb9591bae"
+
+[[env.production.r2_buckets]]
+binding = "PERFORMANCE_TRACES"
+bucket_name = "quanto-falta-performance-traces"

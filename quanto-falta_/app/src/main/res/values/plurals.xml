@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="countdown_days_remaining">
+        <item quantity="one">Falta %d dia</item>
+        <item quantity="other">Faltam %d dias</item>
+    </plurals>
+    <plurals name="countdown_days_elapsed">
+        <item quantity="one">Aconteceu há %d dia</item>
+        <item quantity="other">Aconteceu há %d dias</item>
+    </plurals>
+    <plurals name="countdown_weeks_remaining">
+        <item quantity="one">Falta %d semana</item>
+        <item quantity="other">Faltam %d semanas</item>
+    </plurals>
+    <plurals name="countdown_weeks_elapsed">
+        <item quantity="one">Aconteceu há %d semana</item>
+        <item quantity="other">Aconteceu há %d semanas</item>
+    </plurals>
+    <plurals name="countdown_months_remaining">
+        <item quantity="one">Falta %d mês</item>
+        <item quantity="other">Faltam %d meses</item>
+    </plurals>
+    <plurals name="countdown_months_elapsed">
+        <item quantity="one">Aconteceu há %d mês</item>
+        <item quantity="other">Aconteceu há %d meses</item>
+    </plurals>
+</resources>

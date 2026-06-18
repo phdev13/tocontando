@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tô Contando</title>
+    <!-- As meta tags dinâmicas serão injetadas pelo servidor depois, mas aqui tem um fallback -->
+    <meta name="description" content="Acompanhe a contagem regressiva para este evento!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="share.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Ambient background blobs -->
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3" id="dynamic-bg"></div>
+
+    <main class="share-container">
+        <!-- Logo Header -->
+        <div class="share-header">
+            <img src="/assets/logo.png" alt="Tô Contando Logo" class="share-logo">
+            <span class="share-logo-text">Tô Contando</span>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="state-container glass-card">
+            <div class="spinner"></div>
+            <p>Carregando evento...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="state-container glass-card hidden">
+            <h1 class="error-title">Ops!</h1>
+            <p class="error-desc">Não encontramos este evento. Ele pode ter expirado ou o link está incorreto.</p>
+            <a href="/" class="btn-primary" style="margin-top: 1.5rem;">Conhecer o Tô Contando</a>
+        </div>
+
+        <!-- Success State (Countdown) -->
+        <div id="event-view" class="state-container event-card hidden">
+            <!-- Giant Watermark Background -->
+            <div class="watermark-icon">
+                <span class="material-icons-round event-icon" id="watermark-emoji">event</span>
+            </div>
+
+            <!-- Top right floating icon -->
+            <div class="floating-icon-bubble">
+                <span class="material-icons-round event-icon" id="floating-emoji">event</span>
+            </div>
+
+            <!-- Content -->
+            <div class="event-card-content">
+                <span class="eyebrow">Próximo evento</span>
+                <h1 id="event-title">Carregando...</h1>
+
+                <div class="spacer"></div>
+
+                <div class="countdown-row" id="countdown-wrapper">
+                    <div class="number-giant" id="time-left">0</div>
+                    <div class="unit-label" id="time-unit">dias</div>
+                </div>
+
+                <p id="event-date" class="date-subtitle">...</p>
+
+                <div id="celebration-msg" class="celebration-msg hidden">
+                    <div class="celebration-icon">🎉</div>
+                    <p>Este evento já aconteceu!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Fixo no rodapé -->
+    <div class="floating-cta">
+        <p>Crie sua própria contagem.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.phdev.quantofalta" class="btn-primary small" target="_blank" rel="noopener noreferrer">Baixar
+            Grátis</a>
+    </div>
+
+    <script src="share.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,594 @@
+openapi: 3.1.0
+info:
+  title: Tô Contando API
+  version: 1.0.0
+  description: API central versionada para app Android, site publico, painel administrativo e servicos internos.
+servers:
+  - url: https://api.tocontando.com.br/api/v1
+    description: Production API
+  - url: https://api.tocontando.com.br/api/v1
+    description: Legacy Production API
+  - url: https://api-staging.quantofalta.shop/api/v1
+    description: Staging API
+  - url: http://localhost:8787/api/v1
+    description: Local
+security: []
+tags:
+  - name: Public
+  - name: App
+  - name: Admin
+paths:
+  /public/status:
+    get:
+      tags: [Public]
+      summary: Retorna saude publica da API.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "503":
+          $ref: "#/components/responses/Error"
+  /public/app-config:
+    get:
+      tags: [Public]
+      summary: Retorna configuracao remota segura para clientes.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /public/latest-version:
+    get:
+      tags: [Public]
+      summary: Retorna ultima versao estavel publicada.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /public/testers:
+    get:
+      tags: [Public]
+      summary: Lista testers publicados com consentimento.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /public/plans:
+    get:
+      tags: [Public]
+      summary: Lista planos publicos disponiveis.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /app/installations/register:
+    post:
+      tags: [App]
+      summary: Registra ou atualiza uma instalacao Android.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InstallationRegisterRequest"
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/sessions:
+    post:
+      tags: [App]
+      summary: Cria uma sessao temporaria de app.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/telemetry:
+    post:
+      tags: [App]
+      summary: Recebe telemetria em lote.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/telemetry/performance:
+    post:
+      tags: [App]
+      summary: Recebe metricas de performance em lote.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/telemetry/notifications:
+    post:
+      tags: [App]
+      summary: Recebe o relatorio de saude de notificacoes do dispositivo.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/feedback:
+    post:
+      tags: [App]
+      summary: Registra feedback do app.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/premium/status:
+    get:
+      tags: [App]
+      summary: Retorna estado Premium final de um usuario ou instalacao.
+      parameters:
+        - in: query
+          name: userId
+          schema: { type: string }
+        - in: query
+          name: installationId
+          schema: { type: string }
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/premium/activate-token:
+    post:
+      tags: [App]
+      summary: Ativa Premium via codigo/token.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+        "409":
+          $ref: "#/components/responses/Error"
+  /app/premium/verify-purchase:
+    post:
+      tags: [App]
+      summary: Verifica compra Google Play.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/premium/restore:
+    post:
+      tags: [App]
+      summary: Ponto de restauracao Premium.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /app/ota/check:
+    get:
+      tags: [App]
+      summary: Verifica atualizacao OTA.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/notifications/register:
+    post:
+      tags: [App]
+      summary: Registra token de notificacao push.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "202":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/share/events:
+    post:
+      tags: [App]
+      summary: Cria um evento compartilhavel sem segredo fixo no APK.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/sync/backup:
+    post:
+      tags: [App]
+      summary: Salva backup privado da instalacao.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /app/sync/restore:
+    get:
+      tags: [App]
+      summary: Restaura backup privado da instalacao.
+      parameters:
+        - in: query
+          name: installation_id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "404":
+          $ref: "#/components/responses/Error"
+  /public/share/events/{slug}:
+    get:
+      tags: [Public]
+      summary: Retorna evento publico compartilhado.
+      parameters:
+        - in: path
+          name: slug
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "404":
+          $ref: "#/components/responses/Error"
+  /admin/dashboard:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna resumo administrativo.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "401":
+          $ref: "#/components/responses/Error"
+  /admin/metrics:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna metricas administrativas.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/metrics/overview:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna metricas principais do dashboard.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/metrics/events:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna eventos agregados por data.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/metrics/performance:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna tendencias de performance.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/devices:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista instalacoes/dispositivos.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/devices/{id}/diagnostics:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna diagnosticos de notificacoes de um dispositivo especifico.
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "404":
+          $ref: "#/components/responses/Error"
+  /admin/feedback:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista feedbacks.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/feedback/{id}:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Detalha um feedback.
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "404":
+          $ref: "#/components/responses/Error"
+    patch:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Atualiza status administrativo de feedback.
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /admin/ota/releases:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista releases OTA.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+    post:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Cria uma release OTA.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /admin/ota/releases/{versionCode}:
+    patch:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Atualiza rollout/status de release OTA.
+      parameters:
+        - in: path
+          name: versionCode
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/ota/releases/github-release:
+    post:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Cria release no GitHub e registra versao OTA.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+  /admin/config:
+    patch:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Atualiza configuracao remota permitida.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+        "400":
+          $ref: "#/components/responses/Error"
+  /admin/settings:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista configuracoes administrativas.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/settings/{key}:
+    put:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Atualiza uma configuracao administrativa.
+      parameters:
+        - in: path
+          name: key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/testers:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista testers administrativos.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+    post:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Cria tester.
+      responses:
+        "201":
+          $ref: "#/components/responses/Success"
+  /admin/testers/{id}:
+    put:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Atualiza tester.
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+    delete:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Remove tester.
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/premium/metrics:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Retorna metricas Premium.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/premium/codes:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista codigos Premium.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+    post:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Cria codigo Premium.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/premium/purchases:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista compras Premium.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+  /admin/premium/users:
+    get:
+      tags: [Admin]
+      security:
+        - cloudflareAccess: []
+      summary: Lista usuarios Premium.
+      responses:
+        "200":
+          $ref: "#/components/responses/Success"
+components:
+  securitySchemes:
+    cloudflareAccess:
+      type: http
+      scheme: bearer
+      bearerFormat: Cloudflare Access JWT
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    Success:
+      description: Resposta padronizada de sucesso.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SuccessEnvelope"
+    Error:
+      description: Resposta padronizada de erro.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorEnvelope"
+  schemas:
+    SuccessEnvelope:
+      type: object
+      required: [success, data, error, meta]
+      properties:
+        success:
+          const: true
+        data:
+          description: Dados da resposta.
+        error:
+          type: "null"
+        meta:
+          $ref: "#/components/schemas/Meta"
+    ErrorEnvelope:
+      type: object
+      required: [success, data, error, meta]
+      properties:
+        success:
+          const: false
+        data:
+          type: "null"
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              enum:
+                - INVALID_REQUEST
+                - UNAUTHORIZED
+                - FORBIDDEN
+                - NOT_FOUND
+                - RATE_LIMITED
+                - INVALID_TOKEN
+                - TOKEN_EXPIRED
+                - TOKEN_ALREADY_USED
+                - PURCHASE_INVALID
+                - PREMIUM_EXPIRED
+                - APP_UPDATE_REQUIRED
+                - FEATURE_DISABLED
+                - INTERNAL_ERROR
+            message:
+              type: string
+        meta:
+          $ref: "#/components/schemas/Meta"
+    Meta:
+      type: object
+      required: [requestId]
+      properties:
+        requestId:
+          type: string
+          format: uuid
+    InstallationRegisterRequest:
+      type: object
+      required: [installationId, versionCode, versionName]
+      properties:
+        installationId:
+          type: string
+          format: uuid
+        versionCode:
+          type: integer
+          minimum: 1
+        versionName:
+          type: string
+        androidVersion:
+          type: string
+        architecture:
+          type: string
+        language:
+          type: string
+        manufacturer:
+          type: string
+        model:
+          type: string
+        theme:
+          enum: [light, dark, system]
+        releaseChannel:
+          enum: [stable, beta, internal]

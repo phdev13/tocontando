@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Install packages ?" opens official Android installer (no silent install) -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application>
+        <!--
+            FileProvider for sharing downloaded APK with the Android system installer.
+            Authority must match the one used in OtaUpdateModal.installApk().
+        -->
+        <provider
+            android:name=".core.ota.OtaFileProvider"
+            android:authorities="${applicationId}.ota.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/ota_file_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

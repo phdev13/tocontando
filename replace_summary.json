@@ -1,0 +1,104 @@
+{
+  "replacements_made": 37,
+  "files_altered": [
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\QuantoFaltaApplication.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\routes\\admin\\versions.ts",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\EventWidget.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\index.html",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\share.html",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\TELEMETRY_CATALOG.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\OTA.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\openapi.yaml",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\AndroidManifest.xml",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\ARCHITECTURE.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\index.html",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\testers\\TestersScreen.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard\\FRONTEND_ARCHITECTURE.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\EventWidgetConfigurationActivity.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\privacy\\index.html",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\NOTIFICACOES_SISTEMA.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\MainActivity.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\sync\\BackupSyncWorker.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\ADMIN_SECURITY_AUDIT.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\METRICS.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\MONETIZACAO.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\terms\\index.html",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\ADMIN_ACCESS_RECOVERY.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\diagnostics\\DiagnosticsScreen.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\deploy.py",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\CLOUDFLARE_ACCESS_SETUP.md",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\navigation\\AppNavigation.kt",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\routes\\apk.ts",
+    "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\src\\lib\\api.ts"
+  ],
+  "preserved": [
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\backups\\quanto-falta-d1-remote-20260615-204839.sql",
+      "line": 34,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\migrations\\0001_initial.sql",
+      "line": 1,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 6,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 12,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 92,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 98,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 100,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 103,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 104,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+      "line": 114,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\implementacoes.txt",
+      "line": 18,
+      "reason": "Historical or Migration file"
+    },
+    {
+      "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\implementacoes.txt",
+      "line": 36,
+      "reason": "Historical or Migration file"
+    }
+  ]
+}

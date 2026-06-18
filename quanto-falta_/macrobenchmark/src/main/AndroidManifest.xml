@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- The Macrobenchmark module needs to be able to query the target app -->
+        <queries>
+            <package android:name="com.phdev.quantofalta" />
+        </queries>
+    </application>
+</manifest>

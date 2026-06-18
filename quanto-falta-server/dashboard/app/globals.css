@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0b0a0f;
+  --color-surface: #110f17;
+  --color-surface-hover: #151419;
+  --color-border: #1f1e24;
+  --color-primary: #ffffff;
+  --color-primary-muted: #8b8a91;
+  
+  --font-sans: var(--font-inter);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-primary)] font-sans antialiased;
+    color-scheme: dark;
+  }
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--color-border)] rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[var(--color-border-hover)];
+}
+
+/* ======================================================
+   MOBILE-ONLY STYLES — Does NOT affect desktop (≥900px)
+   ====================================================== */
+@media (max-width: 899px) {
+  /* Prevent horizontal overflow on mobile */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Mobile table wrapper: contained scroll */
+  .mobile-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+  
+  .mobile-table-scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    background: linear-gradient(to right, transparent, var(--color-surface));
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  /* Mobile-friendly touch targets */
+  .mobile-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Animation utilities for mobile drawer */
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}

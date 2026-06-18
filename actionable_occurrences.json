@@ -1,0 +1,3787 @@
+[
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 3,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\ADMIN_ACCESS_RECOVERY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 5,
+    "content": "\"content\": \"2. Acesse **Zero Trust -> Access -> Applications -> Admin Quanto Falta**.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 8,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\ADMIN_SECURITY_AUDIT.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 10,
+    "content": "\"content\": \"**Alvo:** Backend (Worker) e Frontend (Dashboard) do projeto *Quanto Falta?*\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 13,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\ADMIN_SECURITY_CHANGES.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 15,
+    "content": "\"content\": \"## 1. Modificações no Backend (`quanto-falta-api`)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 18,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\ADMIN_SECURITY_TESTS.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 20,
+    "content": "\"content\": \"Usando ferramentas como Postman ou `curl` contra a rota do worker (ex: `https://quanto-falta-api.philippeboechat1.workers.dev/admin/metrics`):\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 23,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\CLOUDFLARE_ACCESS_SETUP.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 25,
+    "content": "\"content\": \"Este documento descreve as etapas necessárias para configurar o **Cloudflare Zero Trust Access** no painel administrativo do Quanto Falta (`admin.quantofalta.shop`).\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 28,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\CLOUDFLARE_ACCESS_SETUP.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 30,
+    "content": "\"content\": \"1. **Nome da aplicação:** Admin Quanto Falta\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 33,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\CLOUDFLARE_ACCESS_SETUP.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 35,
+    "content": "\"content\": \"O backend (`quanto-falta-api`) já foi modificado para validar o token que o Cloudflare Access injeta (`Cf-Access-Jwt-Assertion`).\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 38,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\deploy.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 40,
+    "content": "\"content\": \"deploy_panel.py — Painel de Deploy Profissional · Quanto Falta?\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 43,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\deploy.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 45,
+    "content": "\"content\": \"\\\"cmd\\\":    r\\\"npm run build ; node_modules\\\\.bin\\\\wrangler pages deploy out --project-name quanto-falta-dashboard\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 48,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\deploy.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 50,
+    "content": "\"content\": \"self.root.title(\\\"Deploy · Quanto Falta?\\\")\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 53,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\deploy.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 55,
+    "content": "\"content\": \"tk.Label(titlebar, text=\\\"  ⬡  QUANTO FALTA?\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 58,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\NOTIFICACOES_SISTEMA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 60,
+    "content": "\"content\": \"# Sistema de Notificações — Quanto Falta?\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 63,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\NOTIFICACOES_SISTEMA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 65,
+    "content": "\"content\": \"Este documento descreve a arquitetura, o comportamento e as limitações do sistema de notificações locais do aplicativo **Quanto Falta?**.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 68,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 70,
+    "content": "\"content\": \"# PROMPT — INTEGRAR O FRONTEND EXISTENTE AO BACKEND DO QUANTO FALTA?\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 73,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 75,
+    "content": "\"content\": \"Analise o frontend administrativo que já está sendo desenvolvido e faça ele se comunicar corretamente com o backend existente do Quanto Falta?.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 78,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 80,
+    "content": "\"content\": \"Cole abaixo desta linha a documentação completa da API do Quanto Falta?.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 83,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 85,
+    "content": "\"content\": \"**Title:** Quanto Falta? — Contagens regressivas para seus momentos especiais\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 88,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 90,
+    "content": "\"content\": \"Quanto Falta? — Contagens regressivas para seus momentos especiais\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 93,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 95,
+    "content": "\"content\": \"![Tela de criação de evento](https://share.quantofalta.shop/assets/print2.png) ![Tela principal do Quanto Falta?](https://share.quantofalta.shop/assets/print1.png) ![Detalhes e compartilhamento de evento](https://share.quantofalta.shop/assets/print3.png)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 98,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 100,
+    "content": "\"content\": \"Sim! O Quanto Falta? é 100% offline. Todos os seus eventos ficam armazenados localmente no seu celular. Você não precisa de internet para criar, ver ou gerenciar contagens regressivas.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 103,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 105,
+    "content": "\"content\": \"Ao compartilhar um evento, o app gera um link único. Qualquer pessoa que receber esse link pode ver a contagem regressiva ao vivo no navegador, sem precisar baixar o Quanto Falta?. O link é atualizado em tempo real.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 108,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 110,
+    "content": "\"content\": \"Pressione e segure a tela inicial do Android, toque em \\\"Widgets\\\", encontre o \\\"Quanto Falta?\\\" e arraste para a posição desejada. Você pode configurar qual evento aparece no widget e personalizar o tamanho.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 113,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 115,
+    "content": "\"content\": \"Não. O Quanto Falta? não tem anúncios. A versão gratuita é completamente funcional para seus primeiros eventos. O Premium remove essa limitação e apoia o desenvolvimento do app.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 118,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\recursos_app.txt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 120,
+    "content": "\"content\": \"COMPARAÇÃO DE RECURSOS - QUANTO FALTA?\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 123,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 125,
+    "content": "\"content\": \"dir_to_search = r\\\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 128,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 130,
+    "content": "\"content\": \"(r'https?://quantofalta\\\\.shop', 'https://tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 133,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 135,
+    "content": "\"content\": \"(r'https?://www\\\\.quantofalta\\\\.shop', 'https://www.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 138,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 140,
+    "content": "\"content\": \"(r'https?://api\\\\.quantofalta\\\\.shop', 'https://api.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 143,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 145,
+    "content": "\"content\": \"(r'https?://share\\\\.quantofalta\\\\.shop', 'https://share.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 148,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 150,
+    "content": "\"content\": \"(r'https?://admin\\\\.quantofalta\\\\.shop', 'https://admin.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 153,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 155,
+    "content": "\"content\": \"(r'Quanto Falta\\\\?', 'Tô Contando'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 158,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 160,
+    "content": "\"content\": \"(r'Quanto Falta', 'Tô Contando')\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 163,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 165,
+    "content": "\"content\": \"# But wait! 'Quanto Falta' has space, so it's not the package name 'quantofalta'.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 168,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 170,
+    "content": "\"content\": \"# But wait! What if 'Quanto Falta' matches 'Quanto Falta'? Yes.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 173,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 175,
+    "content": "\"content\": \"# What about 'quantofalta'? The script doesn't replace 'quantofalta', it replaces domains.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 178,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 180,
+    "content": "\"content\": \"dir_to_search = r\\\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 183,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 185,
+    "content": "\"content\": \"(r'https?://quantofalta\\\\.shop', 'https://tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 188,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 190,
+    "content": "\"content\": \"(r'https?://www\\\\.quantofalta\\\\.shop', 'https://www.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 193,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 195,
+    "content": "\"content\": \"(r'https?://api\\\\.quantofalta\\\\.shop', 'https://api.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 198,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 200,
+    "content": "\"content\": \"(r'https?://share\\\\.quantofalta\\\\.shop', 'https://share.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 203,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 205,
+    "content": "\"content\": \"(r'https?://admin\\\\.quantofalta\\\\.shop', 'https://admin.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 208,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 210,
+    "content": "\"content\": \"(r'quantofalta\\\\.shop', 'tocontando.com.br'), # remaining mentions\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 213,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 215,
+    "content": "\"content\": \"(r'Quanto Falta\\\\?', 'Tô Contando'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 218,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 220,
+    "content": "\"content\": \"(r'Quanto Falta', 'Tô Contando'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 223,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 225,
+    "content": "\"content\": \"dir_to_search = r\\\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-web\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 228,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 230,
+    "content": "\"content\": \"(r'https?://quantofalta\\\\.shop', 'https://tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 233,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 235,
+    "content": "\"content\": \"(r'https?://www\\\\.quantofalta\\\\.shop', 'https://www.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 238,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 240,
+    "content": "\"content\": \"(r'https?://api\\\\.quantofalta\\\\.shop', 'https://api.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 243,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 245,
+    "content": "\"content\": \"(r'https?://share\\\\.quantofalta\\\\.shop', 'https://share.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 248,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 250,
+    "content": "\"content\": \"(r'https?://admin\\\\.quantofalta\\\\.shop', 'https://admin.tocontando.com.br'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 253,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 255,
+    "content": "\"content\": \"(r'quantofalta\\\\.shop', 'tocontando.com.br'), # remaining mentions\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 258,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 260,
+    "content": "\"content\": \"(r'Quanto Falta\\\\?', 'Tô Contando'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 263,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 265,
+    "content": "\"content\": \"(r'Quanto Falta', 'Tô Contando'),\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 268,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\search.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 270,
+    "content": "\"content\": \"root = r'c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta'\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 273,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\search.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 275,
+    "content": "\"content\": \"pattern = re.compile(r'quanto\\\\s*falta|quantofalta|falta\\\\s*pouco|faltapouco|quanto-falta|falta-pouco|quanto_falta', re.IGNORECASE)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 278,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 280,
+    "content": "\"content\": \"# SUPER PROMPT — Landing Page Premium do app “Quanto Falta?”\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 283,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 285,
+    "content": "\"content\": \"Crie uma landing page completa, premium, moderna e altamente refinada para o aplicativo Android **Quanto Falta?**, um app de contagens regressivas para momentos importantes, como viagens, casamentos, formaturas, aniversários, provas, férias e metas pessoais.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 288,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 290,
+    "content": "\"content\": \"- nome “Quanto Falta?”.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 293,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 295,
+    "content": "\"content\": \"> Quanto Falta? — Contagens regressivas para momentos especiais\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 298,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\TELEMETRY_CATALOG.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 300,
+    "content": "\"content\": \"# Catálogo de Telemetria - Quanto Falta\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 303,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\TELEMETRY_CATALOG.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 305,
+    "content": "\"content\": \"Este documento cataloga todos os eventos, métricas de performance e coletas do ecossistema Quanto Falta, atualizado após a unificação da infraestrutura de telemetria.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 308,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\backups\\\\quanto-falta-d1-remote-20260615-204839.sql\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 310,
+    "content": "\"content\": \"INSERT INTO \\\"app_versions\\\" (\\\"id\\\",\\\"version_code\\\",\\\"version_name\\\",\\\"release_channel\\\",\\\"status\\\",\\\"mandatory\\\",\\\"min_supported_version_code\\\",\\\"title\\\",\\\"summary\\\",\\\"changelog\\\",\\\"apk_r2_key\\\",\\\"apk_size_bytes\\\",\\\"sha256\\\",\\\"signature_fingerprint\\\",\\\"rollout_percentage\\\",\\\"published_at\\\",\\\"created_at\\\",\\\"updated_at\\\",\\\"github_release_tag\\\") VALUES(1,2,'1.1','stable','draft',1,1,'Novidades: Linha do Tempo, Agradecimento aos Testers e Melhorias Visuais!',replace(replace('✨ NOVIDADES:\\\\r\\\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\\\r\\\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\\\r\\\\n\\\\r\\\\n🛠 MELHORIAS E CORREÇÕES:\\\\r\\\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\\\r\\\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\"{prefillTitle}\\\") apareciam na tela por engano.\\\\r\\\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\\\r\\\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\"Ver Eventos Ativos\\\", deixando mais claro o próximo passo!\\\\r\\\\n\\\\r\\\\nAtualize agora e aproveite!\\\\r\\\\n','\\\\r',char(13)),'\\\\n',char(10)),'[\\\"✨ NOVIDADES:\\\\r\\\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\\\r\\\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\\\r\\\\n\\\\r\\\\n🛠 MELHORIAS E CORREÇÕES:\\\\r\\\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\\\r\\\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\\\\\"{prefillTitle}\\\\\\\") apareciam na tela por engano.\\\\r\\\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\\\r\\\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\\\\\"Ver Eventos Ativos\\\\\\\", deixando mais claro o próximo passo!\\\\r\\\\n\\\\r\\\\nAtualize agora e aproveite!\\\\r\\\\n\\\"]',NULL,20172787,NULL,NULL,0,NULL,1781481061000,1781481067192,'1.1');\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 313,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 315,
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Quanto Falta? Transforme datas importantes em contagens regressivas bonitas e compartilháveis.\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 318,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 320,
+    "content": "\"content\": \"<title>Quanto Falta? — Cada dia conta</title>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 323,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 325,
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"#inicio\\\" aria-label=\\\"Quanto Falta? — início\\\">\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 328,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 330,
+    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 333,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 335,
+    "content": "\"content\": \"<h1>Descubra quanto falta para o que <span>realmente importa.</span></h1>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 338,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 340,
+    "content": "\"content\": \"<div class=\\\"hero-visual\\\" aria-label=\\\"Prévia do aplicativo Quanto Falta?\\\">\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 343,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 345,
+    "content": "\"content\": \"<img src=\\\"assets/app-screens/1.png\\\" alt=\\\"Tela de eventos do aplicativo Quanto Falta?\\\" width=\\\"600\\\" height=\\\"1254\\\" draggable=\\\"false\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 348,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 350,
+    "content": "\"content\": \"<p>O Quanto Falta? cuida da contagem. Você aproveita cada pedacinho da expectativa.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 353,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 355,
+    "content": "\"content\": \"<p>Sim! O Quanto Falta? é 100% offline. Todos os seus eventos ficam armazenados localmente no seu celular. Você não precisa de internet para criar, ver ou gerenciar contagens regressivas.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 358,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 360,
+    "content": "\"content\": \"<p>Ao compartilhar um evento, o app gera um link único. Qualquer pessoa que receber esse link pode ver a contagem regressiva ao vivo no navegador, sem precisar baixar o Quanto Falta?.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 363,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 365,
+    "content": "\"content\": \"<p>Não. O Quanto Falta? não tem nenhum anúncio. A versão gratuita é completamente funcional. O Premium libera eventos ilimitados, fotos de capa, biometria e sincronização na nuvem para apoiar o desenvolvimento do app.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 368,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 370,
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"#inicio\\\"><span class=\\\"logo-mark\\\" aria-hidden=\\\"true\\\"><img src=\\\"assets/brand/iconpadrao.png?v=2\\\" alt=\\\"\\\" width=\\\"512\\\" height=\\\"512\\\" /></span><span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span></a>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 373,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 375,
+    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Quanto Falta? <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 378,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\share.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 380,
+    "content": "\"content\": \"<title>Compartilhando um Momento - Quanto Falta?</title>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 383,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\share.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 385,
+    "content": "\"content\": \"<img src=\\\"https://quantofalta.shop/assets/icon.png\\\" alt=\\\"Quanto Falta? Logo\\\" style=\\\"width: 24px; border-radius: 6px;\\\">\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 388,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\share.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 390,
+    "content": "\"content\": \"<span>Quanto Falta?</span>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 393,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 395,
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Política de Privacidade do aplicativo Quanto Falta?.\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 398,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 400,
+    "content": "\"content\": \"<title>Política de Privacidade — Quanto Falta?</title>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 403,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 405,
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"../\\\" aria-label=\\\"Quanto Falta? — início\\\">\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 408,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 410,
+    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 413,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 415,
+    "content": "\"content\": \"<p><strong>Resumo simples:</strong> O Quanto Falta? não coleta, armazena nem compartilha nenhum dado pessoal seu. Seus eventos ficam 100% no seu dispositivo.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 418,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 420,
+    "content": "\"content\": \"<p>O Quanto Falta? é um aplicativo Android desenvolvido de forma independente. Para dúvidas, suporte técnico, questões de privacidade ou solicitações de exclusão de dados, entre em contato pelo e-mail oficial: <a class=\\\"legal-inline-link\\\" href=\\\"mailto:contato@quantofalta.shop\\\">contato@quantofalta.shop</a>.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 423,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 425,
+    "content": "\"content\": \"<p>Quando você opta por compartilhar um evento, o app envia apenas os dados do evento compartilhado — título, data e contagem — para os servidores do Quanto Falta?, com o único propósito de gerar um link público temporário. Esse compartilhamento é sempre opcional e iniciado pelo usuário.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 428,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 430,
+    "content": "\"content\": \"<p>As compras Premium são processadas integralmente pela Google Play Store, sujeita à <a class=\\\"legal-inline-link external-link\\\" href=\\\"https://policies.google.com/privacy\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Política de Privacidade do Google<svg><use href=\\\"#icon-arrow-up-right\\\"/></svg></a>. O Quanto Falta? não armazena dados de pagamento.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 433,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 435,
+    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 438,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 440,
+    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Quanto Falta? <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 443,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 445,
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Termos de Uso do aplicativo Quanto Falta?.\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 448,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 450,
+    "content": "\"content\": \"<title>Termos de Uso — Quanto Falta?</title>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 453,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 455,
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"../\\\" aria-label=\\\"Quanto Falta? — início\\\">\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 458,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 460,
+    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 463,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 465,
+    "content": "\"content\": \"<p><strong>Resumo simples:</strong> O Quanto Falta? é uma ferramenta de uso pessoal. Não nos responsabilizamos pela perda de dados, pois eles ficam salvos apenas no seu celular, nem por perdas decorrentes de mau uso.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 468,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 470,
+    "content": "\"content\": \"<p>Ao baixar e utilizar o aplicativo “Quanto Falta?”, você concorda com os presentes Termos de Uso. Se não concordar com alguma parte, por favor, não utilize o aplicativo.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 473,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 475,
+    "content": "\"content\": \"<p>O Quanto Falta? permite que você crie contagens regressivas para eventos. Você é o único responsável pelo conteúdo — títulos, datas e anotações — inserido no aplicativo. O aplicativo deve ser usado apenas para fins lícitos e pessoais.</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 478,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 480,
+    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 483,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 485,
+    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Quanto Falta? <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 488,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\openapi.yaml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 490,
+    "content": "\"content\": \"title: Quanto Falta API\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 493,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\package-lock.json\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 495,
+    "content": "\"content\": \"\\\"name\\\": \\\"quanto-falta-backend\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 498,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\package-lock.json\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 500,
+    "content": "\"content\": \"\\\"name\\\": \\\"quanto-falta-backend\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 503,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\package.json\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 505,
+    "content": "\"content\": \"\\\"name\\\": \\\"quanto-falta-backend\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 508,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 510,
+    "content": "\"content\": \"name = \\\"quanto-falta-api\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 513,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 515,
+    "content": "\"content\": \"database_name = \\\"quanto_falta_db\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 518,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 520,
+    "content": "\"content\": \"bucket_name = \\\"quanto-falta-performance-traces\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 523,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 525,
+    "content": "\"content\": \"name = \\\"quanto-falta-api-preview\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 528,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 530,
+    "content": "\"content\": \"database_name = \\\"quanto_falta_preview_db\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 533,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 535,
+    "content": "\"content\": \"bucket_name = \\\"quanto-falta-performance-traces-preview\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 538,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 540,
+    "content": "\"content\": \"name = \\\"quanto-falta-api\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 543,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 545,
+    "content": "\"content\": \"database_name = \\\"quanto_falta_db\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 548,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\wrangler.toml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 550,
+    "content": "\"content\": \"bucket_name = \\\"quanto-falta-performance-traces\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 553,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\migrations\\\\0001_initial.sql\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 555,
+    "content": "\"content\": \"-- Migration 0001: Initial schema for Quanto Falta? backend\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 558,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\index.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 560,
+    "content": "\"content\": \"'https://quanto-falta-dashboard.pages.dev',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 563,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\index.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 565,
+    "content": "\"content\": \"hostname.endsWith('.quanto-falta-dashboard.pages.dev') ||\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 568,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\index.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 570,
+    "content": "\"content\": \"'https://quanto-falta-dashboard.pages.dev',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 573,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\index.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 575,
+    "content": "\"content\": \"hostname.endsWith('.quanto-falta-dashboard.pages.dev') ||\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 578,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\apk.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 580,
+    "content": "\"content\": \"const repoPath = c.env.GITHUB_REPO ?? 'phdev13/QuantoFalta';\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 583,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\apk.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 585,
+    "content": "\"content\": \"'User-Agent': 'QuantoFalta-Worker',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 588,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\apk.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 590,
+    "content": "\"content\": \"'User-Agent': 'QuantoFalta-Worker',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 593,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\health.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 595,
+    "content": "\"content\": \"service: 'quanto-falta-api',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 598,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\admin\\\\versions.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 600,
+    "content": "\"content\": \"const repoPath = c.env.GITHUB_REPO ?? 'phdev13/QuantoFalta';\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 603,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\admin\\\\versions.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 605,
+    "content": "\"content\": \"'User-Agent': 'QuantoFalta-Worker',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 608,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\admin\\\\versions.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 610,
+    "content": "\"content\": \"'User-Agent': 'QuantoFalta-Worker',\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 613,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard\\\\FRONTEND_ARCHITECTURE.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 615,
+    "content": "\"content\": \"O novo painel administrativo do \\\"Quanto Falta?\\\" será baseado na arquitetura **App Router do Next.js**.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 618,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 620,
+    "content": "\"content\": \"<title>Quanto Falta? — Painel Admin</title>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 623,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 625,
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Painel administrativo do Quanto Falta?\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 628,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\package-lock.json\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 630,
+    "content": "\"content\": \"\\\"name\\\": \\\"quanto-falta-dashboard\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 633,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\package-lock.json\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 635,
+    "content": "\"content\": \"\\\"name\\\": \\\"quanto-falta-dashboard\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 638,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\package.json\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 640,
+    "content": "\"content\": \"\\\"name\\\": \\\"quanto-falta-dashboard\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 643,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\src\\\\lib\\\\api.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 645,
+    "content": "\"content\": \"/** Typed API client for the Quanto Falta? admin backend */\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 648,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 650,
+    "content": "\"content\": \"C:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\backups\\\\quanto-falta-server-backup-20260615-202157.zip\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 653,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 655,
+    "content": "\"content\": \"C:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\backups\\\\quanto-falta-d1-remote-20260615-204839.sql\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 658,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 660,
+    "content": "\"content\": \"- Migrations remotas aplicadas no D1 `quanto_falta_db`:\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 663,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 665,
+    "content": "\"content\": \"- Worker: `quanto-falta-api`\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 668,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 670,
+    "content": "\"content\": \"- URL workers.dev: `https://quanto-falta-api.philippeboechat1.workers.dev`\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 673,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 675,
+    "content": "\"content\": \"- Projeto: `quanto-falta-dashboard`\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 678,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 680,
+    "content": "\"content\": \"- Alias: `https://production.quanto-falta-dashboard.pages.dev`\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 683,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 685,
+    "content": "\"content\": \"- Worker tests: `npm run test:worker-safe` passou. Esse script copia o backend para um caminho temporario sem espaco antes de rodar `vitest`, contornando a falha do `@cloudflare/vitest-pool-workers` no caminho local `Quanto falta`.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 688,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\ARCHITECTURE.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 690,
+    "content": "\"content\": \"# Arquitetura do Quanto Falta?\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 693,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\DEPLOY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 695,
+    "content": "\"content\": \"npx wrangler pages deploy dist --project-name quanto-falta-dashboard --branch main\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 698,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\METRICS.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 700,
+    "content": "\"content\": \"O Quanto Falta? NÃO utiliza IDs de publicidade, Firebase Analytics ou identificadores rastreáveis de hardware (IMEI/MAC). O identificador único (`InstallationId`) é um UUID-v4 gerado localmente que se perde caso o app seja desinstalado ou limpo.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 703,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\MONETIZACAO.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 705,
+    "content": "\"content\": \"# Documentação de Monetização - Quanto Falta?\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 708,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\MONETIZACAO.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 710,
+    "content": "\"content\": \"Este documento descreve a arquitetura técnica e o fluxo de dados do sistema de monetização do aplicativo *Quanto Falta?*. O modelo comercial atual possui apenas:\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 713,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\OTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 715,
+    "content": "\"content\": \"O sistema de OTA permite ao Quanto Falta? atualizar-se sem depender da Google Play Store.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 718,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-web\\\\frontend\\\\app.js\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 720,
+    "content": "\"content\": \"QUANTO FALTA? — app.js v2\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 723,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-web\\\\frontend\\\\style.css\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 725,
+    "content": "\"content\": \"QUANTO FALTA? — Design System Web v2\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 728,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\implementacoes.txt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 730,
+    "content": "\"content\": \"“Falta pouco para a viagem.”\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 733,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\implementacoes.txt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 735,
+    "content": "\"content\": \"A imagem compartilhada deve ter uma assinatura pequena e elegante do Quanto Falta?, sem parecer propaganda invasiva.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 738,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\.idea\\\\workspace.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 740,
+    "content": "\"content\": \"<option name=\\\"KEY_STORE_PATH\\\" value=\\\"C:\\\\Users\\\\Philippe\\\\Documents\\\\KeyStore Tô Contando\\\\quantofaltakey\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 743,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\.idea\\\\workspace.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 745,
+    "content": "\"content\": \"&quot;ExportApk.ApkPathForMy_Application.app&quot;: &quot;C:\\\\\\\\Users\\\\\\\\Philippe\\\\\\\\Desktop\\\\\\\\Quanto falta\\\\\\\\quanto-falta_\\\\\\\\app&quot;,\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 748,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\.idea\\\\workspace.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 750,
+    "content": "\"content\": \"&quot;ExportBundle.BundlePathForMy_Application.app&quot;: &quot;C:\\\\\\\\Users\\\\\\\\Philippe\\\\\\\\Desktop\\\\\\\\Quanto falta\\\\\\\\quanto-falta_\\\\\\\\app&quot;,\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 753,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\.idea\\\\workspace.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 755,
+    "content": "\"content\": \"&quot;last_opened_file_path&quot;: &quot;C:/Users/Philippe/Desktop/Quanto falta/quanto-falta_&quot;,\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 758,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\.idea\\\\workspace.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 760,
+    "content": "\"content\": \"<module name=\\\"Quanto_Falta.app\\\" />\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 763,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\.idea\\\\workspace.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 765,
+    "content": "\"content\": \"<url>file://$PROJECT_DIR$/app/src/main/java/com/phdev/quantofalta/feature/eventdetails/ShareBottomSheet.kt</url>\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 768,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\AndroidManifest.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 770,
+    "content": "\"content\": \"android:name=\\\".QuantoFaltaApplication\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 773,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\MainActivity.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 775,
+    "content": "\"content\": \"val appContainer = (application as QuantoFaltaApplication).container\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 778,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\MainActivity.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 780,
+    "content": "\"content\": \"val startupDuration = System.currentTimeMillis() - QuantoFaltaApplication.appStartTime\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 783,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\QuantoFaltaApplication.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 785,
+    "content": "\"content\": \"class QuantoFaltaApplication : Application(), Configuration.Provider, ImageLoaderFactory {\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 788,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\QuantoFaltaApplication.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 790,
+    "content": "\"content\": \"android.util.Log.e(\\\"QuantoFaltaApp\\\", \\\"Erro não-crítico ao agendar background jobs\\\", e)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 793,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 795,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 798,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 800,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 803,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 805,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 808,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 810,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 813,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 815,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 818,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 820,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 823,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 825,
+    "content": "\"content\": \"quantoFaltaApplication().container.introManager\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 828,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 830,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 833,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 835,
+    "content": "\"content\": \"com.phdev.quantofalta.core.database.AppDatabase.getDatabase(quantoFaltaApplication())\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 838,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 840,
+    "content": "\"content\": \"val app = quantoFaltaApplication()\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 843,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 845,
+    "content": "\"content\": \"fun CreationExtras.quantoFaltaApplication(): QuantoFaltaApplication =\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 848,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 850,
+    "content": "\"content\": \"(this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as QuantoFaltaApplication)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 853,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\database\\\\AppDatabase.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 855,
+    "content": "\"content\": \"\\\"quanto_falta_database\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 858,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\navigation\\\\AppNavigation.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 860,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 863,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\navigation\\\\AppNavigation.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 865,
+    "content": "\"content\": \"val appContainer = (context.applicationContext as QuantoFaltaApplication).container\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 868,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\notifications\\\\NotificationFactory.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 870,
+    "content": "\"content\": \"offset >= 10080 -> Triple(\\\"Está chegando\\\", \\\"Falta pouco para “${event.title}”.\\\", NotificationChannels.CHANNEL_UPCOMING)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 873,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\notifications\\\\NotificationFactory.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 875,
+    "content": "\"content\": \"offset == 60 -> Triple(\\\"Falta pouco\\\", \\\"“${event.title}” começa em 1 hora.\\\", NotificationChannels.CHANNEL_TODAY)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 878,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\preferences\\\\IntroManager.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 880,
+    "content": "\"content\": \"val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = \\\"quanto_falta_settings\\\")\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 883,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\sync\\\\BackupSyncWorker.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 885,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 888,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\sync\\\\BackupSyncWorker.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 890,
+    "content": "\"content\": \"val app = applicationContext as QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 893,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\utils\\\\EventMessageProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 895,
+    "content": "\"content\": \"\\\"Falta pouco para $title. Descanse bem e se hidrate! 💧\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 898,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\utils\\\\EventMessageProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 900,
+    "content": "\"content\": \"\\\"Falta pouco para você aproveitar $title. ☕\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 903,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\domain\\\\model\\\\CountdownDirection.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 905,
+    "content": "\"content\": \"REMAINING,  // mostra quanto falta\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 908,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\domain\\\\model\\\\EventExtensions.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 910,
+    "content": "\"content\": \"return \\\"Falta pouco para a sua data.\\\"\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 913,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\diagnostics\\\\DiagnosticsScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 915,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 918,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\diagnostics\\\\DiagnosticsScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 920,
+    "content": "\"content\": \"val appContainer = (context.applicationContext as QuantoFaltaApplication).container\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 923,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\eventdetails\\\\ShareBottomSheet.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 925,
+    "content": "\"content\": \"putExtra(Intent.EXTRA_TEXT, \\\"Olha quanto falta para '${event.title}': $generatedUrl\\\")\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 928,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\intro\\\\IntroScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 930,
+    "content": "\"content\": \"text = \\\"Saiba quanto falta para\\\\no que realmente importa.\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 933,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\intro\\\\IntroScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 935,
+    "content": "\"content\": \"text = \\\"Pronto. Agora você sempre saberá quanto falta.\\\",\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 938,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\testers\\\\TestersScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 940,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 943,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\testers\\\\TestersScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 945,
+    "content": "\"content\": \"val appContainer = (context.applicationContext as QuantoFaltaApplication).container\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 948,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\widget\\\\EventWidget.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 950,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 953,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\widget\\\\EventWidget.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 955,
+    "content": "\"content\": \"val app = context.applicationContext as QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 958,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\widget\\\\EventWidgetConfigurationActivity.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 960,
+    "content": "\"content\": \"import com.phdev.quantofalta.QuantoFaltaApplication\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 963,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\widget\\\\EventWidgetConfigurationActivity.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
+    "line_num": 965,
+    "content": "\"content\": \"val app = (applicationContext as QuantoFaltaApplication)\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\ADMIN_SECURITY_CHANGES.md",
+    "line_num": 5,
+    "content": "## 1. Modificações no Backend (`quanto-falta-api`)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\ADMIN_SECURITY_TESTS.md",
+    "line_num": 12,
+    "content": "Usando ferramentas como Postman ou `curl` contra a rota do worker (ex: `https://quanto-falta-api.philippeboechat1.workers.dev/admin/metrics`):"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 5,
+    "content": "root = r'c:\\Users\\Philippe\\Desktop\\Quanto falta'"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 33,
+    "content": "# 1. Replace \"Quanto Falta?\" and \"Quanto Falta\" in UI strings"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 35,
+    "content": "content = re.sub(r'Quanto Falta\\?', 'Tô Contando', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 36,
+    "content": "content = re.sub(r'Quanto Falta', 'Tô Contando', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 37,
+    "content": "content = re.sub(r'QuantoFalta', 'ToContando', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 40,
+    "content": "# But we already did 'Quanto Falta', not 'quantofalta'"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 52,
+    "content": "content = re.sub(r'https?://(?:www\\.)?quantofalta\\.shop', 'https://tocontando.com.br', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 53,
+    "content": "content = re.sub(r'https?://api\\.quantofalta\\.shop', 'https://api.tocontando.com.br', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 54,
+    "content": "content = re.sub(r'https?://share\\.quantofalta\\.shop', 'https://share.tocontando.com.br', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 55,
+    "content": "content = re.sub(r'https?://admin\\.quantofalta\\.shop', 'https://admin.tocontando.com.br', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
+    "line_num": 56,
+    "content": "content = re.sub(r'https?://assets\\.quantofalta\\.shop', 'https://assets.tocontando.com.br', content)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\CLOUDFLARE_ACCESS_SETUP.md",
+    "line_num": 27,
+    "content": "O backend (`quanto-falta-api`) já foi modificado para validar o token que o Cloudflare Access injeta (`Cf-Access-Jwt-Assertion`)."
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\deploy.py",
+    "line_num": 124,
+    "content": "\"cmd\":    r\"npm run build ; node_modules\\.bin\\wrangler pages deploy out --project-name quanto-falta-dashboard\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\deploy.py",
+    "line_num": 729,
+    "content": "tk.Label(titlebar, text=\"  ⬡  QUANTO FALTA?\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\filter_matches.py",
+    "line_num": 5,
+    "content": "root = r'c:\\Users\\Philippe\\Desktop\\Quanto falta'"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\filter_matches.py",
+    "line_num": 12,
+    "content": "pattern = re.compile(r'(quanto\\s*falta|quantofalta|falta\\s*pouco|faltapouco|quanto-falta|falta-pouco|quanto_falta)', re.IGNORECASE)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\filter_matches.py",
+    "line_num": 16,
+    "content": "re.compile(r'com\\.phdev\\.quantofalta', re.IGNORECASE),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\filter_matches.py",
+    "line_num": 17,
+    "content": "re.compile(r'quantofalta\\.shop', re.IGNORECASE),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md",
+    "line_num": 1,
+    "content": "# PROMPT — INTEGRAR O FRONTEND EXISTENTE AO BACKEND DO QUANTO FALTA?"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\recursos_app.txt",
+    "line_num": 1,
+    "content": "COMPARAÇÃO DE RECURSOS - QUANTO FALTA?"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 4,
+    "content": "dir_to_search = r\"c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 7,
+    "content": "(r'https?://quantofalta\\.shop', 'https://tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 8,
+    "content": "(r'https?://www\\.quantofalta\\.shop', 'https://www.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 9,
+    "content": "(r'https?://api\\.quantofalta\\.shop', 'https://api.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 10,
+    "content": "(r'https?://share\\.quantofalta\\.shop', 'https://share.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 11,
+    "content": "(r'https?://admin\\.quantofalta\\.shop', 'https://admin.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 28,
+    "content": "# But wait! 'Tô Contando' has space, so it's not the package name 'quantofalta'."
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py",
+    "line_num": 31,
+    "content": "# What about 'quantofalta'? The script doesn't replace 'quantofalta', it replaces domains."
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 4,
+    "content": "dir_to_search = r\"c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 8,
+    "content": "(r'https?://quantofalta\\.shop', 'https://tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 9,
+    "content": "(r'https?://www\\.quantofalta\\.shop', 'https://www.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 10,
+    "content": "(r'https?://api\\.quantofalta\\.shop', 'https://api.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 11,
+    "content": "(r'https?://share\\.quantofalta\\.shop', 'https://share.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 12,
+    "content": "(r'https?://admin\\.quantofalta\\.shop', 'https://admin.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py",
+    "line_num": 13,
+    "content": "(r'quantofalta\\.shop', 'tocontando.com.br'), # remaining mentions"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 4,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\QuantoFaltaApplication.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 5,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 6,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\admin\\\\versions.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 7,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\widget\\\\EventWidget.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 8,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 9,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\share.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 10,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\TELEMETRY_CATALOG.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 11,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\OTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 12,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\openapi.yaml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 13,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_dashboard.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 14,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\AndroidManifest.xml\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 15,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 16,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\ARCHITECTURE.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 17,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 18,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_web.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 19,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 20,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\testers\\\\TestersScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 21,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard\\\\FRONTEND_ARCHITECTURE.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 22,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\widget\\\\EventWidgetConfigurationActivity.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 23,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\AppViewModelProvider.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 24,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\privacy\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 25,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\NOTIFICACOES_SISTEMA.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 26,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\MainActivity.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 27,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\sync\\\\BackupSyncWorker.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 28,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\ADMIN_SECURITY_AUDIT.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 29,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\METRICS.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 30,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\MONETIZACAO.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 31,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\novositequantofalta\\\\terms\\\\index.html\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 32,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\ADMIN_ACCESS_RECOVERY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 33,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\feature\\\\diagnostics\\\\DiagnosticsScreen.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 34,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\deploy.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 35,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\index.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 36,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\replace_android.py\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 37,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\CLOUDFLARE_ACCESS_SETUP.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 38,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app\\\\src\\\\main\\\\java\\\\com\\\\phdev\\\\quantofalta\\\\core\\\\navigation\\\\AppNavigation.kt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 39,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\src\\\\routes\\\\apk.ts\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 40,
+    "content": "\"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\dashboard_old\\\\src\\\\lib\\\\api.ts\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 44,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\backups\\\\quanto-falta-d1-remote-20260615-204839.sql\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 49,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\backend\\\\migrations\\\\0001_initial.sql\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 54,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 59,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 64,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 69,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 74,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 79,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 84,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 89,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta-server\\\\docs\\\\API_UNIFICATION_INVENTORY.md\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 94,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\implementacoes.txt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json",
+    "line_num": 99,
+    "content": "\"file\": \"c:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\implementacoes.txt\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 4,
+    "content": "dir_to_search = r\"c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 8,
+    "content": "(r'https?://quantofalta\\.shop', 'https://tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 9,
+    "content": "(r'https?://www\\.quantofalta\\.shop', 'https://www.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 10,
+    "content": "(r'https?://api\\.quantofalta\\.shop', 'https://api.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 11,
+    "content": "(r'https?://share\\.quantofalta\\.shop', 'https://share.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 12,
+    "content": "(r'https?://admin\\.quantofalta\\.shop', 'https://admin.tocontando.com.br'),"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py",
+    "line_num": 13,
+    "content": "(r'quantofalta\\.shop', 'tocontando.com.br'), # remaining mentions"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search.py",
+    "line_num": 4,
+    "content": "root = r'c:\\Users\\Philippe\\Desktop\\Quanto falta'"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search.py",
+    "line_num": 6,
+    "content": "pattern = re.compile(r'quanto\\s*falta|quantofalta|falta\\s*pouco|faltapouco|quanto-falta|falta-pouco|quanto_falta', re.IGNORECASE)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 1,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 2,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\ADMIN_SECURITY_CHANGES.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 3,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\ADMIN_SECURITY_TESTS.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 4,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 5,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\CLOUDFLARE_ACCESS_SETUP.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 6,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\deploy.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 7,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\filter_matches.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 8,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\PROMPT_INTEGRAR_FRONTEND_BACKEND_QUANTO_FALTA.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 9,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\Quanto_Falta__—_Contagens_regressivas_para_seus_momentos_especiais.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 10,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\recursos_app.txt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 11,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_android.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 12,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_dashboard.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 13,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_summary.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 14,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\replace_web.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 15,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search.py"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 16,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 17,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\SUPER_PROMPT_LANDING_PAGE_QUANTO_FALTA.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 18,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\backups\\quanto-falta-d1-remote-20260615-204839.sql"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 19,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\api.js"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 20,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\index.html"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 21,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\share.html"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 22,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\privacy\\index.html"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 23,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\terms\\index.html"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 24,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\package.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 25,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\openapi.yaml"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 26,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\package-lock.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 27,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\package.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 28,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 29,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\migrations\\0001_initial.sql"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 30,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 31,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\modules\\premium\\routes.ts"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 32,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\routes\\health.ts"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 33,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\routes\\monetization.ts"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 34,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard\\FRONTEND_AUDIT.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 35,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\package-lock.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 36,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\package.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 37,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 38,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\DEPLOY.md"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 39,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\package-lock.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 40,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\package.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 41,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\wrangler.toml"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 42,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\frontend\\app.js"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 43,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\frontend\\index.html"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 44,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\frontend\\share.html"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 45,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\frontend\\style.css"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 46,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\implementacoes.txt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 47,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 48,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\release\\output-metadata.json"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 49,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\androidTest\\java\\com\\example\\ExampleInstrumentedTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 50,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\MainActivity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 51,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\QuantoFaltaApplication.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 52,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\billing\\BillingClientWrapper.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 53,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\billing\\EntitlementManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 54,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\billing\\PremiumFeature.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 55,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\billing\\PremiumPlan.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 56,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppContainer.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 57,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 58,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\analytics\\AnalyticsEvent.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 59,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\analytics\\AnalyticsManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 60,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\analytics\\AnalyticsQueue.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 61,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\analytics\\InstallationManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 62,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\auth\\AuthManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 63,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\config\\AppConfigManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 64,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\AppDatabase.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 65,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\BackupManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 66,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\DeliveredMilestoneDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 67,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\DeliveredMilestoneEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 68,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\EventDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 69,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\EventEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 70,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\EventReminderDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 71,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\EventReminderEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 72,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\EventTimelineDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 73,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\EventTimelineEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 74,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\OutboxDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 75,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\OutboxEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 76,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\PerformanceDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 77,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\PerformanceEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 78,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\ScheduledNotificationDao.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 79,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\ScheduledNotificationEntity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 80,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\SyncState.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 81,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\WidgetEventData.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 82,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\Animations.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 83,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\AppBottomNav.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 84,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\AppButtons.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 85,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\AppIcons.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 86,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\AppInputs.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 87,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\AppTopBar.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 88,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\CompletedEventCard.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 89,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\DateTimePicker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 90,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\EmptyState.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 91,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\EventCard.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 92,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\PremiumGate.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 93,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\SettingsComponents.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 94,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\components\\WidgetPreviewComponents.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 95,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\AppColors.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 96,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\AppShapes.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 97,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\AppSpacing.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 98,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\AppTheme.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 99,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\AppTypography.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 100,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\ContrastUtils.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 101,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\designsystem\\theme\\ThemeManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 102,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\diagnostics\\NotificationDiagnosticsReporter.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 103,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\feedback\\FeedbackManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 104,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\feedback\\SmartFeedbackManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 105,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\icon\\IconManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 106,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\navigation\\AppNavigation.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 107,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\navigation\\Screen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 108,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\network\\ApiClient.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 109,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\AlarmPermissionReceiver.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 110,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationActionReceiver.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 111,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationBootReceiver.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 112,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationChannels.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 113,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationDispatcher.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 114,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationFactory.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 115,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationPermissionManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 116,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationScheduler.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 117,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\model\\EventReminder.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 118,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\model\\TriggerType.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 119,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\worker\\NotificationReschedulerWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 120,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\ApkDownloadManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 121,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\ApkValidator.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 122,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\OtaApiClient.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 123,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\OtaDataStore.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 124,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\OtaFileProvider.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 125,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\OtaManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 126,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\OtaState.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 127,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\OtaWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 128,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\ota\\ui\\OtaUpdateModal.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 129,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\performance\\JankStatsAggregator.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 130,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\preferences\\IntroManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 131,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\privacy\\PrivacySettings.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 132,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\sync\\BackupSyncWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 133,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\sync\\SyncWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 134,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\telemetry\\TelemetryInterceptor.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 135,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\telemetry\\TelemetrySyncWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 136,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\testers\\TestersManager.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 137,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\time\\Ticker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 138,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\time\\TimeUtils.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 139,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\EventMessageProvider.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 140,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\ImageCaptureUtils.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 141,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\ImageStorageHelper.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 142,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\SupportEmailUtils.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 143,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\TitleValidator.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 144,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\data\\repository\\EventRepository.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 145,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\CountdownCalculator.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 146,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\MilestoneDetector.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 147,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\PremiumState.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 148,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\SaveEventUseCase.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 149,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\CountdownDirection.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 150,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\CountdownFormat.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 151,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\CountdownResult.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 152,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\Event.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 153,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\EventExtensions.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 154,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\EventUiModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 155,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\worker\\MilestoneWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 156,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\completed\\CompletedScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 157,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\completed\\CompletedViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 158,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\createevent\\CreateEventScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 159,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\createevent\\CreateEventViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 160,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\createevent\\CustomColorPickerSheet.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 161,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\createevent\\TemplateSelectionBottomSheet.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 162,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\diagnostics\\DiagnosticsScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 163,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\eventdetails\\EventDetailsScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 164,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\eventdetails\\EventDetailsViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 165,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\eventdetails\\ShareBottomSheet.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 166,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\eventdetails\\ShareImageCard.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 167,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\feedback\\FeedbackModal.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 168,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\highlight\\HighlightScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 169,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\highlight\\HighlightViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 170,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\home\\HomeScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 171,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\home\\HomeViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 172,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\intro\\IntroScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 173,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\intro\\IntroViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 174,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\MoreScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 175,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\MoreViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 176,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsAboutScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 177,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsAppearanceScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 178,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsBackupScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 179,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsClearDataScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 180,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsNotificationsScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 181,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsPrivacyScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 182,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsSupportScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 183,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsSyncScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 184,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SettingsUpdatesScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 185,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\more\\SyncViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 186,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\premium\\PremiumScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 187,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\premium\\RedeemCodeScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 188,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\sponsor\\SponsorScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 189,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\testers\\TestersScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 190,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\timeline\\TimelineScreen.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 191,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\timeline\\TimelineViewModel.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 192,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\EventWidget.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 193,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\EventWidgetConfigurationActivity.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 194,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\EventWidgetReceiver.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 195,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\WidgetUpdateScheduler.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 196,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\WidgetUpdateWorker.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 197,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\state\\WidgetEnums.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 198,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\state\\WidgetState.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 199,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\ui\\WidgetLayouts.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 200,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\widget\\ui\\WidgetThemes.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 201,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\presentation\\CountdownTextProvider.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 202,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\res\\xml\\event_widget_info.xml"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 203,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\example\\ExampleRobolectricTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 204,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\example\\ExampleUnitTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 205,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\example\\core\\preferences\\IntroManagerTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 206,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\phdev\\quantofalta\\core\\utils\\EventMessageProviderTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 207,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\phdev\\quantofalta\\core\\utils\\TitleValidatorTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 208,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\phdev\\quantofalta\\feature\\widget\\WidgetEnumsTest.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 209,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\test\\java\\com\\phdev\\quantofalta\\mock\\MockDataGenerator.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 210,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\macrobenchmark\\src\\main\\AndroidManifest.xml"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 211,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\macrobenchmark\\src\\main\\java\\com\\phdev\\quantofalta\\macrobenchmark\\BaselineProfileGenerator.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 212,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\macrobenchmark\\src\\main\\java\\com\\phdev\\quantofalta\\macrobenchmark\\ColdStartupBenchmark.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\search_results.txt",
+    "line_num": 213,
+    "content": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\macrobenchmark\\src\\main\\java\\com\\phdev\\quantofalta\\macrobenchmark\\HomeFirstScrollBenchmark.kt"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\backups\\quanto-falta-d1-remote-20260615-204839.sql",
+    "line_num": 34,
+    "content": "INSERT INTO \"app_versions\" (\"id\",\"version_code\",\"version_name\",\"release_channel\",\"status\",\"mandatory\",\"min_supported_version_code\",\"title\",\"summary\",\"changelog\",\"apk_r2_key\",\"apk_size_bytes\",\"sha256\",\"signature_fingerprint\",\"rollout_percentage\",\"published_at\",\"created_at\",\"updated_at\",\"github_release_tag\") VALUES(1,2,'1.1','stable','draft',1,1,'Novidades: Linha do Tempo, Agradecimento aos Testers e Melhorias Visuais!',replace(replace('✨ NOVIDADES:\\r\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\r\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\r\\n\\r\\n🛠 MELHORIAS E CORREÇÕES:\\r\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\r\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \"{prefillTitle}\") apareciam na tela por engano.\\r\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\r\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \"Ver Eventos Ativos\", deixando mais claro o próximo passo!\\r\\n\\r\\nAtualize agora e aproveite!\\r\\n','\\r',char(13)),'\\n',char(10)),'[\"✨ NOVIDADES:\\r\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\r\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\r\\n\\r\\n🛠 MELHORIAS E CORREÇÕES:\\r\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\r\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\"{prefillTitle}\\\") apareciam na tela por engano.\\r\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\r\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\"Ver Eventos Ativos\\\", deixando mais claro o próximo passo!\\r\\n\\r\\nAtualize agora e aproveite!\\r\\n\"]',NULL,20172787,NULL,NULL,0,NULL,1781481061000,1781481067192,'1.1');"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\index.html",
+    "line_num": 90,
+    "content": "<h1>Descubra quanto falta para o que <span>realmente importa.</span></h1>"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\package-lock.json",
+    "line_num": 2,
+    "content": "\"name\": \"quanto-falta-backend\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\package-lock.json",
+    "line_num": 8,
+    "content": "\"name\": \"quanto-falta-backend\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\package.json",
+    "line_num": 2,
+    "content": "\"name\": \"quanto-falta-backend\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 1,
+    "content": "name = \"quanto-falta-api\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 25,
+    "content": "database_name = \"quanto_falta_db\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 30,
+    "content": "bucket_name = \"quanto-falta-performance-traces\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 41,
+    "content": "name = \"quanto-falta-api-preview\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 50,
+    "content": "database_name = \"quanto_falta_preview_db\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 55,
+    "content": "bucket_name = \"quanto-falta-performance-traces-preview\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 59,
+    "content": "name = \"quanto-falta-api\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 66,
+    "content": "database_name = \"quanto_falta_db\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\wrangler.toml",
+    "line_num": 71,
+    "content": "bucket_name = \"quanto-falta-performance-traces\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\migrations\\0001_initial.sql",
+    "line_num": 1,
+    "content": "-- Migration 0001: Initial schema for Quanto Falta? backend"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts",
+    "line_num": 64,
+    "content": "'https://quanto-falta-dashboard.pages.dev',"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts",
+    "line_num": 76,
+    "content": "hostname.endsWith('.quanto-falta-dashboard.pages.dev') ||"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts",
+    "line_num": 132,
+    "content": "'https://quanto-falta-dashboard.pages.dev',"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts",
+    "line_num": 144,
+    "content": "hostname.endsWith('.quanto-falta-dashboard.pages.dev') ||"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\routes\\health.ts",
+    "line_num": 10,
+    "content": "service: 'quanto-falta-api',"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\package-lock.json",
+    "line_num": 2,
+    "content": "\"name\": \"quanto-falta-dashboard\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\package-lock.json",
+    "line_num": 8,
+    "content": "\"name\": \"quanto-falta-dashboard\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\dashboard_old\\package.json",
+    "line_num": 2,
+    "content": "\"name\": \"quanto-falta-dashboard\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 6,
+    "content": "C:\\Users\\Philippe\\Desktop\\Quanto falta\\backups\\quanto-falta-server-backup-20260615-202157.zip"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 12,
+    "content": "C:\\Users\\Philippe\\Desktop\\Quanto falta\\backups\\quanto-falta-d1-remote-20260615-204839.sql"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 92,
+    "content": "- Migrations remotas aplicadas no D1 `quanto_falta_db`:"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 98,
+    "content": "- Worker: `quanto-falta-api`"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 100,
+    "content": "- URL workers.dev: `https://quanto-falta-api.philippeboechat1.workers.dev`"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 103,
+    "content": "- Projeto: `quanto-falta-dashboard`"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 104,
+    "content": "- Alias: `https://production.quanto-falta-dashboard.pages.dev`"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\API_UNIFICATION_INVENTORY.md",
+    "line_num": 114,
+    "content": "- Worker tests: `npm run test:worker-safe` passou. Esse script copia o backend para um caminho temporario sem espaco antes de rodar `vitest`, contornando a falha do `@cloudflare/vitest-pool-workers` no caminho local `Quanto falta`."
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\docs\\DEPLOY.md",
+    "line_num": 29,
+    "content": "npx wrangler pages deploy dist --project-name quanto-falta-dashboard --branch main"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\frontend\\app.js",
+    "line_num": 2,
+    "content": "QUANTO FALTA? — app.js v2"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-web\\frontend\\style.css",
+    "line_num": 2,
+    "content": "QUANTO FALTA? — Design System Web v2"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\implementacoes.txt",
+    "line_num": 18,
+    "content": "“Falta pouco para a viagem.”"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\implementacoes.txt",
+    "line_num": 36,
+    "content": "A imagem compartilhada deve ter uma assinatura pequena e elegante do Quanto Falta?, sem parecer propaganda invasiva."
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",
+    "line_num": 28,
+    "content": "<option name=\"KEY_STORE_PATH\" value=\"C:\\Users\\Philippe\\Documents\\KeyStore Tô Contando\\quantofaltakey\" />"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",
+    "line_num": 46,
+    "content": "&quot;ExportApk.ApkPathForMy_Application.app&quot;: &quot;C:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app&quot;,"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",
+    "line_num": 47,
+    "content": "&quot;ExportBundle.BundlePathForMy_Application.app&quot;: &quot;C:\\\\Users\\\\Philippe\\\\Desktop\\\\Quanto falta\\\\quanto-falta_\\\\app&quot;,"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",
+    "line_num": 57,
+    "content": "&quot;last_opened_file_path&quot;: &quot;C:/Users/Philippe/Desktop/Quanto falta/quanto-falta_&quot;,"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",
+    "line_num": 68,
+    "content": "<module name=\"Quanto_Falta.app\" />"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",
+    "line_num": 152,
+    "content": "<url>file://$PROJECT_DIR$/app/src/main/java/com/phdev/quantofalta/feature/eventdetails/ShareBottomSheet.kt</url>"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 16,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 25,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 32,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 40,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 44,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 49,
+    "content": "quantoFaltaApplication().container.introManager"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 53,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 65,
+    "content": "com.phdev.quantofalta.core.database.AppDatabase.getDatabase(quantoFaltaApplication())"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 69,
+    "content": "val app = quantoFaltaApplication()"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\AppViewModelProvider.kt",
+    "line_num": 79,
+    "content": "fun CreationExtras.quantoFaltaApplication(): ToContandoApplication ="
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\database\\AppDatabase.kt",
+    "line_num": 156,
+    "content": "\"quanto_falta_database\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationFactory.kt",
+    "line_num": 84,
+    "content": "offset >= 10080 -> Triple(\"Está chegando\", \"Falta pouco para “${event.title}”.\", NotificationChannels.CHANNEL_UPCOMING)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\notifications\\NotificationFactory.kt",
+    "line_num": 85,
+    "content": "offset == 60 -> Triple(\"Falta pouco\", \"“${event.title}” começa em 1 hora.\", NotificationChannels.CHANNEL_TODAY)"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\preferences\\IntroManager.kt",
+    "line_num": 12,
+    "content": "val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = \"quanto_falta_settings\")"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\EventMessageProvider.kt",
+    "line_num": 264,
+    "content": "\"Falta pouco para $title. Descanse bem e se hidrate! 💧\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\core\\utils\\EventMessageProvider.kt",
+    "line_num": 486,
+    "content": "\"Falta pouco para você aproveitar $title. ☕\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\CountdownDirection.kt",
+    "line_num": 4,
+    "content": "REMAINING,  // mostra quanto falta"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\domain\\model\\EventExtensions.kt",
+    "line_num": 74,
+    "content": "return \"Falta pouco para a sua data.\""
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\eventdetails\\ShareBottomSheet.kt",
+    "line_num": 204,
+    "content": "putExtra(Intent.EXTRA_TEXT, \"Olha quanto falta para '${event.title}': $generatedUrl\")"
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\intro\\IntroScreen.kt",
+    "line_num": 376,
+    "content": "text = \"Saiba quanto falta para\\no que realmente importa.\","
+  },
+  {
+    "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\app\\src\\main\\java\\com\\phdev\\quantofalta\\feature\\intro\\IntroScreen.kt",
+    "line_num": 995,
+    "content": "text = \"Pronto. Agora você sempre saberá quanto falta.\","
+  }
+]

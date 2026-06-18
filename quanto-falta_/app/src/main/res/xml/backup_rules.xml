@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="."/>
+    <include domain="sharedpref" path="."/>
+    <!-- Exclude cache and temporary files implicitly by not including them -->
+    <exclude domain="sharedpref" path="EncryptedSharedPreferences.xml"/>
+</full-backup-content>

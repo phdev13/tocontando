@@ -1,0 +1,191 @@
+Eu melhoraria principalmente o que aumenta valor percebido, retenção e confiança, sem transformar o app em algo complexo.
+
+1. Tornaria a Home mais emocional
+
+Hoje o app não deve apenas mostrar “faltam 32 dias”. Ele precisa fazer o usuário sentir que aquele evento está chegando.
+
+Eu adicionaria:
+
+progresso visual até a data;
+mensagens contextuais;
+destaque automático para o evento mais próximo;
+pequenas mudanças visuais conforme o evento se aproxima;
+estado especial no dia do evento;
+lembranças como “há 30 dias você criou esta contagem”.
+
+Exemplos:
+
+“Falta pouco para a viagem.”
+“Você já percorreu 82% da espera.”
+“É amanhã.”
+“Chegou o grande dia.”
+
+2. Melhoraria muito o compartilhamento
+
+Essa pode ser uma das maiores formas de divulgação orgânica do app.
+
+O usuário deveria conseguir gerar:
+
+imagem vertical para Stories;
+card quadrado;
+wallpaper;
+link público opcional;
+contagem com tema, ícone e mensagem personalizada;
+opção de esconder a data exata ou informações privadas.
+
+A imagem compartilhada deve ter uma assinatura pequena e elegante do Quanto Falta?, sem parecer propaganda invasiva.
+
+3. Criaria eventos recorrentes
+
+Isso aumentaria bastante a retenção.
+
+Exemplos:
+
+aniversário;
+aniversário de namoro;
+férias anuais;
+Natal;
+pagamento;
+prova;
+campeonato;
+lançamento recorrente.
+
+Depois que o evento terminar, o usuário poderia selecionar:
+
+“Criar novamente para o próximo ano.”
+
+4. Melhoraria a experiência após o evento
+
+Hoje, quando a contagem termina, o evento não deveria simplesmente desaparecer em “Concluídos”.
+
+Eu criaria um encerramento especial:
+
+animação sutil;
+mensagem comemorativa;
+botão para compartilhar;
+campo opcional para adicionar uma lembrança;
+opção para manter o evento como recordação;
+informação de quanto tempo passou desde o evento.
+
+Assim, o app serviria tanto para o futuro quanto para preservar momentos importantes.
+
+5. Adicionaria backup simples antes de nuvem completa
+
+Não começaria obrigando login.
+
+Eu implementaria primeiro:
+
+exportação de backup;
+importação do backup;
+restauração automática do Android;
+aviso claro antes de desinstalação ou troca de celular;
+backup protegido por criptografia.
+
+Depois, o Premium poderia oferecer sincronização opcional entre dispositivos.
+
+6. Refinaria os widgets
+
+Os widgets provavelmente podem ser um dos maiores motivos para pagar pelo Premium.
+
+Eu ofereceria:
+
+widget minimalista;
+widget com imagem;
+widget transparente;
+widget compacto;
+widget de tela inteira;
+seleção de unidades;
+atualização automática confiável;
+suporte a múltiplos eventos;
+visual especial quando faltar um dia ou chegar a data.
+
+O usuário deveria visualizar o widget antes de adicioná-lo.
+
+7. Tornaria o Premium mais convincente
+
+O Premium precisa vender benefícios visíveis, não apenas remover limitações arbitrárias.
+
+Eu colocaria no Premium:
+
+widgets avançados;
+eventos ilimitados;
+temas exclusivos;
+compartilhamentos sem marca;
+backup e sincronização;
+ícones e estilos especiais;
+múltiplos lembretes;
+personalização completa;
+histórico e recordações;
+proteção por biometria para eventos privados.
+
+A versão gratuita ainda deve ser boa o suficiente para o usuário gostar do app.
+
+8. Melhoraria os lembretes
+
+Além de D-30, D-7 e D-1, eu permitiria:
+
+lembrete personalizado;
+horário definido pelo usuário;
+múltiplos lembretes;
+lembrete semanal;
+notificações diferentes conforme o tipo de evento;
+opção de desativar tudo facilmente.
+
+As mensagens deveriam ser humanas e contextuais, nunca genéricas demais.
+
+9. Criaria templates de eventos
+
+Isso facilitaria a criação e deixaria o app mais completo sem adicionar complexidade.
+
+Categorias:
+
+viagem;
+aniversário;
+casamento;
+formatura;
+prova;
+lançamento;
+férias;
+campeonato;
+encontro;
+evento personalizado.
+
+Cada template poderia sugerir ícone, cor, lembretes e texto.
+
+10. Adicionaria privacidade por evento
+
+Alguns eventos podem ser pessoais.
+
+Eu incluiria:
+
+evento privado;
+proteção por biometria;
+ocultar conteúdo na tela de aplicativos recentes;
+ocultar nome em notificações;
+bloquear compartilhamento acidental;
+esconder eventos específicos dos widgets.
+11. Simplificaria toda a parte técnica invisível
+
+Eu evitaria deixar o projeto preso em sistemas que não aumentam o valor direto para o usuário.
+
+Antes da produção, priorizaria:
+
+Google Play Billing completo;
+restauração de compras;
+rate limiting;
+backup;
+correção total de widgets e notificações;
+dashboard com métricas reais;
+remoção do OTA externo da build da Play Store.
+
+FCM, sistemas administrativos avançados e métricas muito complexas poderiam vir depois.
+
+Minha prioridade para o app
+
+Eu faria nesta ordem:
+
+Primeiro: estabilidade, backup, Billing e widgets.
+Depois: compartilhamento, recorrência e encerramento dos eventos.
+Por último: sincronização em nuvem, notificações remotas e recursos administrativos avançados.
+
+A maior melhoria não seria adicionar dezenas de funções. Seria fazer o app transformar uma simples data em uma experiência emocional, bonita e compartilhável.

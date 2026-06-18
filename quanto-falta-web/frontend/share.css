@@ -1,0 +1,292 @@
+/* Especificidades da Tela de Compartilhamento */
+
+.share-container {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 100px; /* Espaço para o CTA fixo */
+    position: relative;
+    z-index: 10;
+}
+
+/* Logo Header */
+.share-header {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-2xl);
+    animation: fadeInDown 0.6s ease;
+}
+
+.share-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--r-sm);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.share-logo-text {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(28, 29, 42, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--r-xl);
+    padding: var(--sp-2xl) var(--sp-xl);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+    width: 100%;
+    animation: fadeSlideUp 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+.state-container {
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--purple-primary);
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto var(--sp-md);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Event Card (mirrors Android App) */
+.event-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px; /* similar width to app card */
+    margin: 0 auto;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    padding: var(--sp-2xl) var(--sp-xl);
+    text-align: left;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+    animation: fadeSlideUp 0.6s cubic-bezier(0.34,1.56,0.64,1) both;
+    /* Default background fallback, will be set via javascript `--primary-color` and `--dark-color` */
+    background: linear-gradient(135deg, var(--primary-color, var(--purple-primary)), var(--dark-color, var(--blue-secondary)));
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.watermark-icon {
+    position: absolute;
+    bottom: -60px;
+    right: -40px;
+    font-size: 260px;
+    opacity: 0.12;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    line-height: 1;
+    z-index: 1;
+    color: white;
+    animation: breatheScale 8s ease-in-out infinite alternate;
+}
+
+@keyframes breatheScale {
+    from { transform: rotate(-15deg) scale(1); }
+    to { transform: rotate(-15deg) scale(1.05); }
+}
+
+.floating-icon-bubble {
+    position: absolute;
+    top: var(--sp-xl);
+    right: var(--sp-xl);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    z-index: 3;
+    animation: floatBubble 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@keyframes floatBubble {
+    from { transform: translateY(-6px); }
+    to { transform: translateY(6px); }
+}
+
+.floating-icon-bubble .event-icon {
+    font-size: 2.5rem;
+    opacity: 0.9;
+    color: white;
+}
+
+.event-card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.eyebrow {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: var(--sp-sm);
+    font-weight: 500;
+}
+
+#event-title {
+    font-size: clamp(2rem, 5vw, 2.4rem);
+    font-weight: 600;
+    color: white;
+    margin-bottom: var(--sp-lg);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.countdown-row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--sp-md);
+    margin-bottom: var(--sp-md);
+}
+
+.number-giant {
+    font-size: clamp(4.5rem, 15vw, 6.5rem);
+    line-height: 0.85;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: white;
+    letter-spacing: -2px;
+}
+
+.unit-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    padding-bottom: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.date-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+}
+
+/* Celebration State */
+.celebration-msg {
+    margin-top: var(--sp-xl);
+    animation: fadeSlideUp 0.5s ease both;
+    text-align: center;
+}
+
+.celebration-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--sp-sm);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    60% {transform: translateY(-10px);}
+}
+
+.celebration-msg p {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+}
+
+/* Error State */
+.error-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-pink);
+    margin-bottom: var(--sp-md);
+}
+
+.error-desc {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Floating CTA (Mobile & Desktop) */
+.floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(19, 20, 31, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-lg);
+    z-index: 100;
+    animation: fadeSlideUp 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.5s both;
+}
+
+.floating-cta p {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.btn-primary.small {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 16px rgba(123,97,255,0.3);
+}
+
+@media (max-width: 600px) {
+    .glass-card {
+        padding: var(--sp-xl) var(--sp-md);
+    }
+    
+    .floating-cta {
+        flex-direction: column;
+        gap: var(--sp-sm);
+        padding: 1.2rem;
+        text-align: center;
+    }
+}
