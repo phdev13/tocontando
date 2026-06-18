@@ -1,6 +1,6 @@
 # Auditoria do Frontend Atual
 
-**Aviso Importante**: Como este ambiente é uma infraestrutura limpa e separada (Next.js App Router provisionado via AI Studio) para o desenvolvimento do **novo** painel administrativo, o código-fonte do painel legado (`admin.quantofalta.shop`) não está presente neste repositório.
+**Aviso Importante**: Como este ambiente é uma infraestrutura limpa e separada (Next.js App Router provisionado via AI Studio) para o desenvolvimento do **novo** painel administrativo, o código-fonte do painel legado (`admin.tocontando.com.br`) não está presente neste repositório.
 
 Abaixo estão as conclusões assumidas sobre a arquitetura para o planejamento da substituição:
 

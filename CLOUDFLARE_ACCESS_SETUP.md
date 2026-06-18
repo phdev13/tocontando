@@ -1,12 +1,12 @@
 # Configuração do Cloudflare Access (Setup)
 
-Este documento descreve as etapas necessárias para configurar o **Cloudflare Zero Trust Access** no painel administrativo do Tô Contando (`admin.quantofalta.shop`).
+Este documento descreve as etapas necessárias para configurar o **Cloudflare Zero Trust Access** no painel administrativo do Tô Contando (`admin.tocontando.com.br`).
 
 ## 1. Aplicação Access
 
 No painel do Cloudflare Zero Trust (Access -> Applications):
 1. **Nome da aplicação:** Admin Tô Contando
-2. **Domain:** `admin.quantofalta.shop`
+2. **Domain:** `admin.tocontando.com.br`
 3. **Session Duration:** 8 hours
 4. **App Launcher Visibility:** Hide
 
@@ -35,7 +35,7 @@ npx wrangler secret put CF_ACCESS_AUDIENCE
 # Exemplo de valor: <Audience Tag da aplicação criada no passo 1>
 ```
 
-> **Atenção:** O painel administrativo `admin.quantofalta.shop` passará automaticamente pelo Access. Para que as chamadas da API (`workers.dev`) tenham o header injetado via proxy/CORS com cookies, recomendamos mapear o worker para `admin.quantofalta.shop/api/*` via painel da Cloudflare (Triggers -> Custom Domains).
+> **Atenção:** O painel administrativo `admin.tocontando.com.br` passará automaticamente pelo Access. Para que as chamadas da API (`workers.dev`) tenham o header injetado via proxy/CORS com cookies, recomendamos mapear o worker para `admin.tocontando.com.br/api/*` via painel da Cloudflare (Triggers -> Custom Domains).
 
 ## 5. Service Tokens (Opcional)
 Se precisar acessar via CI/CD ou Scripts automatizados:

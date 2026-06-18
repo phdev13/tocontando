@@ -8,6 +8,9 @@ routes = [
   { pattern = "admin.quantofalta.shop/admin/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
   { pattern = "admin.quantofalta.shop/api/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
   { pattern = "api.quantofalta.shop/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
+  { pattern = "admin.tocontando.com.br/admin/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
+  { pattern = "admin.tocontando.com.br/api/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
+  { pattern = "api.tocontando.com.br/*", zone_id = "43824abdbd6c948a0d019acc4bcc36d7" },
   { pattern = "admin.tocontando.com.br/admin/*", zone_id = "9fcabeb1b3892351b5112e3e04954e5c" },
   { pattern = "admin.tocontando.com.br/api/*", zone_id = "9fcabeb1b3892351b5112e3e04954e5c" },
   { pattern = "api.tocontando.com.br/*", zone_id = "9fcabeb1b3892351b5112e3e04954e5c" }

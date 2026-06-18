@@ -33,7 +33,7 @@ link público opcional;
 contagem com tema, ícone e mensagem personalizada;
 opção de esconder a data exata ou informações privadas.
 
-A imagem compartilhada deve ter uma assinatura pequena e elegante do Quanto Falta?, sem parecer propaganda invasiva.
+A imagem compartilhada deve ter uma assinatura pequena e elegante do Tô Contando, sem parecer propaganda invasiva.
 
 3. Criaria eventos recorrentes
 

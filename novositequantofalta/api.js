@@ -2,7 +2,7 @@ const API_CONFIG = {
   // A URL oficial do backend
   BASE_URL: window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" 
     ? "http://127.0.0.1:8787/api/v1/public" // ou URL local de desenvolvimento
-    : "https://api.quantofalta.shop/api/v1/public",
+    : "https://api.tocontando.com.br/api/v1/public",
   TIMEOUT: 5000,
 };
 

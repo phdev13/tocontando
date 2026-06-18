@@ -129,7 +129,7 @@ function SidebarContent({ pathname }: { pathname: string }) {
           <Timer className="h-6 w-6" />
         </div>
         <div className="flex flex-col">
-          <span className="font-bold text-lg leading-tight text-white tracking-tight">Quanto Falta?</span>
+          <span className="font-bold text-lg leading-tight text-white tracking-tight">Tô Contando</span>
           <span className="text-xs font-medium text-purple-400">Admin Premium</span>
         </div>
       </div>

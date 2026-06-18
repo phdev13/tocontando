@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 $cfToken = $env:CLOUDFLARE_API_TOKEN
 $hostingerToken = $env:HOSTINGER_API_TOKEN
 $accountId = "f165980a213718a04990d66be1772f66"
-$domain = "quantofalta.shop"
+$domain = "tocontando.com.br"
 
 if (-not $cfToken) {
     Write-Error "CLOUDFLARE_API_TOKEN environment variable is missing."
@@ -88,10 +88,10 @@ if ($Mode -eq 'Validate') {
     # 14. Validation
     Write-Host "Validating endpoints..." -ForegroundColor Cyan
     $endpoints = @(
-        "https://quantofalta.shop",
-        "https://api.quantofalta.shop/health",
-        "https://admin.quantofalta.shop",
-        "https://share.quantofalta.shop"
+        "https://tocontando.com.br",
+        "https://api.tocontando.com.br/health",
+        "https://admin.tocontando.com.br",
+        "https://share.tocontando.com.br"
     )
 
     foreach ($ep in $endpoints) {

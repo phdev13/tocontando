@@ -7,7 +7,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 5,
-    "content": "\"content\": \"2. Acesse **Zero Trust -> Access -> Applications -> Admin Quanto Falta**.\""
+    "content": "\"content\": \"2. Acesse **Zero Trust -> Access -> Applications -> Admin Tô Contando**.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -17,7 +17,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 10,
-    "content": "\"content\": \"**Alvo:** Backend (Worker) e Frontend (Dashboard) do projeto *Quanto Falta?*\""
+    "content": "\"content\": \"**Alvo:** Backend (Worker) e Frontend (Dashboard) do projeto *Tô Contando*\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -47,7 +47,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 25,
-    "content": "\"content\": \"Este documento descreve as etapas necessárias para configurar o **Cloudflare Zero Trust Access** no painel administrativo do Quanto Falta (`admin.quantofalta.shop`).\""
+    "content": "\"content\": \"Este documento descreve as etapas necessárias para configurar o **Cloudflare Zero Trust Access** no painel administrativo do Tô Contando (`admin.tocontando.com.br`).\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -57,7 +57,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 30,
-    "content": "\"content\": \"1. **Nome da aplicação:** Admin Quanto Falta\""
+    "content": "\"content\": \"1. **Nome da aplicação:** Admin Tô Contando\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -77,7 +77,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 40,
-    "content": "\"content\": \"deploy_panel.py — Painel de Deploy Profissional · Quanto Falta?\""
+    "content": "\"content\": \"deploy_panel.py — Painel de Deploy Profissional · Tô Contando\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -97,7 +97,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 50,
-    "content": "\"content\": \"self.root.title(\\\"Deploy · Quanto Falta?\\\")\""
+    "content": "\"content\": \"self.root.title(\\\"Deploy · Tô Contando\\\")\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -117,7 +117,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 60,
-    "content": "\"content\": \"# Sistema de Notificações — Quanto Falta?\""
+    "content": "\"content\": \"# Sistema de Notificações — Tô Contando\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -127,7 +127,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 65,
-    "content": "\"content\": \"Este documento descreve a arquitetura, o comportamento e as limitações do sistema de notificações locais do aplicativo **Quanto Falta?**.\""
+    "content": "\"content\": \"Este documento descreve a arquitetura, o comportamento e as limitações do sistema de notificações locais do aplicativo **Tô Contando**.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -147,7 +147,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 75,
-    "content": "\"content\": \"Analise o frontend administrativo que já está sendo desenvolvido e faça ele se comunicar corretamente com o backend existente do Quanto Falta?.\""
+    "content": "\"content\": \"Analise o frontend administrativo que já está sendo desenvolvido e faça ele se comunicar corretamente com o backend existente do Tô Contando.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -157,7 +157,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 80,
-    "content": "\"content\": \"Cole abaixo desta linha a documentação completa da API do Quanto Falta?.\""
+    "content": "\"content\": \"Cole abaixo desta linha a documentação completa da API do Tô Contando.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -167,7 +167,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 85,
-    "content": "\"content\": \"**Title:** Quanto Falta? — Contagens regressivas para seus momentos especiais\""
+    "content": "\"content\": \"**Title:** Tô Contando — Contagens regressivas para seus momentos especiais\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -177,7 +177,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 90,
-    "content": "\"content\": \"Quanto Falta? — Contagens regressivas para seus momentos especiais\""
+    "content": "\"content\": \"Tô Contando — Contagens regressivas para seus momentos especiais\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -187,7 +187,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 95,
-    "content": "\"content\": \"![Tela de criação de evento](https://share.quantofalta.shop/assets/print2.png) ![Tela principal do Quanto Falta?](https://share.quantofalta.shop/assets/print1.png) ![Detalhes e compartilhamento de evento](https://share.quantofalta.shop/assets/print3.png)\""
+    "content": "\"content\": \"![Tela de criação de evento](https://share.tocontando.com.br/assets/print2.png) ![Tela principal do Tô Contando](https://share.tocontando.com.br/assets/print1.png) ![Detalhes e compartilhamento de evento](https://share.tocontando.com.br/assets/print3.png)\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -197,7 +197,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 100,
-    "content": "\"content\": \"Sim! O Quanto Falta? é 100% offline. Todos os seus eventos ficam armazenados localmente no seu celular. Você não precisa de internet para criar, ver ou gerenciar contagens regressivas.\""
+    "content": "\"content\": \"Sim! O Tô Contando é 100% offline. Todos os seus eventos ficam armazenados localmente no seu celular. Você não precisa de internet para criar, ver ou gerenciar contagens regressivas.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -207,7 +207,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 105,
-    "content": "\"content\": \"Ao compartilhar um evento, o app gera um link único. Qualquer pessoa que receber esse link pode ver a contagem regressiva ao vivo no navegador, sem precisar baixar o Quanto Falta?. O link é atualizado em tempo real.\""
+    "content": "\"content\": \"Ao compartilhar um evento, o app gera um link único. Qualquer pessoa que receber esse link pode ver a contagem regressiva ao vivo no navegador, sem precisar baixar o Tô Contando. O link é atualizado em tempo real.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -217,7 +217,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 110,
-    "content": "\"content\": \"Pressione e segure a tela inicial do Android, toque em \\\"Widgets\\\", encontre o \\\"Quanto Falta?\\\" e arraste para a posição desejada. Você pode configurar qual evento aparece no widget e personalizar o tamanho.\""
+    "content": "\"content\": \"Pressione e segure a tela inicial do Android, toque em \\\"Widgets\\\", encontre o \\\"Tô Contando\\\" e arraste para a posição desejada. Você pode configurar qual evento aparece no widget e personalizar o tamanho.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -227,7 +227,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 115,
-    "content": "\"content\": \"Não. O Quanto Falta? não tem anúncios. A versão gratuita é completamente funcional para seus primeiros eventos. O Premium remove essa limitação e apoia o desenvolvimento do app.\""
+    "content": "\"content\": \"Não. O Tô Contando não tem anúncios. A versão gratuita é completamente funcional para seus primeiros eventos. O Premium remove essa limitação e apoia o desenvolvimento do app.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -307,7 +307,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 155,
-    "content": "\"content\": \"(r'Quanto Falta\\\\?', 'Tô Contando'),\""
+    "content": "\"content\": \"(r'Tô Contando\\\\?', 'Tô Contando'),\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -317,7 +317,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 160,
-    "content": "\"content\": \"(r'Quanto Falta', 'Tô Contando')\""
+    "content": "\"content\": \"(r'Tô Contando', 'Tô Contando')\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -327,7 +327,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 165,
-    "content": "\"content\": \"# But wait! 'Quanto Falta' has space, so it's not the package name 'quantofalta'.\""
+    "content": "\"content\": \"# But wait! 'Tô Contando' has space, so it's not the package name 'quantofalta'.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -337,7 +337,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 170,
-    "content": "\"content\": \"# But wait! What if 'Quanto Falta' matches 'Quanto Falta'? Yes.\""
+    "content": "\"content\": \"# But wait! What if 'Tô Contando' matches 'Tô Contando'? Yes.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -427,7 +427,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 215,
-    "content": "\"content\": \"(r'Quanto Falta\\\\?', 'Tô Contando'),\""
+    "content": "\"content\": \"(r'Tô Contando\\\\?', 'Tô Contando'),\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -437,7 +437,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 220,
-    "content": "\"content\": \"(r'Quanto Falta', 'Tô Contando'),\""
+    "content": "\"content\": \"(r'Tô Contando', 'Tô Contando'),\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -517,7 +517,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 260,
-    "content": "\"content\": \"(r'Quanto Falta\\\\?', 'Tô Contando'),\""
+    "content": "\"content\": \"(r'Tô Contando\\\\?', 'Tô Contando'),\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -527,7 +527,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 265,
-    "content": "\"content\": \"(r'Quanto Falta', 'Tô Contando'),\""
+    "content": "\"content\": \"(r'Tô Contando', 'Tô Contando'),\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -557,7 +557,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 280,
-    "content": "\"content\": \"# SUPER PROMPT — Landing Page Premium do app “Quanto Falta?”\""
+    "content": "\"content\": \"# SUPER PROMPT — Landing Page Premium do app “Tô Contando”\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -567,7 +567,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 285,
-    "content": "\"content\": \"Crie uma landing page completa, premium, moderna e altamente refinada para o aplicativo Android **Quanto Falta?**, um app de contagens regressivas para momentos importantes, como viagens, casamentos, formaturas, aniversários, provas, férias e metas pessoais.\""
+    "content": "\"content\": \"Crie uma landing page completa, premium, moderna e altamente refinada para o aplicativo Android **Tô Contando**, um app de contagens regressivas para momentos importantes, como viagens, casamentos, formaturas, aniversários, provas, férias e metas pessoais.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -577,7 +577,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 290,
-    "content": "\"content\": \"- nome “Quanto Falta?”.\""
+    "content": "\"content\": \"- nome “Tô Contando”.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -587,7 +587,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 295,
-    "content": "\"content\": \"> Quanto Falta? — Contagens regressivas para momentos especiais\""
+    "content": "\"content\": \"> Tô Contando — Contagens regressivas para momentos especiais\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -597,7 +597,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 300,
-    "content": "\"content\": \"# Catálogo de Telemetria - Quanto Falta\""
+    "content": "\"content\": \"# Catálogo de Telemetria - Tô Contando\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -607,7 +607,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 305,
-    "content": "\"content\": \"Este documento cataloga todos os eventos, métricas de performance e coletas do ecossistema Quanto Falta, atualizado após a unificação da infraestrutura de telemetria.\""
+    "content": "\"content\": \"Este documento cataloga todos os eventos, métricas de performance e coletas do ecossistema Tô Contando, atualizado após a unificação da infraestrutura de telemetria.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -617,7 +617,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 310,
-    "content": "\"content\": \"INSERT INTO \\\"app_versions\\\" (\\\"id\\\",\\\"version_code\\\",\\\"version_name\\\",\\\"release_channel\\\",\\\"status\\\",\\\"mandatory\\\",\\\"min_supported_version_code\\\",\\\"title\\\",\\\"summary\\\",\\\"changelog\\\",\\\"apk_r2_key\\\",\\\"apk_size_bytes\\\",\\\"sha256\\\",\\\"signature_fingerprint\\\",\\\"rollout_percentage\\\",\\\"published_at\\\",\\\"created_at\\\",\\\"updated_at\\\",\\\"github_release_tag\\\") VALUES(1,2,'1.1','stable','draft',1,1,'Novidades: Linha do Tempo, Agradecimento aos Testers e Melhorias Visuais!',replace(replace('✨ NOVIDADES:\\\\r\\\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\\\r\\\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\\\r\\\\n\\\\r\\\\n🛠 MELHORIAS E CORREÇÕES:\\\\r\\\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\\\r\\\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\"{prefillTitle}\\\") apareciam na tela por engano.\\\\r\\\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\\\r\\\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\"Ver Eventos Ativos\\\", deixando mais claro o próximo passo!\\\\r\\\\n\\\\r\\\\nAtualize agora e aproveite!\\\\r\\\\n','\\\\r',char(13)),'\\\\n',char(10)),'[\\\"✨ NOVIDADES:\\\\r\\\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\\\r\\\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\\\r\\\\n\\\\r\\\\n🛠 MELHORIAS E CORREÇÕES:\\\\r\\\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\\\r\\\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\\\\\"{prefillTitle}\\\\\\\") apareciam na tela por engano.\\\\r\\\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\\\r\\\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\\\\\"Ver Eventos Ativos\\\\\\\", deixando mais claro o próximo passo!\\\\r\\\\n\\\\r\\\\nAtualize agora e aproveite!\\\\r\\\\n\\\"]',NULL,20172787,NULL,NULL,0,NULL,1781481061000,1781481067192,'1.1');\""
+    "content": "\"content\": \"INSERT INTO \\\"app_versions\\\" (\\\"id\\\",\\\"version_code\\\",\\\"version_name\\\",\\\"release_channel\\\",\\\"status\\\",\\\"mandatory\\\",\\\"min_supported_version_code\\\",\\\"title\\\",\\\"summary\\\",\\\"changelog\\\",\\\"apk_r2_key\\\",\\\"apk_size_bytes\\\",\\\"sha256\\\",\\\"signature_fingerprint\\\",\\\"rollout_percentage\\\",\\\"published_at\\\",\\\"created_at\\\",\\\"updated_at\\\",\\\"github_release_tag\\\") VALUES(1,2,'1.1','stable','draft',1,1,'Novidades: Linha do Tempo, Agradecimento aos Testers e Melhorias Visuais!',replace(replace('✨ NOVIDADES:\\\\r\\\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\\\r\\\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Tô Contando. Um muito obrigado a todos os nossos testadores!\\\\r\\\\n\\\\r\\\\n🛠 MELHORIAS E CORREÇÕES:\\\\r\\\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\\\r\\\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\"{prefillTitle}\\\") apareciam na tela por engano.\\\\r\\\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\\\r\\\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\"Ver Eventos Ativos\\\", deixando mais claro o próximo passo!\\\\r\\\\n\\\\r\\\\nAtualize agora e aproveite!\\\\r\\\\n','\\\\r',char(13)),'\\\\n',char(10)),'[\\\"✨ NOVIDADES:\\\\r\\\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\\\r\\\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Tô Contando. Um muito obrigado a todos os nossos testadores!\\\\r\\\\n\\\\r\\\\n🛠 MELHORIAS E CORREÇÕES:\\\\r\\\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\\\r\\\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\\\\\"{prefillTitle}\\\\\\\") apareciam na tela por engano.\\\\r\\\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\\\r\\\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\\\\\"Ver Eventos Ativos\\\\\\\", deixando mais claro o próximo passo!\\\\r\\\\n\\\\r\\\\nAtualize agora e aproveite!\\\\r\\\\n\\\"]',NULL,20172787,NULL,NULL,0,NULL,1781481061000,1781481067192,'1.1');\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -627,7 +627,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 315,
-    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Quanto Falta? Transforme datas importantes em contagens regressivas bonitas e compartilháveis.\\\" />\""
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Tô Contando Transforme datas importantes em contagens regressivas bonitas e compartilháveis.\\\" />\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -637,7 +637,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 320,
-    "content": "\"content\": \"<title>Quanto Falta? — Cada dia conta</title>\""
+    "content": "\"content\": \"<title>Tô Contando — Cada dia conta</title>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -647,7 +647,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 325,
-    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"#inicio\\\" aria-label=\\\"Quanto Falta? — início\\\">\""
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"#inicio\\\" aria-label=\\\"Tô Contando — início\\\">\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -657,7 +657,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 330,
-    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+    "content": "\"content\": \"<span>Tô Contando<span class=\\\"logo-question\\\">?</span></span>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -677,7 +677,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 340,
-    "content": "\"content\": \"<div class=\\\"hero-visual\\\" aria-label=\\\"Prévia do aplicativo Quanto Falta?\\\">\""
+    "content": "\"content\": \"<div class=\\\"hero-visual\\\" aria-label=\\\"Prévia do aplicativo Tô Contando\\\">\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -687,7 +687,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 345,
-    "content": "\"content\": \"<img src=\\\"assets/app-screens/1.png\\\" alt=\\\"Tela de eventos do aplicativo Quanto Falta?\\\" width=\\\"600\\\" height=\\\"1254\\\" draggable=\\\"false\\\" />\""
+    "content": "\"content\": \"<img src=\\\"assets/app-screens/1.png\\\" alt=\\\"Tela de eventos do aplicativo Tô Contando\\\" width=\\\"600\\\" height=\\\"1254\\\" draggable=\\\"false\\\" />\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -697,7 +697,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 350,
-    "content": "\"content\": \"<p>O Quanto Falta? cuida da contagem. Você aproveita cada pedacinho da expectativa.</p>\""
+    "content": "\"content\": \"<p>O Tô Contando cuida da contagem. Você aproveita cada pedacinho da expectativa.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -707,7 +707,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 355,
-    "content": "\"content\": \"<p>Sim! O Quanto Falta? é 100% offline. Todos os seus eventos ficam armazenados localmente no seu celular. Você não precisa de internet para criar, ver ou gerenciar contagens regressivas.</p>\""
+    "content": "\"content\": \"<p>Sim! O Tô Contando é 100% offline. Todos os seus eventos ficam armazenados localmente no seu celular. Você não precisa de internet para criar, ver ou gerenciar contagens regressivas.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -717,7 +717,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 360,
-    "content": "\"content\": \"<p>Ao compartilhar um evento, o app gera um link único. Qualquer pessoa que receber esse link pode ver a contagem regressiva ao vivo no navegador, sem precisar baixar o Quanto Falta?.</p>\""
+    "content": "\"content\": \"<p>Ao compartilhar um evento, o app gera um link único. Qualquer pessoa que receber esse link pode ver a contagem regressiva ao vivo no navegador, sem precisar baixar o Tô Contando.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -727,7 +727,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 365,
-    "content": "\"content\": \"<p>Não. O Quanto Falta? não tem nenhum anúncio. A versão gratuita é completamente funcional. O Premium libera eventos ilimitados, fotos de capa, biometria e sincronização na nuvem para apoiar o desenvolvimento do app.</p>\""
+    "content": "\"content\": \"<p>Não. O Tô Contando não tem nenhum anúncio. A versão gratuita é completamente funcional. O Premium libera eventos ilimitados, fotos de capa, biometria e sincronização na nuvem para apoiar o desenvolvimento do app.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -737,7 +737,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 370,
-    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"#inicio\\\"><span class=\\\"logo-mark\\\" aria-hidden=\\\"true\\\"><img src=\\\"assets/brand/iconpadrao.png?v=2\\\" alt=\\\"\\\" width=\\\"512\\\" height=\\\"512\\\" /></span><span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span></a>\""
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"#inicio\\\"><span class=\\\"logo-mark\\\" aria-hidden=\\\"true\\\"><img src=\\\"assets/brand/iconpadrao.png?v=2\\\" alt=\\\"\\\" width=\\\"512\\\" height=\\\"512\\\" /></span><span>Tô Contando<span class=\\\"logo-question\\\">?</span></span></a>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -747,7 +747,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 375,
-    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Quanto Falta? <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
+    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Tô Contando <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -757,7 +757,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 380,
-    "content": "\"content\": \"<title>Compartilhando um Momento - Quanto Falta?</title>\""
+    "content": "\"content\": \"<title>Compartilhando um Momento - Tô Contando</title>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -767,7 +767,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 385,
-    "content": "\"content\": \"<img src=\\\"https://quantofalta.shop/assets/icon.png\\\" alt=\\\"Quanto Falta? Logo\\\" style=\\\"width: 24px; border-radius: 6px;\\\">\""
+    "content": "\"content\": \"<img src=\\\"https://tocontando.com.br/assets/icon.png\\\" alt=\\\"Tô Contando Logo\\\" style=\\\"width: 24px; border-radius: 6px;\\\">\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -777,7 +777,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 390,
-    "content": "\"content\": \"<span>Quanto Falta?</span>\""
+    "content": "\"content\": \"<span>Tô Contando</span>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -787,7 +787,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 395,
-    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Política de Privacidade do aplicativo Quanto Falta?.\\\" />\""
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Política de Privacidade do aplicativo Tô Contando.\\\" />\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -797,7 +797,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 400,
-    "content": "\"content\": \"<title>Política de Privacidade — Quanto Falta?</title>\""
+    "content": "\"content\": \"<title>Política de Privacidade — Tô Contando</title>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -807,7 +807,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 405,
-    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"../\\\" aria-label=\\\"Quanto Falta? — início\\\">\""
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"../\\\" aria-label=\\\"Tô Contando — início\\\">\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -817,7 +817,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 410,
-    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+    "content": "\"content\": \"<span>Tô Contando<span class=\\\"logo-question\\\">?</span></span>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -827,7 +827,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 415,
-    "content": "\"content\": \"<p><strong>Resumo simples:</strong> O Quanto Falta? não coleta, armazena nem compartilha nenhum dado pessoal seu. Seus eventos ficam 100% no seu dispositivo.</p>\""
+    "content": "\"content\": \"<p><strong>Resumo simples:</strong> O Tô Contando não coleta, armazena nem compartilha nenhum dado pessoal seu. Seus eventos ficam 100% no seu dispositivo.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -837,7 +837,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 420,
-    "content": "\"content\": \"<p>O Quanto Falta? é um aplicativo Android desenvolvido de forma independente. Para dúvidas, suporte técnico, questões de privacidade ou solicitações de exclusão de dados, entre em contato pelo e-mail oficial: <a class=\\\"legal-inline-link\\\" href=\\\"mailto:contato@quantofalta.shop\\\">contato@quantofalta.shop</a>.</p>\""
+    "content": "\"content\": \"<p>O Tô Contando é um aplicativo Android desenvolvido de forma independente. Para dúvidas, suporte técnico, questões de privacidade ou solicitações de exclusão de dados, entre em contato pelo e-mail oficial: <a class=\\\"legal-inline-link\\\" href=\\\"mailto:contato@tocontando.com.br\\\">contato@tocontando.com.br</a>.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -847,7 +847,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 425,
-    "content": "\"content\": \"<p>Quando você opta por compartilhar um evento, o app envia apenas os dados do evento compartilhado — título, data e contagem — para os servidores do Quanto Falta?, com o único propósito de gerar um link público temporário. Esse compartilhamento é sempre opcional e iniciado pelo usuário.</p>\""
+    "content": "\"content\": \"<p>Quando você opta por compartilhar um evento, o app envia apenas os dados do evento compartilhado — título, data e contagem — para os servidores do Tô Contando, com o único propósito de gerar um link público temporário. Esse compartilhamento é sempre opcional e iniciado pelo usuário.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -857,7 +857,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 430,
-    "content": "\"content\": \"<p>As compras Premium são processadas integralmente pela Google Play Store, sujeita à <a class=\\\"legal-inline-link external-link\\\" href=\\\"https://policies.google.com/privacy\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Política de Privacidade do Google<svg><use href=\\\"#icon-arrow-up-right\\\"/></svg></a>. O Quanto Falta? não armazena dados de pagamento.</p>\""
+    "content": "\"content\": \"<p>As compras Premium são processadas integralmente pela Google Play Store, sujeita à <a class=\\\"legal-inline-link external-link\\\" href=\\\"https://policies.google.com/privacy\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">Política de Privacidade do Google<svg><use href=\\\"#icon-arrow-up-right\\\"/></svg></a>. O Tô Contando não armazena dados de pagamento.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -867,7 +867,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 435,
-    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+    "content": "\"content\": \"<span>Tô Contando<span class=\\\"logo-question\\\">?</span></span>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -877,7 +877,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 440,
-    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Quanto Falta? <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
+    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Tô Contando <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -887,7 +887,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 445,
-    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Termos de Uso do aplicativo Quanto Falta?.\\\" />\""
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Termos de Uso do aplicativo Tô Contando.\\\" />\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -897,7 +897,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 450,
-    "content": "\"content\": \"<title>Termos de Uso — Quanto Falta?</title>\""
+    "content": "\"content\": \"<title>Termos de Uso — Tô Contando</title>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -907,7 +907,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 455,
-    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"../\\\" aria-label=\\\"Quanto Falta? — início\\\">\""
+    "content": "\"content\": \"<a class=\\\"logo\\\" href=\\\"../\\\" aria-label=\\\"Tô Contando — início\\\">\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -917,7 +917,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 460,
-    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+    "content": "\"content\": \"<span>Tô Contando<span class=\\\"logo-question\\\">?</span></span>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -927,7 +927,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 465,
-    "content": "\"content\": \"<p><strong>Resumo simples:</strong> O Quanto Falta? é uma ferramenta de uso pessoal. Não nos responsabilizamos pela perda de dados, pois eles ficam salvos apenas no seu celular, nem por perdas decorrentes de mau uso.</p>\""
+    "content": "\"content\": \"<p><strong>Resumo simples:</strong> O Tô Contando é uma ferramenta de uso pessoal. Não nos responsabilizamos pela perda de dados, pois eles ficam salvos apenas no seu celular, nem por perdas decorrentes de mau uso.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -937,7 +937,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 470,
-    "content": "\"content\": \"<p>Ao baixar e utilizar o aplicativo “Quanto Falta?”, você concorda com os presentes Termos de Uso. Se não concordar com alguma parte, por favor, não utilize o aplicativo.</p>\""
+    "content": "\"content\": \"<p>Ao baixar e utilizar o aplicativo “Tô Contando”, você concorda com os presentes Termos de Uso. Se não concordar com alguma parte, por favor, não utilize o aplicativo.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -947,7 +947,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 475,
-    "content": "\"content\": \"<p>O Quanto Falta? permite que você crie contagens regressivas para eventos. Você é o único responsável pelo conteúdo — títulos, datas e anotações — inserido no aplicativo. O aplicativo deve ser usado apenas para fins lícitos e pessoais.</p>\""
+    "content": "\"content\": \"<p>O Tô Contando permite que você crie contagens regressivas para eventos. Você é o único responsável pelo conteúdo — títulos, datas e anotações — inserido no aplicativo. O aplicativo deve ser usado apenas para fins lícitos e pessoais.</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -957,7 +957,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 480,
-    "content": "\"content\": \"<span>Quanto Falta<span class=\\\"logo-question\\\">?</span></span>\""
+    "content": "\"content\": \"<span>Tô Contando<span class=\\\"logo-question\\\">?</span></span>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -967,7 +967,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 485,
-    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Quanto Falta? <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
+    "content": "\"content\": \"<p class=\\\"footer-copyright\\\">© 2024 Tô Contando <span aria-hidden=\\\"true\\\">·</span> Feito com <svg aria-label=\\\"amor\\\"><use href=\\\"#icon-heart\\\"/></svg> no Brasil</p>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -977,7 +977,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 490,
-    "content": "\"content\": \"title: Quanto Falta API\""
+    "content": "\"content\": \"title: Tô Contando API\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1107,7 +1107,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 555,
-    "content": "\"content\": \"-- Migration 0001: Initial schema for Quanto Falta? backend\""
+    "content": "\"content\": \"-- Migration 0001: Initial schema for Tô Contando backend\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1227,7 +1227,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 615,
-    "content": "\"content\": \"O novo painel administrativo do \\\"Quanto Falta?\\\" será baseado na arquitetura **App Router do Next.js**.\""
+    "content": "\"content\": \"O novo painel administrativo do \\\"Tô Contando\\\" será baseado na arquitetura **App Router do Next.js**.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1237,7 +1237,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 620,
-    "content": "\"content\": \"<title>Quanto Falta? — Painel Admin</title>\""
+    "content": "\"content\": \"<title>Tô Contando — Painel Admin</title>\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1247,7 +1247,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 625,
-    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Painel administrativo do Quanto Falta?\\\" />\""
+    "content": "\"content\": \"<meta name=\\\"description\\\" content=\\\"Painel administrativo do Tô Contando\\\" />\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1287,7 +1287,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 645,
-    "content": "\"content\": \"/** Typed API client for the Quanto Falta? admin backend */\""
+    "content": "\"content\": \"/** Typed API client for the Tô Contando admin backend */\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1377,7 +1377,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 690,
-    "content": "\"content\": \"# Arquitetura do Quanto Falta?\""
+    "content": "\"content\": \"# Arquitetura do Tô Contando\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1397,7 +1397,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 700,
-    "content": "\"content\": \"O Quanto Falta? NÃO utiliza IDs de publicidade, Firebase Analytics ou identificadores rastreáveis de hardware (IMEI/MAC). O identificador único (`InstallationId`) é um UUID-v4 gerado localmente que se perde caso o app seja desinstalado ou limpo.\""
+    "content": "\"content\": \"O Tô Contando NÃO utiliza IDs de publicidade, Firebase Analytics ou identificadores rastreáveis de hardware (IMEI/MAC). O identificador único (`InstallationId`) é um UUID-v4 gerado localmente que se perde caso o app seja desinstalado ou limpo.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1407,7 +1407,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 705,
-    "content": "\"content\": \"# Documentação de Monetização - Quanto Falta?\""
+    "content": "\"content\": \"# Documentação de Monetização - Tô Contando\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1417,7 +1417,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 710,
-    "content": "\"content\": \"Este documento descreve a arquitetura técnica e o fluxo de dados do sistema de monetização do aplicativo *Quanto Falta?*. O modelo comercial atual possui apenas:\""
+    "content": "\"content\": \"Este documento descreve a arquitetura técnica e o fluxo de dados do sistema de monetização do aplicativo *Tô Contando*. O modelo comercial atual possui apenas:\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1427,7 +1427,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 715,
-    "content": "\"content\": \"O sistema de OTA permite ao Quanto Falta? atualizar-se sem depender da Google Play Store.\""
+    "content": "\"content\": \"O sistema de OTA permite ao Tô Contando atualizar-se sem depender da Google Play Store.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1467,7 +1467,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
     "line_num": 735,
-    "content": "\"content\": \"A imagem compartilhada deve ter uma assinatura pequena e elegante do Quanto Falta?, sem parecer propaganda invasiva.\""
+    "content": "\"content\": \"A imagem compartilhada deve ter uma assinatura pequena e elegante do Tô Contando, sem parecer propaganda invasiva.\""
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\actionable_occurrences.json",
@@ -1947,17 +1947,17 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
     "line_num": 33,
-    "content": "# 1. Replace \"Quanto Falta?\" and \"Quanto Falta\" in UI strings"
+    "content": "# 1. Replace \"Tô Contando\" and \"Tô Contando\" in UI strings"
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
     "line_num": 35,
-    "content": "content = re.sub(r'Quanto Falta\\?', 'Tô Contando', content)"
+    "content": "content = re.sub(r'Tô Contando\\?', 'Tô Contando', content)"
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
     "line_num": 36,
-    "content": "content = re.sub(r'Quanto Falta', 'Tô Contando', content)"
+    "content": "content = re.sub(r'Tô Contando', 'Tô Contando', content)"
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
@@ -1967,7 +1967,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
     "line_num": 40,
-    "content": "# But we already did 'Quanto Falta', not 'quantofalta'"
+    "content": "# But we already did 'Tô Contando', not 'quantofalta'"
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\auto_replace.py",
@@ -3472,7 +3472,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\backups\\quanto-falta-d1-remote-20260615-204839.sql",
     "line_num": 34,
-    "content": "INSERT INTO \"app_versions\" (\"id\",\"version_code\",\"version_name\",\"release_channel\",\"status\",\"mandatory\",\"min_supported_version_code\",\"title\",\"summary\",\"changelog\",\"apk_r2_key\",\"apk_size_bytes\",\"sha256\",\"signature_fingerprint\",\"rollout_percentage\",\"published_at\",\"created_at\",\"updated_at\",\"github_release_tag\") VALUES(1,2,'1.1','stable','draft',1,1,'Novidades: Linha do Tempo, Agradecimento aos Testers e Melhorias Visuais!',replace(replace('✨ NOVIDADES:\\r\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\r\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\r\\n\\r\\n🛠 MELHORIAS E CORREÇÕES:\\r\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\r\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \"{prefillTitle}\") apareciam na tela por engano.\\r\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\r\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \"Ver Eventos Ativos\", deixando mais claro o próximo passo!\\r\\n\\r\\nAtualize agora e aproveite!\\r\\n','\\r',char(13)),'\\n',char(10)),'[\"✨ NOVIDADES:\\r\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\r\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Quanto Falta. Um muito obrigado a todos os nossos testadores!\\r\\n\\r\\n🛠 MELHORIAS E CORREÇÕES:\\r\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\r\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\"{prefillTitle}\\\") apareciam na tela por engano.\\r\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\r\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\"Ver Eventos Ativos\\\", deixando mais claro o próximo passo!\\r\\n\\r\\nAtualize agora e aproveite!\\r\\n\"]',NULL,20172787,NULL,NULL,0,NULL,1781481061000,1781481067192,'1.1');"
+    "content": "INSERT INTO \"app_versions\" (\"id\",\"version_code\",\"version_name\",\"release_channel\",\"status\",\"mandatory\",\"min_supported_version_code\",\"title\",\"summary\",\"changelog\",\"apk_r2_key\",\"apk_size_bytes\",\"sha256\",\"signature_fingerprint\",\"rollout_percentage\",\"published_at\",\"created_at\",\"updated_at\",\"github_release_tag\") VALUES(1,2,'1.1','stable','draft',1,1,'Novidades: Linha do Tempo, Agradecimento aos Testers e Melhorias Visuais!',replace(replace('✨ NOVIDADES:\\r\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\r\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Tô Contando. Um muito obrigado a todos os nossos testadores!\\r\\n\\r\\n🛠 MELHORIAS E CORREÇÕES:\\r\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\r\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \"{prefillTitle}\") apareciam na tela por engano.\\r\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\r\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \"Ver Eventos Ativos\", deixando mais claro o próximo passo!\\r\\n\\r\\nAtualize agora e aproveite!\\r\\n','\\r',char(13)),'\\n',char(10)),'[\"✨ NOVIDADES:\\r\\n• Linha do Tempo dos Eventos: Agora você pode acompanhar o histórico completo de cada evento! Veja quando ele foi criado, marcos importantes da contagem regressiva e quando foi concluído.\\r\\n• Agradecimento aos Testers: Criamos uma área especial (em Ajustes > Sobre) para homenagear todos que ajudaram a construir o Tô Contando. Um muito obrigado a todos os nossos testadores!\\r\\n\\r\\n🛠 MELHORIAS E CORREÇÕES:\\r\\n• Textos Inteligentes: Melhoramos as mensagens de destaque e os textos dos eventos. O app agora se adapta melhor ao tema do evento (viagens, finanças, festas) de forma muito mais natural e fluida.\\r\\n• Correção de Placeholders: Resolvemos o problema onde mensagens técnicas (como \\\"{prefillTitle}\\\") apareciam na tela por engano.\\r\\n• Interface Limpa: Removemos botões redundantes na tela de Destaque para uma experiência mais limpa.\\r\\n• Nova nomenclatura: Na aba de Concluídos, o botão agora diz \\\"Ver Eventos Ativos\\\", deixando mais claro o próximo passo!\\r\\n\\r\\nAtualize agora e aproveite!\\r\\n\"]',NULL,20172787,NULL,NULL,0,NULL,1781481061000,1781481067192,'1.1');"
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\novositequantofalta\\index.html",
@@ -3542,7 +3542,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\migrations\\0001_initial.sql",
     "line_num": 1,
-    "content": "-- Migration 0001: Initial schema for Quanto Falta? backend"
+    "content": "-- Migration 0001: Initial schema for Tô Contando backend"
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta-server\\backend\\src\\index.ts",
@@ -3647,7 +3647,7 @@
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\implementacoes.txt",
     "line_num": 36,
-    "content": "A imagem compartilhada deve ter uma assinatura pequena e elegante do Quanto Falta?, sem parecer propaganda invasiva."
+    "content": "A imagem compartilhada deve ter uma assinatura pequena e elegante do Tô Contando, sem parecer propaganda invasiva."
   },
   {
     "file": "c:\\Users\\Philippe\\Desktop\\Quanto falta\\quanto-falta_\\.idea\\workspace.xml",

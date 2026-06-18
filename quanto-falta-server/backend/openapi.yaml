@@ -8,7 +8,7 @@ servers:
     description: Production API
   - url: https://api.tocontando.com.br/api/v1
     description: Legacy Production API
-  - url: https://api-staging.quantofalta.shop/api/v1
+  - url: https://api-staging.tocontando.com.br/api/v1
     description: Staging API
   - url: http://localhost:8787/api/v1
     description: Local

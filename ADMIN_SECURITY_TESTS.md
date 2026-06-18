@@ -3,7 +3,7 @@
 Assim que você configurar a aplicação Cloudflare Access e aplicar os deploys via terminal, submeta o sistema aos testes lógicos abaixo:
 
 ## Bloco 1: Acesso de Borda (Edge)
-1. **[ ] Bloqueio Anônimo:** Abra uma guia anônima e acesse `admin.quantofalta.shop`. **Passou se:** A tela de login da Cloudflare interceptar o carregamento. Nenhuma página "App" carregou.
+1. **[ ] Bloqueio Anônimo:** Abra uma guia anônima e acesse `admin.tocontando.com.br`. **Passou se:** A tela de login da Cloudflare interceptar o carregamento. Nenhuma página "App" carregou.
 2. **[ ] Bloqueio Curinga:** Tente entrar usando OTP em um e-mail falso genérico (ex: `teste@gmail.com`). **Passou se:** O e-mail não receber código ou o Access informar que você não é autorizado pela política.
 3. **[ ] Acesso Exato:** Entre com `philippeboechat1@gmail.com` recebendo OTP/Google OAuth. **Passou se:** A dashboard aparecer renderizada e os dados surgirem.
 4. **[ ] Logout Universal:** Clique no botão de logout da dashboard (que envia para `/cdn-cgi/access/logout`). **Passou se:** A sessão for deslogada e ao tentar voltar for exigida a tela Cloudflare novamente.

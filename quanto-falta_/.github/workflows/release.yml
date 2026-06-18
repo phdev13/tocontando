@@ -193,7 +193,7 @@ jobs:
               \"apkSizeBytes\": $APK_SIZE,
               \"sha256\": \"$APK_SHA256\",
               \"rolloutPercentage\": 10,
-              \"title\": \"Quanto Falta? $VERSION_NAME\",
+              \"title\": \"Tô Contando $VERSION_NAME\",
               \"changelog\": [$(echo "$CHANGELOG" | head -10 | sed 's/^/\"/' | sed 's/$/\"/' | tr '\n' ',' | sed 's/,$//')]
             }"
 
@@ -248,9 +248,9 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "Quanto Falta? ${{ needs.android-build.outputs.versionName }}"
+          name: "Tô Contando ${{ needs.android-build.outputs.versionName }}"
           body: |
-            ## Quanto Falta? ${{ needs.android-build.outputs.versionName }}
+            ## Tô Contando ${{ needs.android-build.outputs.versionName }}
 
             **Version Code:** `${{ needs.android-build.outputs.versionCode }}`
             **SHA-256:** `${{ needs.android-build.outputs.apkSha256 }}`

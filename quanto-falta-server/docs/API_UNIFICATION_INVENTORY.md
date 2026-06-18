@@ -19,7 +19,7 @@ Observacao: antes do backup foram adicionados apenas arquivos novos da camada mo
 Dominio alvo:
 
 ```text
-https://api.quantofalta.shop/api/v1
+https://api.tocontando.com.br/api/v1
 ```
 
 Contrato central:
@@ -98,15 +98,15 @@ backend/openapi.yaml
   - Worker: `quanto-falta-api`
   - Version ID: `7e530746-3a32-462a-acb9-d24c76a6afae`
   - URL workers.dev: `https://quanto-falta-api.philippeboechat1.workers.dev`
-  - Dominio publico validado: `https://api.quantofalta.shop`
+  - Dominio publico validado: `https://api.tocontando.com.br`
 - Painel publicado no Cloudflare Pages:
   - Projeto: `quanto-falta-dashboard`
   - Alias: `https://production.quanto-falta-dashboard.pages.dev`
-  - Dominio protegido validado: `https://admin.quantofalta.shop`
+  - Dominio protegido validado: `https://admin.tocontando.com.br`
 - Site publicado no Cloudflare Pages:
   - Projeto: `quanto-falta-web`
   - Alias: `https://production.quanto-falta-web.pages.dev`
-  - Dominios validados: `https://quantofalta.shop`, `https://www.quantofalta.shop`, `https://share.quantofalta.shop`
+  - Dominios validados: `https://tocontando.com.br`, `https://www.tocontando.com.br`, `https://share.tocontando.com.br`
 
 ## Validacao final
 
@@ -115,8 +115,8 @@ backend/openapi.yaml
 - Painel: `npm run build` passou.
 - App Android: `assembleDebug` passou usando `JAVA_HOME=C:\Program Files\Android\Android Studio\jbr`.
 - Smoke HTTP:
-  - `GET https://api.quantofalta.shop/api/v1/public/status` retornou 200.
-  - `GET https://api.quantofalta.shop/api/v1/public/app-config` retornou 200.
-  - `GET https://api.quantofalta.shop/api/v1/public/stats/events/count` retornou 200.
-  - `https://admin.quantofalta.shop` retornou a tela do Cloudflare Access.
+  - `GET https://api.tocontando.com.br/api/v1/public/status` retornou 200.
+  - `GET https://api.tocontando.com.br/api/v1/public/app-config` retornou 200.
+  - `GET https://api.tocontando.com.br/api/v1/public/stats/events/count` retornou 200.
+  - `https://admin.tocontando.com.br` retornou a tela do Cloudflare Access.
   - Site publico retornou 200 nos dominios principais.

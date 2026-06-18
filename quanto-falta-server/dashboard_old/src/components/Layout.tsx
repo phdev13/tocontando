@@ -63,7 +63,7 @@ export default function Layout() {
           <img src={isCopa ? '/favicon-copa.png' : '/favicon.png'} alt="Logo" width="32" height="32" className="rounded-lg" />
         </div>
         <div>
-          <div className="font-outfit font-bold text-base text-text-primary leading-tight">Quanto Falta?</div>
+          <div className="font-outfit font-bold text-base text-text-primary leading-tight">Tô Contando</div>
           <div className="text-xs text-primary font-semibold tracking-wider uppercase">Admin Premium</div>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function Layout() {
       
       {/* Mobile Header */}
       <header className="md:hidden flex items-center justify-between p-4 glass-panel border-b border-white/5 sticky top-0 z-30">
-        <div className="font-outfit font-bold text-lg text-text-primary">Quanto Falta?</div>
+        <div className="font-outfit font-bold text-lg text-text-primary">Tô Contando</div>
         <Button variant="ghost" size="icon" onClick={() => setIsMobileOpen(true)}>
           <Menu size={24} />
         </Button>

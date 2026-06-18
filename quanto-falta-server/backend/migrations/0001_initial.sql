@@ -1,4 +1,4 @@
--- Migration 0001: Initial schema for Quanto Falta? backend
+-- Migration 0001: Initial schema for Tô Contando backend
 -- All timestamps stored as Unix milliseconds (INTEGER)
 
 -- ============================================================

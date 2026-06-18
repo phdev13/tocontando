@@ -518,7 +518,7 @@ Criar footer completo e organizado.
 
 Utilizar o e-mail oficial:
 
-> contato@quantofalta.shop
+> contato@tocontando.com.br
 
 Manter o footer leve, limpo e alinhado.
 
