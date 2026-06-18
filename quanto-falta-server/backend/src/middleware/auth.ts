@@ -23,9 +23,9 @@ export const adminAuthMiddleware: MiddlewareHandler<{ Bindings: Env }> = async (
   }
 
   const teamDomain = c.env.CF_ACCESS_TEAM_DOMAIN;
-  const audience = c.env.CF_ACCESS_AUDIENCE;
+  const audienceEnv = c.env.CF_ACCESS_AUDIENCE;
 
-  if (!teamDomain || !audience) {
+  if (!teamDomain || !audienceEnv) {
     console.error('Missing CF_ACCESS_TEAM_DOMAIN or CF_ACCESS_AUDIENCE environment variables');
     return c.json({ error: 'Server configuration error', code: 'SERVER_ERROR' }, 500);
   }
@@ -37,10 +37,12 @@ export const adminAuthMiddleware: MiddlewareHandler<{ Bindings: Env }> = async (
     JWKS = jose.createRemoteJWKSet(new URL(certsUrl));
   }
 
+  const audienceArray = audienceEnv.includes(',') ? audienceEnv.split(',').map((a: string) => a.trim()) : audienceEnv;
+
   try {
     const { payload } = await jose.jwtVerify(token, JWKS, {
       issuer: teamDomain,
-      audience: audience,
+      audience: audienceArray,
     });
 
     const email = payload.email as string;
