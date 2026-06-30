@@ -23,8 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
@@ -44,6 +46,12 @@ private val CATEGORIES = listOf(
     "other" to "Outro",
 )
 
+enum class FeedbackSubmitResult {
+    SUCCESS,
+    QUEUED,
+    ERROR
+}
+
 /**
  * Modal Dialog for Feedback following Tô Contando design.
  * Uses a real centralized Dialog instead of a BottomSheet.
@@ -61,6 +69,7 @@ fun FeedbackModal(
     var rating by remember { mutableStateOf(0) }
     var category by remember { mutableStateOf("suggestion") }
     var message by remember { mutableStateOf("") }
+    var includeTechData by remember { mutableStateOf(false) }
     
     // Auto-dismiss on success after a short delay
     LaunchedEffect(submitResult) {
@@ -149,95 +158,10 @@ fun FeedbackModal(
                         verticalArrangement = Arrangement.spacedBy(24.dp)
                     ) {
                         // 2. Avaliação
-                        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                            Text(
-                                "Avaliação",
-                                style = AppTypography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                for (i in 1..5) {
-                                    val filled = i <= rating
-                                    val color by animateColorAsState(
-                                        targetValue = if (filled) Color(0xFFFFAB00) else MaterialTheme.colorScheme.surfaceVariant,
-                                        animationSpec = tween(300),
-                                        label = "starColor$i"
-                                    )
-                                    val scale by animateFloatAsState(
-                                        targetValue = if (filled) 1.15f else 1f,
-                                        animationSpec = spring(
-                                            dampingRatio = Spring.DampingRatioMediumBouncy,
-                                            stiffness = Spring.StiffnessLow
-                                        ),
-                                        label = "starScale$i"
-                                    )
-                                    
-                                    val interactionSource = remember { MutableInteractionSource() }
-                                    
-                                    Icon(
-                                        imageVector = if (filled) Icons.Filled.Star else Icons.Outlined.StarBorder,
-                                        contentDescription = "$i estrela(s)",
-                                        tint = color,
-                                        modifier = Modifier
-                                            .size(44.dp)
-                                            .scale(scale)
-                                            .clickable(
-                                                interactionSource = interactionSource,
-                                                indication = null
-                                            ) { rating = i }
-                                    )
-                                }
-                            }
-                        }
+                        RatingBar(rating = rating, onRatingChanged = { rating = it })
 
                         // 3. Categorias (Chips)
-                        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                            Text(
-                                "O que você deseja relatar?",
-                                style = AppTypography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                            FlowRow(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                                verticalArrangement = Arrangement.spacedBy(10.dp)
-                            ) {
-                                CATEGORIES.forEach { (key, label) ->
-                                    val selected = category == key
-                                    val bgColor by animateColorAsState(
-                                        if (selected) PurplePrimary.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f),
-                                        label = "chipBg"
-                                    )
-                                    val borderColor by animateColorAsState(
-                                        if (selected) PurplePrimary else Color.Transparent,
-                                        label = "chipBorder"
-                                    )
-                                    val textColor by animateColorAsState(
-                                        if (selected) PurplePrimary else MaterialTheme.colorScheme.onSurfaceVariant,
-                                        label = "chipText"
-                                    )
-                                    
-                                    Box(
-                                        modifier = Modifier
-                                            .clip(RoundedCornerShape(12.dp))
-                                            .background(bgColor)
-                                            .border(1.dp, borderColor, RoundedCornerShape(12.dp))
-                                            .clickable { category = key }
-                                            .padding(horizontal = 16.dp, vertical = 10.dp),
-                                        contentAlignment = Alignment.Center
-                                    ) {
-                                        Text(
-                                            text = label,
-                                            style = AppTypography.labelLarge.copy(fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium),
-                                            color = textColor
-                                        )
-                                    }
-                                }
-                            }
-                        }
+                        CategorySelector(category = category, onCategoryChanged = { category = it })
 
                         // 4. Mensagem
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -273,6 +197,31 @@ fun FeedbackModal(
                                 color = MaterialTheme.colorScheme.outline,
                                 modifier = Modifier.align(Alignment.End)
                             )
+                        }
+
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { includeTechData = !includeTechData },
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Checkbox(
+                                checked = includeTechData,
+                                onCheckedChange = { includeTechData = it }
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Column {
+                                Text(
+                                    "Incluir dados técnicos",
+                                    style = AppTypography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
+                                    color = MaterialTheme.colorScheme.onSurface
+                                )
+                                Text(
+                                    "Versão do app, Android e modelo do aparelho.",
+                                    style = AppTypography.bodyMedium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
                         }
                         
                         Spacer(modifier = Modifier.height(4.dp))
@@ -325,7 +274,7 @@ fun FeedbackModal(
                                     rating = if (rating > 0) rating else null,
                                     category = category,
                                     message = message.trim(),
-                                    includeTechData = true,
+                                    includeTechData = includeTechData,
                                     sourceScreen = sourceScreen,
                                     versionCode = versionCode,
                                     androidVersion = Build.VERSION.RELEASE,
@@ -373,10 +322,9 @@ fun FeedbackModal(
                                 .fillMaxWidth()
                                 .clickable {
                                     SupportEmailUtils.openSupportEmail(context)
-                                    onDismiss()
                                 }
                                 .padding(vertical = 8.dp),
-                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                            textAlign = TextAlign.Center
                         )
                     }
                 }
@@ -385,4 +333,115 @@ fun FeedbackModal(
     }
 }
 
-enum class FeedbackSubmitResult { SUCCESS, QUEUED, ERROR }
+@Composable
+fun RatingBar(rating: Int, onRatingChanged: (Int) -> Unit) {
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(
+            "Avaliação",
+            style = AppTypography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
+            color = MaterialTheme.colorScheme.onSurface
+        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            for (i in 1..5) {
+                val filled = i <= rating
+                val starColor by animateColorAsState(
+                    targetValue = if (filled) Color(0xFFFFB300) else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.46f),
+                    animationSpec = tween(300),
+                    label = "starColor$i"
+                )
+                val tileColor by animateColorAsState(
+                    targetValue = if (filled) Color(0xFFFFB300).copy(alpha = 0.18f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.62f),
+                    animationSpec = tween(300),
+                    label = "starTile$i"
+                )
+                val scale by animateFloatAsState(
+                    targetValue = if (filled) 1.15f else 1f,
+                    animationSpec = spring(
+                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                        stiffness = Spring.StiffnessLow
+                    ),
+                    label = "starScale$i"
+                )
+                
+                val interactionSource = remember { MutableInteractionSource() }
+                
+                Box(
+                    modifier = Modifier
+                        .size(48.dp)
+                        .clip(RoundedCornerShape(14.dp))
+                        .background(tileColor)
+                        .clickable(
+                            interactionSource = interactionSource,
+                            indication = null
+                        ) { onRatingChanged(i) },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = if (filled) Icons.Filled.Star else Icons.Outlined.StarBorder,
+                        contentDescription = "$i estrela(s)",
+                        tint = starColor,
+                        modifier = Modifier
+                            .size(34.dp)
+                            .scale(scale)
+                            .graphicsLayer {
+                                alpha = if (filled) 1f else 0.9f
+                            }
+                    )
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun CategorySelector(category: String, onCategoryChanged: (String) -> Unit) {
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(
+            "O que você deseja relatar?",
+            style = AppTypography.labelLarge.copy(fontWeight = FontWeight.SemiBold),
+            color = MaterialTheme.colorScheme.onSurface
+        )
+        FlowRow(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            CATEGORIES.forEach { (key, label) ->
+                val selected = category == key
+                val bgColor by animateColorAsState(
+                    if (selected) PurplePrimary.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.4f),
+                    label = "chipBg"
+                )
+                val borderColor by animateColorAsState(
+                    if (selected) PurplePrimary else Color.Transparent,
+                    label = "chipBorder"
+                )
+                val textColor by animateColorAsState(
+                    if (selected) PurplePrimary else MaterialTheme.colorScheme.onSurfaceVariant,
+                    label = "chipText"
+                )
+                
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(bgColor)
+                        .border(1.dp, borderColor, RoundedCornerShape(12.dp))
+                        .clickable { onCategoryChanged(key) }
+                        .padding(horizontal = 16.dp, vertical = 10.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = label,
+                        style = AppTypography.labelLarge.copy(fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium),
+                        color = textColor
+                    )
+                }
+            }
+        }
+    }
+}

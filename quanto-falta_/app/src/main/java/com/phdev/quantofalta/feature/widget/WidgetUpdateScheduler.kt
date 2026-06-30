@@ -13,23 +13,34 @@ class WidgetUpdateScheduler(private val context: Context) {
 
     suspend fun updateWidgetsForEvent(eventId: String) {
         val manager = GlanceAppWidgetManager(context)
-        val glanceIds = manager.getGlanceIds(EventWidget::class.java)
         
-        for (glanceId in glanceIds) {
-            val prefs = androidx.glance.appwidget.state.getAppWidgetState(context, androidx.glance.state.PreferencesGlanceStateDefinition, glanceId)
-            val mappedEventId = prefs[EventWidget.eventIdKey]
-            
-            if (mappedEventId == eventId) {
-                EventWidget().update(context, glanceId)
+        val widgetClasses = listOf(EventWidget::class.java, MicroWidget::class.java, HeroWidget::class.java, ListWidget::class.java)
+        val widgetInstances = listOf(EventWidget(), MicroWidget(), HeroWidget(), ListWidget())
+        
+        widgetClasses.forEachIndexed { index, clazz ->
+            val glanceIds = manager.getGlanceIds(clazz)
+            for (glanceId in glanceIds) {
+                val prefs = androidx.glance.appwidget.state.getAppWidgetState(context, androidx.glance.state.PreferencesGlanceStateDefinition, glanceId)
+                val mappedEventId = prefs[EventWidget.eventIdKey]
+                
+                if (mappedEventId == eventId || clazz == ListWidget::class.java) {
+                    widgetInstances[index].update(context, glanceId)
+                }
             }
         }
     }
     
     suspend fun updateAllWidgets() {
         val manager = GlanceAppWidgetManager(context)
-        val glanceIds = manager.getGlanceIds(EventWidget::class.java)
-        for (glanceId in glanceIds) {
-            EventWidget().update(context, glanceId)
+        
+        val widgetClasses = listOf(EventWidget::class.java, MicroWidget::class.java, HeroWidget::class.java, ListWidget::class.java)
+        val widgetInstances = listOf(EventWidget(), MicroWidget(), HeroWidget(), ListWidget())
+        
+        widgetClasses.forEachIndexed { index, clazz ->
+            val glanceIds = manager.getGlanceIds(clazz)
+            for (glanceId in glanceIds) {
+                widgetInstances[index].update(context, glanceId)
+            }
         }
     }
 

@@ -9,6 +9,7 @@ import com.phdev.quantofalta.core.analytics.AnalyticsQueue
 import com.phdev.quantofalta.core.analytics.InstallationManager
 import com.phdev.quantofalta.core.database.AppDatabase
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -77,6 +78,12 @@ class TelemetrySyncWorker(
         val queue = AnalyticsQueue(context)
         val performanceDao = AppDatabase.getDatabase(context).performanceDao()
         val installationId = InstallationManager.getOrCreateId(context)
+        val privacySettings = com.phdev.quantofalta.core.privacy.PrivacySettings(context)
+        val canSendUsage = privacySettings.shareUsageData.first()
+        val canSendPerformance = privacySettings.sharePerformanceData.first()
+        if (!canSendUsage && !canSendPerformance) {
+            return@withContext Result.success()
+        }
 
         val packageInfo = try {
             context.packageManager.getPackageInfo(context.packageName, 0)
@@ -109,7 +116,7 @@ class TelemetrySyncWorker(
 
         // 1. Send Event Batch
         try {
-            val events = queue.peek(BATCH_SIZE)
+            val events = if (canSendUsage) queue.peek(BATCH_SIZE) else emptyList()
             if (events.isNotEmpty()) {
                 val payload = JSONObject().apply {
                     put("installationId", installationId)
@@ -137,7 +144,7 @@ class TelemetrySyncWorker(
 
         // 2. Send General Performance Metrics (Startup/Queries)
         try {
-            val perfMetrics = queue.peekPerformance(BATCH_SIZE)
+            val perfMetrics = if (canSendPerformance) queue.peekPerformance(50) else emptyList()
             if (perfMetrics.isNotEmpty()) {
                 val payload = JSONObject().apply {
                     put("installationId", installationId)
@@ -163,84 +170,36 @@ class TelemetrySyncWorker(
             allSuccess = false
         }
 
-        // 3. Send JankStats / Macrobenchmark Runs
+        // 3. Send locally aggregated startup and slow-frame measurements
         try {
-            val dbMetrics = performanceDao.getAllMetrics()
-            if (dbMetrics.isNotEmpty()) {
-                val groupedMetrics = dbMetrics.groupBy { it.runId }
-                for ((runId, runMetrics) in groupedMetrics) {
-                    val payload = JSONObject().apply {
-                        put("id", runId)
-                        put("source", "JANKSTATS")
-                        put("app_version", versionName)
-                        put("version_code", versionCode)
-                        put("build_type", BuildConfig.BUILD_TYPE)
-                        put("device_model", android.os.Build.MODEL)
-                        put("device_manufacturer", android.os.Build.MANUFACTURER)
-                        put("android_version", android.os.Build.VERSION.RELEASE)
-                        put("api_level", android.os.Build.VERSION.SDK_INT)
-                        put("status", "COMPLETED")
-                        put("payload_hash", java.util.UUID.randomUUID().toString()) 
-                    }
-
-                    var runCreated = false
-                    try {
-                        val responseCode = postReturnCode("$BASE_URL/api/v1/performance/runs", payload.toString(), useGzip = true, auth = "PUBLIC_INGEST_TOKEN")
-                        if (responseCode in 200..299 || responseCode == 409) {
-                            runCreated = true
+            val dbMetrics = if (canSendPerformance) performanceDao.getAllMetrics().take(50) else emptyList()
+            val invalidMetrics = dbMetrics.filter { it.durationMs <= 0 }
+            if (invalidMetrics.isNotEmpty()) {
+                performanceDao.deleteMetrics(invalidMetrics.map { it.id })
+            }
+            val validMetrics = dbMetrics.filter { it.durationMs > 0 }
+            if (validMetrics.isNotEmpty()) {
+                val payload = JSONObject().apply {
+                    put("installationId", installationId)
+                    put("versionCode", versionCode)
+                    put("androidVersion", android.os.Build.VERSION.RELEASE)
+                    put("metrics", JSONArray(validMetrics.map { metric ->
+                        JSONObject().apply {
+                            put("type", if (metric.metricType == "STARTUP") "cold_start" else "slow_frame")
+                            put("valueMs", metric.durationMs)
+                            put("screen", metric.screenName.take(64))
                         }
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                        allSuccess = false
-                        continue
-                    }
-
-                    if (!runCreated) {
-                        allSuccess = false
-                        continue
-                    }
-
-                    // Send Metrics for the run
-                    val metricsArray = JSONArray()
-                    for (m in runMetrics) {
-                        if (m.metricType == "STARTUP") {
-                            metricsArray.put(JSONObject().apply {
-                                put("id", java.util.UUID.randomUUID().toString())
-                                put("metric_name", "StartupTime")
-                                put("value", m.durationMs)
-                                put("unit", "ms")
-                            })
-                        } else if (m.metricType == "JANK") {
-                            metricsArray.put(JSONObject().apply {
-                                put("id", java.util.UUID.randomUUID().toString())
-                                put("metric_name", "TotalFrames_${m.screenName}")
-                                put("value", m.totalFrames)
-                                put("unit", "frames")
-                            })
-                            metricsArray.put(JSONObject().apply {
-                                put("id", java.util.UUID.randomUUID().toString())
-                                put("metric_name", "JankFrames_${m.screenName}")
-                                put("value", m.jankFrames)
-                                put("unit", "frames")
-                            })
-                        }
-                    }
-
-                    val metricsPayload = JSONObject().apply {
-                        put("metrics", metricsArray)
-                    }
-
-                    try {
-                        val success = post("$BASE_URL/api/v1/performance/runs/$runId/metrics", metricsPayload.toString(), useGzip = true, auth = "PUBLIC_INGEST_TOKEN")
-                        if (success) {
-                            performanceDao.deleteMetrics(runMetrics.map { it.id })
-                        } else {
-                            allSuccess = false
-                        }
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                        allSuccess = false
-                    }
+                    }))
+                }
+                val success = post(
+                    "$BASE_URL/api/v1/app/telemetry/performance",
+                    payload.toString(),
+                    useGzip = true
+                )
+                if (success) {
+                    performanceDao.deleteMetrics(validMetrics.map { it.id })
+                } else {
+                    allSuccess = false
                 }
             }
         } catch (e: Exception) {
@@ -257,18 +216,14 @@ class TelemetrySyncWorker(
         return bos.toByteArray()
     }
 
-    private fun post(url: String, json: String, useGzip: Boolean, auth: String? = null): Boolean {
-        val code = postReturnCode(url, json, useGzip, auth)
+    private fun post(url: String, json: String, useGzip: Boolean): Boolean {
+        val code = postReturnCode(url, json, useGzip)
         return code in 200..299
     }
     
-    private fun postReturnCode(url: String, json: String, useGzip: Boolean, auth: String? = null): Int {
+    private fun postReturnCode(url: String, json: String, useGzip: Boolean): Int {
         return try {
             val requestBuilder = Request.Builder().url(url)
-            
-            if (auth != null) {
-                requestBuilder.addHeader("Authorization", "Bearer $auth")
-            }
 
             if (useGzip) {
                 val gzipped = gzipContent(json)

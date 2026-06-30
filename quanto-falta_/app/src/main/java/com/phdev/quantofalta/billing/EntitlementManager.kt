@@ -10,7 +10,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import org.json.JSONArray
 import org.json.JSONObject
-
+import android.provider.Settings
+import com.phdev.quantofalta.core.network.ApiClient
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 /**
  * Manages premium entitlements securely using EncryptedSharedPreferences.
  */
@@ -100,7 +103,89 @@ class EntitlementManager(context: Context) {
         saveToPrefs(valid)
     }
 
+    /**
+     * Immediately revokes all non-Google-Play entitlements from local storage.
+     *
+     * Should be called on:
+     *  - User logout (to prevent premium state from leaking after session ends)
+     *  - Account switch (before setting the new email + syncing with server)
+     *
+     * Google Play purchases (id starts with "play_store_") are preserved because
+     * they are tied to the device, not the server account.
+     */
+    fun revokeNonPlayStoreEntitlements() {
+        val current = _entitlementsFlow.value.toMutableList()
+        val removed = current.removeAll { !it.id.startsWith("play_store_") }
+        if (removed) {
+            saveToPrefs(current)
+            Log.d(TAG, "revokeNonPlayStoreEntitlements: local entitlements cleared")
+        }
+    }
+
     // ── Prefs Management ──────────────────────────────────────────────
+    
+    fun getSavedEmail(): String? {
+        return sharedPreferences.getString("user_email", null)
+    }
+
+    fun setSavedEmail(email: String) {
+        sharedPreferences.edit().putString("user_email", email).apply()
+    }
+
+    suspend fun syncWithServer(context: Context) = withContext(Dispatchers.IO) {
+        try {
+            val installationId = Settings.Secure.getString(
+                context.contentResolver,
+                Settings.Secure.ANDROID_ID
+            ) ?: return@withContext
+            
+            val email = getSavedEmail()
+            
+            val response = PremiumApi.getStatus(installationId, email)
+            
+            val nowSec = System.currentTimeMillis() / 1000
+            
+            if (response.success) {
+                // Server successfully responded. It is the absolute source of truth.
+                sharedPreferences.edit().putLong("last_successful_sync", nowSec).apply()
+                
+                if (response.isPremium) {
+                    val entitlementId = response.id ?: "server_sync_$installationId"
+                    
+                    val entitlement = Entitlement(
+                        id = entitlementId,
+                        planType = response.planType,
+                        features = response.features,
+                        expiresAt = response.expiresAt
+                    )
+                    
+                    addEntitlement(entitlement)
+                } else {
+                    // Revoke non-Google Play local entitlements if server actively says NO premium
+                    val current = _entitlementsFlow.value.toMutableList()
+                    val removed = current.removeAll { !it.id.startsWith("play_store_") }
+                    if (removed) {
+                        saveToPrefs(current)
+                    }
+                }
+            } else {
+                // Network error or server error.
+                // Check TTL: if last successful sync is older than 7 days, revoke non-PlayStore cache.
+                val lastSync = sharedPreferences.getLong("last_successful_sync", nowSec)
+                val daysSinceSync = (nowSec - lastSync) / 86400
+                if (daysSinceSync > 7) {
+                    Log.w(TAG, "Offline TTL expired (> 7 days). Revoking unverified entitlements.")
+                    val current = _entitlementsFlow.value.toMutableList()
+                    val removed = current.removeAll { !it.id.startsWith("play_store_") }
+                    if (removed) {
+                        saveToPrefs(current)
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to sync premium status: ${e.message}")
+        }
+    }
 
     private fun loadFromPrefs(): List<Entitlement> {
         val jsonString = sharedPreferences.getString(ENTITLEMENTS_KEY, "[]") ?: "[]"

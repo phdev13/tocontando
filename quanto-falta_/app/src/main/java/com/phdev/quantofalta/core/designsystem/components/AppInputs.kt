@@ -44,7 +44,8 @@ fun AppTextField(
     placeholder: String,
     modifier: Modifier = Modifier,
     icon: ImageVector? = null,
-    onClick: (() -> Unit)? = null
+    onClick: (() -> Unit)? = null,
+    isError: Boolean = false
 ) {
     var isFocused by remember { mutableStateOf(false) }
     val isClickable = onClick != null
@@ -57,6 +58,7 @@ fun AppTextField(
     )
     val borderColor by animateColorAsState(
         targetValue = when {
+            isError -> MaterialTheme.colorScheme.error
             isFocused -> MaterialTheme.colorScheme.primary
             isClickable -> MaterialTheme.colorScheme.outline.copy(alpha = 0.4f)
             else -> MaterialTheme.colorScheme.outline.copy(alpha = 0.25f)

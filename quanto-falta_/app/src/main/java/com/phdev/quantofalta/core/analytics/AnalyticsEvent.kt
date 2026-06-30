@@ -38,11 +38,6 @@ sealed class AnalyticsEvent(val name: String) {
     object FeedbackOpened : AnalyticsEvent("feedback_opened")
     object FeedbackSubmitted : AnalyticsEvent("feedback_submitted")
 
-    // ── Testers ────────────────────────────────────────────
-    object TestersScreenOpened : AnalyticsEvent("testers_screen_opened")
-    object TestersSyncSucceeded : AnalyticsEvent("testers_sync_succeeded")
-    object TestersSyncFailed : AnalyticsEvent("testers_sync_failed")
-
     // ── OTA ────────────────────────────────────────────────
     object OtaCheckCompleted : AnalyticsEvent("ota_check_completed")
     data class OtaUpdateAvailable(val otaVersionCode: Int, val mandatory: Boolean) : AnalyticsEvent("ota_update_available")
@@ -52,16 +47,6 @@ sealed class AnalyticsEvent(val name: String) {
     data class OtaUpdateDeferred(val otaVersionCode: Int) : AnalyticsEvent("ota_update_deferred")
     data class OtaInstallationStarted(val otaVersionCode: Int) : AnalyticsEvent("ota_installation_started")
     data class AppVersionChanged(val fromVersionCode: Int, val toVersionCode: Int) : AnalyticsEvent("app_version_changed")
-
-    // ── Performance ────────────────────────────────────────
-    data class ApiRequest(
-        val endpoint: String,
-        val method: String,
-        val status: Int,
-        val durationMs: Long,
-        val success: Boolean,
-        val error: String
-    ) : AnalyticsEvent("api_request")
 
     /** Extracts only approved properties — no free-form strings from user content */
     fun toProperties(): Map<String, Any> = when (this) {
@@ -79,14 +64,6 @@ sealed class AnalyticsEvent(val name: String) {
         is OtaUpdateDeferred -> mapOf("ota_version_code" to otaVersionCode)
         is OtaInstallationStarted -> mapOf("ota_version_code" to otaVersionCode)
         is AppVersionChanged -> mapOf("from_version_code" to fromVersionCode, "to_version_code" to toVersionCode)
-        is ApiRequest -> mapOf(
-            "endpoint" to endpoint,
-            "method" to method,
-            "status" to status,
-            "duration_ms" to durationMs,
-            "success" to success,
-            "error" to error
-        )
         else -> emptyMap()
     }
 }

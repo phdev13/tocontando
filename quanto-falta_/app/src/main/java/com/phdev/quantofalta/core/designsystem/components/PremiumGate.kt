@@ -380,7 +380,7 @@ fun EventLimitModal(
             )
 
             Text(
-                text = "Você atingiu o limite de 5 eventos ativos no plano gratuito. Conclua ou exclua um evento para criar outro, ou desbloqueie eventos ilimitados com o Premium.",
+                text = "Você atingiu o limite de 5 eventos ativos para esta categoria no plano gratuito. Conclua ou exclua um evento para criar outro, ou desbloqueie eventos ilimitados com o Premium.",
                 style = AppTypography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

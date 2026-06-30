@@ -3,8 +3,6 @@ package com.phdev.quantofalta.core.testers
 import android.content.Context
 import android.util.Log
 import com.phdev.quantofalta.BuildConfig
-import com.phdev.quantofalta.core.analytics.AnalyticsEvent
-import com.phdev.quantofalta.core.analytics.AnalyticsManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -35,8 +33,7 @@ sealed class TestersState {
 }
 
 class TestersManager(
-    private val context: Context,
-    private val analyticsManager: AnalyticsManager
+    private val context: Context
 ) {
     companion object {
         private const val TAG = "TestersManager"
@@ -73,7 +70,6 @@ class TestersManager(
             val responseCode = conn.responseCode
             if (responseCode == 304) {
                 Log.d(TAG, "Testers not modified (304). Using cache.")
-                analyticsManager.track(AnalyticsEvent.TestersSyncSucceeded)
                 return@withContext
             }
 
@@ -89,13 +85,11 @@ class TestersManager(
                 writeCache(responseString, newEtag)
 
                 _state.value = TestersState.Content(newTesters)
-                analyticsManager.track(AnalyticsEvent.TestersSyncSucceeded)
             } else {
                 Log.w(TAG, "Failed to sync testers. Code: $responseCode")
                 if (cached == null) {
                     _state.value = TestersState.Error
                 }
-                analyticsManager.track(AnalyticsEvent.TestersSyncFailed)
             }
             conn.disconnect()
         } catch (e: Exception) {
@@ -103,7 +97,6 @@ class TestersManager(
             if (cached == null) {
                 _state.value = TestersState.Error
             }
-            analyticsManager.track(AnalyticsEvent.TestersSyncFailed)
         }
     }
 

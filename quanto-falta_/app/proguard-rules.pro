@@ -43,7 +43,7 @@
 # ------------------------------------------------------------
 
 # Preserva apenas o construtor público — evita expor membros internos
--keep class com.phdev.quantofalta.QuantoFaltaApplication {
+-keep class com.phdev.quantofalta.ToContandoApplication {
     public <init>();
 }
 

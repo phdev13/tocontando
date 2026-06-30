@@ -4,10 +4,20 @@
         <include domain="database" path="."/>
         <include domain="sharedpref" path="."/>
         <exclude domain="sharedpref" path="EncryptedSharedPreferences.xml"/>
+        <exclude domain="sharedpref" path="auth_prefs.xml"/>
+        <exclude domain="sharedpref" path="secret_entitlements_prefs.xml"/>
+        <exclude domain="sharedpref" path="fallback_entitlements_prefs.xml"/>
+        <exclude domain="sharedpref" path="AppConfigPrefs.xml"/>
+        <exclude domain="sharedpref" path="OtaDataStore.xml"/>
     </cloud-backup>
     <device-transfer>
         <include domain="database" path="."/>
         <include domain="sharedpref" path="."/>
         <exclude domain="sharedpref" path="EncryptedSharedPreferences.xml"/>
+        <exclude domain="sharedpref" path="auth_prefs.xml"/>
+        <exclude domain="sharedpref" path="secret_entitlements_prefs.xml"/>
+        <exclude domain="sharedpref" path="fallback_entitlements_prefs.xml"/>
+        <exclude domain="sharedpref" path="AppConfigPrefs.xml"/>
+        <exclude domain="sharedpref" path="OtaDataStore.xml"/>
     </device-transfer>
 </data-extraction-rules>

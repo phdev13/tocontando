@@ -9,13 +9,14 @@ import com.phdev.quantofalta.domain.model.toUiModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
-import java.util.Calendar
 import java.util.UUID
 import com.phdev.quantofalta.billing.EntitlementManager
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.flowOn
 
 class EventDetailsViewModel(
     private val application: android.app.Application,
@@ -38,9 +39,21 @@ class EventDetailsViewModel(
     )
 
     fun getEventUiState(id: String): Flow<EventUiModel?> {
-        return combine(repository.getEventById(id), ticker) { event, currentMillis ->
-            event?.toUiModel(java.time.Instant.ofEpochMilli(currentMillis), application)
-        }
+        return combine(
+            repository.getEventById(id),
+            ticker,
+            entitlementManager.hasActivePremium
+        ) { event, currentMillis, premium ->
+            val visibleEvent = if (premium) event else event?.copy(
+                coverImageUri = null,
+                isPrivate = false,
+                format = com.phdev.quantofalta.domain.model.CountdownFormat.DAYS,
+                relationshipMonthlyEnabled = false,
+                relationshipAnnualEnabled = false,
+                relationshipMilestonesEnabled = false,
+            )
+            visibleEvent?.toUiModel(java.time.Instant.ofEpochMilli(currentMillis), application)
+        }.flowOn(kotlinx.coroutines.Dispatchers.Default)
     }
 
     fun toggleCompleted(id: String, isCompleted: Boolean) {
@@ -49,7 +62,7 @@ class EventDetailsViewModel(
                 val event = repository.getEventById(id).firstOrNull()
                 if (event != null) {
                     val now = System.currentTimeMillis()
-                    val today = java.time.Instant.now().atZone(java.time.ZoneId.of("UTC")).toLocalDate()
+                    val today = java.time.Instant.now().atZone(java.time.ZoneId.of(event.zoneId)).toLocalDate()
                     if (event.targetDate.isBefore(today) || event.targetDate.isEqual(today)) {
                         val nextTarget = today.plusDays(1)
                         val updatedEvent = event.copy(
@@ -57,7 +70,7 @@ class EventDetailsViewModel(
                             targetDate = nextTarget,
                             createdAtMillis = now
                         )
-                        repository.insertEvent(updatedEvent)
+                        repository.insertEvent(updatedEvent, repository.getRemindersForEvent(id))
                         return@launch
                     }
                 }
@@ -72,14 +85,28 @@ class EventDetailsViewModel(
         }
     }
 
+    fun togglePin(id: String) {
+        viewModelScope.launch {
+            repository.togglePin(id)
+        }
+    }
+
     fun deleteEvent(id: String) {
         viewModelScope.launch {
             repository.deleteEventById(id)
         }
     }
 
-    fun duplicateForNextYear(id: String, onComplete: () -> Unit) {
+    fun duplicateForNextYear(
+        id: String,
+        onLimitReached: () -> Unit,
+        onComplete: () -> Unit
+    ) {
         viewModelScope.launch {
+            if (!isPremium.value && repository.countActiveEvents().first() >= com.phdev.quantofalta.billing.PremiumFeature.FREE_EVENT_LIMIT) {
+                onLimitReached()
+                return@launch
+            }
             val event = repository.getEventById(id).firstOrNull() ?: return@launch
             
             // Generate the date for next year
@@ -90,10 +117,20 @@ class EventDetailsViewModel(
                 targetDate = nextYearDate,
                 createdAtMillis = System.currentTimeMillis(),
                 isCompleted = false,
-                isArchived = false
+                isArchived = false,
+                coverImageUri = com.phdev.quantofalta.core.utils.ImageStorageHelper
+                    .duplicateInternalImage(application, event.coverImageUri)
             )
-            
-            repository.insertEvent(newEvent)
+
+            val clonedReminders = repository.getRemindersForEvent(id).map { reminder ->
+                reminder.copy(
+                    id = UUID.randomUUID().toString(),
+                    eventId = newEvent.id,
+                    createdAtMillis = System.currentTimeMillis(),
+                    updatedAtMillis = System.currentTimeMillis()
+                )
+            }
+            repository.insertEvent(newEvent, clonedReminders)
             
             // Archive the old event
             repository.markEventAsArchived(id, true)

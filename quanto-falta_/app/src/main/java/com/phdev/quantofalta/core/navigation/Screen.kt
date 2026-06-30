@@ -26,11 +26,12 @@ sealed class Screen(val route: String) {
     object Testers : Screen("testers")
     object Intro : Screen("intro")
     object Premium : Screen("premium")
+    object PremiumAntecipado : Screen("premium_antecipado")
     object RedeemCode : Screen("redeem_code")
+    object RecoverPremium : Screen("recover_premium")
+    object PremiumSupport : Screen("premium_support")
+    object EarlyAccess : Screen("early_access")
     object Sponsor : Screen("sponsor")
-    object Diagnostics : Screen("diagnostics")
-    
-    // Novas subtelas de ajustes
     object SettingsAppearance : Screen("settings_appearance")
     object SettingsNotifications : Screen("settings_notifications")
     object SettingsBackup : Screen("settings_backup")
@@ -40,4 +41,21 @@ sealed class Screen(val route: String) {
     object SettingsPrivacy : Screen("settings_privacy")
     object SettingsAbout : Screen("settings_about")
     object SettingsSync : Screen("settings_sync")
+    object CreateRelationship : Screen("create_relationship?eventId={eventId}") {
+        fun createRoute(eventId: String? = null) =
+            if (eventId != null) "create_relationship?eventId=$eventId" else "create_relationship"
+    }
+    object RelationshipDetail : Screen("relationship_detail/{eventId}") {
+        fun createRoute(eventId: String) = "relationship_detail/$eventId"
+    }
+    object CreateSalary : Screen("create_salary?eventId={eventId}") {
+        fun createRoute(eventId: String? = null) =
+            if (eventId != null) "create_salary?eventId=$eventId" else "create_salary"
+    }
+    object SalaryDetails : Screen("salary_details/{eventId}") {
+        fun createRoute(eventId: String) = "salary_details/$eventId"
+    }
+    object Celebration : Screen("celebration/{eventId}") {
+        fun createRoute(eventId: String) = "celebration/$eventId"
+    }
 }

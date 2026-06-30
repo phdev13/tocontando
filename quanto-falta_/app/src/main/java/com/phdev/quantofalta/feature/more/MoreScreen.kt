@@ -15,6 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -45,6 +46,7 @@ fun SettingsRow(
     icon: ImageVector,
     iconColor: Color = MaterialTheme.colorScheme.onSurfaceVariant,
     titleColor: Color = MaterialTheme.colorScheme.onSurface,
+    showBadge: Boolean = false,
     onClick: () -> Unit
 ) {
     val haptic = LocalHapticFeedback.current
@@ -58,12 +60,23 @@ fun SettingsRow(
             .padding(horizontal = AppSpacing.extraLarge, vertical = AppSpacing.medium),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(
-            imageVector = icon,
-            contentDescription = null,
-            tint = iconColor,
-            modifier = Modifier.size(24.dp)
-        )
+        Box(contentAlignment = Alignment.TopEnd) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                tint = iconColor,
+                modifier = Modifier.size(24.dp)
+            )
+            if (showBadge) {
+                Box(
+                    modifier = Modifier
+                        .size(8.dp)
+                        .clip(androidx.compose.foundation.shape.CircleShape)
+                        .background(MaterialTheme.colorScheme.error)
+                        .align(Alignment.TopEnd)
+                )
+            }
+        }
         Spacer(modifier = Modifier.width(AppSpacing.large))
         Column(modifier = Modifier.weight(1f)) {
             Text(
@@ -150,6 +163,13 @@ fun MoreScreen(
     viewModel: MoreViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val context = LocalContext.current
+    val syncViewModel: SyncViewModel = viewModel(factory = AppViewModelProvider.Factory)
+    val hasUnreadTicket by syncViewModel.hasUnreadTicket.collectAsStateWithLifecycle()
+
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        syncViewModel.checkBadges()
+    }
 
     Scaffold(
         topBar = {
@@ -165,6 +185,7 @@ fun MoreScreen(
         },
         containerColor = MaterialTheme.colorScheme.background
     ) { contentPadding ->
+        AdaptiveContent(modifier = Modifier.fillMaxSize()) {
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(
@@ -178,7 +199,7 @@ fun MoreScreen(
                 Spacer(modifier = Modifier.height(8.dp))
                 PremiumCard(
                     premiumStatus = uiState.premiumStatus,
-                    onClick = { onNavigate(Screen.Premium.route) }
+                    onClick = { onNavigate(Screen.PremiumAntecipado.route) }
                 )
             }
 
@@ -235,8 +256,10 @@ fun MoreScreen(
             }
             item(key = "support_feedback", contentType = "settings_row") {
                 SettingsRow(
-                    title = "Suporte e feedback",
+                    title = "Suporte e tickets",
+                    description = if (hasUnreadTicket) "Você tem uma nova resposta!" else null,
                     icon = Icons.Filled.HelpOutline,
+                    showBadge = hasUnreadTicket,
                     onClick = { onNavigate(Screen.SettingsSupport.route) }
                 )
             }
@@ -283,6 +306,7 @@ fun MoreScreen(
                     onClick = { onNavigate(Screen.SettingsAbout.route) }
                 )
             }
+        }
         }
     }
 }

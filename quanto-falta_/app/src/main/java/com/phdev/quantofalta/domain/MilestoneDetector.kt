@@ -5,7 +5,11 @@ import com.phdev.quantofalta.domain.model.Event
 
 object MilestoneDetector {
 
-    fun detectMilestones(event: Event, result: CountdownResult): List<String> {
+    fun detectMilestones(
+        event: Event,
+        result: CountdownResult,
+        previousDays: Int? = null
+    ): List<String> {
         val milestones = mutableListOf<String>()
 
         when (result) {
@@ -17,10 +21,15 @@ object MilestoneDetector {
             }
             is CountdownResult.Days -> {
                 if (result.direction == com.phdev.quantofalta.domain.model.CountdownDirection.REMAINING) {
-                    if (result.days <= 100) milestones.add("DAYS_REMAINING_100")
-                    if (result.days <= 30) milestones.add("DAYS_REMAINING_30")
-                    if (result.days <= 7) milestones.add("DAYS_REMAINING_7")
-                    if (result.days <= 1) milestones.add("DAYS_REMAINING_1")
+                    val currentDays = result.days.toInt()
+                    val threshold = listOf(100, 30, 7, 1).firstOrNull { value ->
+                        if (previousDays == null) {
+                            currentDays == value
+                        } else {
+                            previousDays > value && currentDays <= value
+                        }
+                    }
+                    if (threshold != null) milestones.add("DAYS_REMAINING_$threshold")
                 }
             }
             is CountdownResult.Months -> {
@@ -35,6 +44,6 @@ object MilestoneDetector {
             else -> {}
         }
         
-        return milestones
+        return milestones.takeLast(1)
     }
 }

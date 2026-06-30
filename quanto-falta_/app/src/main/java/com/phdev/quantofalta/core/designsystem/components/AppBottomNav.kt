@@ -3,15 +3,16 @@ package com.phdev.quantofalta.core.designsystem.components
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.outlined.CheckCircle
-import androidx.compose.material.icons.outlined.DateRange
-import androidx.compose.material.icons.outlined.Settings
-import androidx.compose.material.icons.outlined.Star
+
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -20,6 +21,7 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -31,7 +33,16 @@ fun AppBottomNav(
     currentRoute: String?,
     onNavigate: (String) -> Unit
 ) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.surface),
+        contentAlignment = Alignment.Center
+    ) {
     NavigationBar(
+        modifier = Modifier
+            .fillMaxWidth()
+            .widthIn(max = AppContentMaxWidth),
         tonalElevation = 0.dp,
         containerColor = MaterialTheme.colorScheme.surface,
     ) {
@@ -48,7 +59,7 @@ fun AppBottomNav(
                 val selected = currentRoute == Screen.Home.route
                 AnimatedNavIcon(
                     iconSelected = Icons.Filled.DateRange,
-                    iconUnselected = Icons.Outlined.DateRange,
+                    iconUnselected = Icons.Filled.DateRange,
                     selected = selected,
                     contentDescription = "Eventos"
                 )
@@ -63,7 +74,7 @@ fun AppBottomNav(
                 val selected = currentRoute == Screen.Completed.route
                 AnimatedNavIcon(
                     iconSelected = Icons.Filled.CheckCircle,
-                    iconUnselected = Icons.Outlined.CheckCircle,
+                    iconUnselected = Icons.Filled.CheckCircle,
                     selected = selected,
                     contentDescription = "Concluídos"
                 )
@@ -78,7 +89,7 @@ fun AppBottomNav(
                 val selected = currentRoute?.startsWith("highlight") == true
                 AnimatedNavIcon(
                     iconSelected = Icons.Filled.Star,
-                    iconUnselected = Icons.Outlined.Star,
+                    iconUnselected = Icons.Filled.Star,
                     selected = selected,
                     contentDescription = "Destaques"
                 )
@@ -93,7 +104,7 @@ fun AppBottomNav(
                 val selected = currentRoute == Screen.More.route
                 AnimatedNavIcon(
                     iconSelected = Icons.Filled.Settings,
-                    iconUnselected = Icons.Outlined.Settings,
+                    iconUnselected = Icons.Filled.Settings,
                     selected = selected,
                     contentDescription = "Mais"
                 )
@@ -103,6 +114,7 @@ fun AppBottomNav(
             onClick = { onNavigate(Screen.More.route) },
             colors = colors
         )
+    }
     }
 }
 

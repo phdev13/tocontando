@@ -4,12 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.phdev.quantofalta.BuildConfig
 import com.phdev.quantofalta.core.analytics.InstallationManager
-import com.phdev.quantofalta.core.privacy.PrivacySettings
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
@@ -42,21 +37,33 @@ class FeedbackManager(private val context: Context) {
         private const val TAG = "FeedbackManager"
         private const val QUEUE_FILE = "feedback_queue.json"
         private val BASE_URL: String = BuildConfig.API_BASE_URL
+        private val queueLock = Any()
+        private const val MAX_QUEUE_SIZE = 100
+        private const val MAX_MESSAGE_LENGTH = 2000
+        private val VALID_CATEGORIES = setOf("suggestion", "bug", "compliment", "question", "other")
     }
 
-    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val queueFile: File get() = File(context.filesDir, QUEUE_FILE)
 
     suspend fun submit(feedback: FeedbackData): Boolean = withContext(Dispatchers.IO) {
+        val normalizedMessage = feedback.message.trim()
+        if (
+            normalizedMessage.isBlank() ||
+            normalizedMessage.length > MAX_MESSAGE_LENGTH ||
+            feedback.rating?.let { it !in 1..5 } == true ||
+            feedback.category !in VALID_CATEGORIES
+        ) return@withContext false
+        val validatedFeedback = feedback.copy(message = normalizedMessage)
         val installationId = InstallationManager.getOrCreateId(context)
 
-        val payload = buildPayload(feedback, installationId)
+        val payload = buildPayload(validatedFeedback, installationId)
 
         // Try to send immediately
         return@withContext try {
             val success = post("$BASE_URL/api/v1/app/feedback", payload)
             if (!success) {
                 savePending(payload)
+                FeedbackRetryWorker.enqueue(context)
                 false
             } else {
                 true
@@ -64,26 +71,30 @@ class FeedbackManager(private val context: Context) {
         } catch (e: Exception) {
             Log.d(TAG, "Offline — saving feedback for later: ${e.message}")
             savePending(payload)
+            FeedbackRetryWorker.enqueue(context)
             false // Returns false = "will send later"
         }
     }
 
-    fun sendPending() {
-        scope.launch {
-            try {
-                val arr = readQueue()
-                if (arr.length() == 0) return@launch
-                val items = JSONArray()
-                for (i in 0 until arr.length()) {
-                    val item = arr.getJSONObject(i)
-                    items.put(item)
-                }
-                val batch = JSONObject().apply { put("items", items) }
-                val success = post("$BASE_URL/api/v1/app/feedback/offline", batch.toString())
-                if (success) clearQueue()
-            } catch (e: Exception) {
-                Log.w(TAG, "Failed to send pending feedback: ${e.message}")
+    suspend fun sendPendingNow(): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val arr = synchronized(queueLock) { readQueue() }
+            if (arr.length() == 0) return@withContext true
+            val items = JSONArray()
+            for (i in 0 until arr.length()) {
+                items.put(arr.getJSONObject(i))
             }
+            val batch = JSONObject().apply { put("items", items) }
+            val success = post("$BASE_URL/api/v1/app/feedback/offline", batch.toString())
+            if (success) {
+                removeSentItems(arr.length())
+                synchronized(queueLock) { readQueue().length() == 0 }
+            } else {
+                false
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Failed to send pending feedback: ${e.message}")
+            false
         }
     }
 
@@ -111,12 +122,19 @@ class FeedbackManager(private val context: Context) {
     }
 
     private fun savePending(payload: String) {
-        try {
-            val arr = readQueue()
-            arr.put(JSONObject(payload))
-            queueFile.writeText(arr.toString())
-        } catch (e: Exception) {
-            Log.w(TAG, "Failed to save pending feedback")
+        synchronized(queueLock) {
+            try {
+                val arr = readQueue()
+                val bounded = JSONArray()
+                val firstIndex = (arr.length() - (MAX_QUEUE_SIZE - 1)).coerceAtLeast(0)
+                for (i in firstIndex until arr.length()) {
+                    bounded.put(arr.get(i))
+                }
+                bounded.put(JSONObject(payload))
+                queueFile.writeText(bounded.toString())
+            } catch (e: Exception) {
+                Log.w(TAG, "Failed to save pending feedback")
+            }
         }
     }
 
@@ -126,7 +144,17 @@ class FeedbackManager(private val context: Context) {
         } else JSONArray()
     }
 
-    private fun clearQueue() { queueFile.delete() }
+    private fun removeSentItems(count: Int) {
+        synchronized(queueLock) {
+            val current = readQueue()
+            val remaining = JSONArray()
+            for (i in count until current.length()) {
+                remaining.put(current.get(i))
+            }
+            if (remaining.length() == 0) queueFile.delete()
+            else queueFile.writeText(remaining.toString())
+        }
+    }
 
     private fun post(url: String, json: String): Boolean {
         val conn = URL(url).openConnection() as HttpURLConnection

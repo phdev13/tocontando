@@ -25,4 +25,7 @@ interface EventReminderDao {
 
     @Query("UPDATE event_reminders SET enabled = :enabled WHERE id = :id")
     suspend fun updateReminderStatus(id: String, enabled: Boolean)
+
+    @Query("DELETE FROM event_reminders")
+    suspend fun deleteAllReminders()
 }

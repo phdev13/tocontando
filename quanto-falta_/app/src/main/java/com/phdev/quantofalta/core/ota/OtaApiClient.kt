@@ -7,18 +7,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.HttpURLConnection
-import java.net.URL
 import java.net.URLEncoder
+import java.net.URL
+import java.nio.charset.StandardCharsets
 
 /**
- * Lightweight OTA API client using only java.net (no OkHttp dependency required).
- * Validates responses before trusting them.
+ * Cliente simplificado para busca de atualizações OTA via JSON estático.
  */
 class OtaApiClient(private val context: Context) {
 
     companion object {
-        // Base URL injected at build time via BuildConfig (set via .env / CI)
-        // Default points to the Cloudflare Worker
         private val BASE_URL: String
             get() = try {
                 BuildConfig::class.java.getField("API_BASE_URL").get(null) as String
@@ -32,27 +30,20 @@ class OtaApiClient(private val context: Context) {
 
     suspend fun checkForUpdate(
         installationId: String,
-        releaseChannel: String = "stable",
+        releaseChannel: String = BuildConfig.OTA_RELEASE_CHANNEL,
     ): OtaUpdateInfo? = withContext(Dispatchers.IO) {
-        if (com.phdev.quantofalta.BuildConfig.FLAVOR == "playStore") return@withContext null
-
-        val versionCode = BuildConfig.VERSION_CODE
-        val versionName = BuildConfig.VERSION_NAME
-        val packageName = context.packageName
-        val androidVersion = android.os.Build.VERSION.RELEASE
-        val arch = android.os.Build.SUPPORTED_ABIS.firstOrNull() ?: "unknown"
-
-        val params = buildString {
-            append("versionCode=").append(versionCode)
-            append("&versionName=").append(URLEncoder.encode(versionName, "UTF-8"))
-            append("&packageName=").append(URLEncoder.encode(packageName, "UTF-8"))
-            append("&releaseChannel=").append(URLEncoder.encode(releaseChannel, "UTF-8"))
-            append("&androidVersion=").append(URLEncoder.encode(androidVersion, "UTF-8"))
-            append("&architecture=").append(URLEncoder.encode(arch, "UTF-8"))
-            append("&installationId=").append(URLEncoder.encode(installationId, "UTF-8"))
-        }
-
-        val url = URL("$BASE_URL/api/v1/app/ota/check?$params")
+        val currentVersionCode = BuildConfig.VERSION_CODE
+        
+        val url = URL(
+            "$BASE_URL/api/v1/app/ota/check" +
+                "?versionCode=$currentVersionCode" +
+                "&versionName=${BuildConfig.VERSION_NAME.urlEncoded()}" +
+                "&packageName=${BuildConfig.APPLICATION_ID.urlEncoded()}" +
+                "&releaseChannel=${releaseChannel.urlEncoded()}" +
+                "&androidVersion=${android.os.Build.VERSION.RELEASE.urlEncoded()}" +
+                "&architecture=${android.os.Build.SUPPORTED_ABIS.firstOrNull().orEmpty().urlEncoded()}" +
+                "&installationId=${installationId.urlEncoded()}"
+        )
         val conn = url.openConnection() as HttpURLConnection
         try {
             conn.connectTimeout = TIMEOUT_MS
@@ -61,12 +52,20 @@ class OtaApiClient(private val context: Context) {
             conn.setRequestProperty("Accept", "application/json")
 
             if (conn.responseCode != 200) {
-                Log.w(TAG, "OTA check returned ${conn.responseCode}")
+                Log.w(TAG, "OTA config not found at $url")
                 return@withContext null
             }
 
             val body = conn.inputStream.bufferedReader().readText()
-            parseUpdateResponse(body)
+            val updateInfo = parseUpdateResponse(body)
+            
+            // Só ativa se o versionCode do servidor for estritamente maior
+            if (updateInfo != null && updateInfo.versionCode > currentVersionCode) {
+                Log.i(TAG, "New version found: ${updateInfo.versionCode} (Current: $currentVersionCode)")
+                updateInfo
+            } else {
+                null
+            }
         } catch (e: Exception) {
             Log.w(TAG, "OTA check failed: ${e.message}")
             null
@@ -81,13 +80,6 @@ class OtaApiClient(private val context: Context) {
             val obj = root.optJSONObject("data") ?: root
             if (!obj.optBoolean("updateAvailable", false)) return null
 
-            val changelogArr = obj.optJSONArray("changelog")
-            val changelog = buildList {
-                if (changelogArr != null) {
-                    for (i in 0 until changelogArr.length()) add(changelogArr.getString(i))
-                }
-            }
-
             val rawApkUrl = obj.optString("apkUrl", "")
             val apkUrl = if (rawApkUrl.startsWith("/")) "$BASE_URL$rawApkUrl" else rawApkUrl
 
@@ -96,18 +88,34 @@ class OtaApiClient(private val context: Context) {
                 versionName = obj.getString("versionName"),
                 title = obj.optString("title", "Nova atualização disponível"),
                 summary = obj.optString("summary", ""),
-                changelog = changelog,
+                changelog = parseChangelog(obj),
                 apkUrl = apkUrl,
-                apkSizeBytes = if (obj.has("apkSize")) obj.getLong("apkSize") else null,
-                sha256 = obj.optString("sha256").takeIf { it.isNotBlank() },
+                apkSizeBytes = obj.optLong("apkSizeBytes", 0L).takeIf { it > 0 },
+                sha256 = obj.optString("sha256").takeIf { it.isNotBlank() && it != "null" },
                 mandatory = obj.optBoolean("mandatory", false),
                 rolloutPercentage = obj.optInt("rolloutPercentage", 100),
                 releaseChannel = obj.optString("releaseChannel", "stable"),
-                publishedAt = obj.optString("publishedAt").takeIf { it.isNotBlank() },
+                publishedAt = obj.optString("publishedAt").takeIf { it.isNotBlank() && it != "null" },
             )
         } catch (e: Exception) {
             Log.e(TAG, "Failed to parse OTA response: ${e.message}")
             null
         }
     }
+
+    private fun parseChangelog(obj: JSONObject): List<String> {
+        val changelogArr = obj.optJSONArray("changelog")
+        if (changelogArr != null) {
+            return buildList {
+                for (i in 0 until changelogArr.length()) {
+                    val line = changelogArr.optString(i).trim()
+                    if (line.isNotBlank()) add(line)
+                }
+            }
+        }
+        return emptyList()
+    }
+
+    private fun String.urlEncoded(): String =
+        URLEncoder.encode(this, StandardCharsets.UTF_8.name())
 }

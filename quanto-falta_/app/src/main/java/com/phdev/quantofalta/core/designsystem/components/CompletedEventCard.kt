@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,17 +31,16 @@ import com.phdev.quantofalta.core.designsystem.theme.AppTypography
 
 @Composable
 fun CompletedEventCard(
-    title: String,
-    date: String,
-    color: Color,
-    iconName: String,
+    event: com.phdev.quantofalta.domain.model.EventUiModel,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val isPremiumCardsEnabled = com.phdev.quantofalta.core.config.AppConfigManager.isPremiumCardsEnabled(context)
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .bounceClick(onClick = onClick),
+            .bounceClick(useHaptic = true, onClick = onClick),
         shape = AppShapes.medium,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp) // Flat as per design usually
@@ -54,32 +55,75 @@ fun CompletedEventCard(
                 modifier = Modifier
                     .size(40.dp)
                     .clip(AppShapes.pill)
-                    .background(color.copy(alpha = 0.15f)),
+                    .background(event.color.copy(alpha = 0.15f)),
                 contentAlignment = Alignment.Center
             ) {
-                Icon(
-                    imageVector = getIconByName(iconName),
-                    contentDescription = null,
-                    tint = color,
-                    modifier = Modifier.size(20.dp)
-                )
+                if (isPremiumCardsEnabled && event.coverImageUri != null) {
+                    val completedImageRequest = androidx.compose.runtime.remember(event.coverImageUri) {
+                        coil.request.ImageRequest.Builder(context)
+                            .data(event.coverImageUri)
+                            .size(160, 160)
+                            .memoryCacheKey("event-cover-completed:${event.coverImageUri}")
+                            .diskCacheKey("event-cover-completed:${event.coverImageUri}")
+                            .crossfade(false)
+                            .build()
+                    }
+                    coil.compose.AsyncImage(
+                        model = completedImageRequest,
+                        contentDescription = null,
+                        contentScale = androidx.compose.ui.layout.ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                } else {
+                    Icon(
+                        imageVector = getIconByName(event.iconName),
+                        contentDescription = null,
+                        tint = event.color,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
             }
             
             Spacer(modifier = Modifier.width(AppSpacing.medium))
             
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = title,
+                    text = event.title,
                     style = AppTypography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(
-                    text = date,
+                    text = event.secondaryText,
                     style = AppTypography.bodyMedium,
                     color = MaterialTheme.colorScheme.outline
                 )
+            }
+        }
+    }
+}
+
+@Composable
+fun CompletedEventCardSkeleton(modifier: Modifier = Modifier) {
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        shape = AppShapes.medium,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.2f)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = AppSpacing.medium, horizontal = AppSpacing.small),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            SkeletonIcon(size = 40.dp)
+            Spacer(modifier = Modifier.width(AppSpacing.medium))
+            Column(modifier = Modifier.weight(1f)) {
+                SkeletonText(width = 140.dp, height = 20.dp)
+                Spacer(modifier = Modifier.height(6.dp))
+                SkeletonText(width = 90.dp, height = 16.dp)
             }
         }
     }

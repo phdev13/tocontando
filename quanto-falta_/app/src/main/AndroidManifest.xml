@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Network for OTA checks, analytics, and feedback -->
+    <!-- Network for app config, analytics, sync, and feedback -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -11,7 +11,9 @@
 
     <!-- Notifications and Alarms -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission
+        android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
 
@@ -31,34 +33,18 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <activity-alias
-            android:name=".MainActivityAliasCopa"
-            android:targetActivity=".MainActivity"
-            android:icon="@drawable/ic_copa"
-            android:roundIcon="@drawable/ic_copa"
-            android:exported="true"
-            android:enabled="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-alias>
-
-        <activity-alias
-            android:name=".MainActivityAliasPadrao"
-            android:targetActivity=".MainActivity"
-            android:icon="@drawable/ic_padrao"
-            android:roundIcon="@drawable/ic_padrao"
-            android:exported="true"
-            android:enabled="false">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-alias>
+        <!-- UCrop – image cropper activity -->
+        <activity
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:theme="@style/Theme.MyApplication" />
 
         <!-- WorkManager initializer (auto via manifest merger) -->
         <provider
@@ -98,16 +84,56 @@
             </intent-filter>
         </receiver>
 
-        <!-- Glance Widget Receiver -->
+        <!-- Glance Widget Receiver (Classic 2x2) -->
         <receiver
             android:name=".feature.widget.EventWidgetReceiver"
-            android:exported="true">
+            android:exported="true"
+            android:label="Tô Contando - Clássico (2x2)">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/event_widget_info" />
+        </receiver>
+
+        <!-- Glance Widget Receiver (Micro 1x1) -->
+        <receiver
+            android:name=".feature.widget.MicroWidgetReceiver"
+            android:exported="true"
+            android:label="Tô Contando - Micro (1x1)">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/micro_widget_info" />
+        </receiver>
+
+        <!-- Glance Widget Receiver (Hero 4x2) -->
+        <receiver
+            android:name=".feature.widget.HeroWidgetReceiver"
+            android:exported="true"
+            android:label="Tô Contando - Hero (4x2) Premium">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/hero_widget_info" />
+        </receiver>
+
+        <!-- Glance Widget Receiver (List 4x3) -->
+        <receiver
+            android:name=".feature.widget.ListWidgetReceiver"
+            android:exported="true"
+            android:label="Tô Contando - Lista (4x3) Premium">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/list_widget_info" />
         </receiver>
 
         <!-- Glance Widget Configuration Activity -->

@@ -18,14 +18,8 @@ enum class PremiumFeature {
     /** Access icons beyond the first FREE_ICON_COUNT in the icon list. */
     ALL_ICONS,
 
-    /** Access colors beyond the first FREE_COLOR_COUNT in the color palette. */
-    ALL_COLORS,
-
     /** Protect individual events with biometric authentication. */
     BIOMETRIC_PROTECTION,
-
-    /** Export/import to cloud and cross-device sync (local JSON is always free). */
-    CLOUD_BACKUP,
 
     /** Advanced share image exports (story, wallpaper formats). */
     ADVANCED_EXPORT,
@@ -50,13 +44,10 @@ enum class PremiumFeature {
 
     companion object {
         /** Events a Free user can have active at the same time. */
-        const val FREE_EVENT_LIMIT = 5
+        const val FREE_EVENT_LIMIT = PremiumPolicy.FREE_EVENT_LIMIT
 
         /** Number of icons freely accessible (index 0..FREE_ICON_COUNT-1). */
-        const val FREE_ICON_COUNT = 21
-
-        /** Number of colors freely accessible (index 0..FREE_COLOR_COUNT-1). */
-        const val FREE_COLOR_COUNT = 4
+        const val FREE_ICON_COUNT = PremiumPolicy.FREE_ICON_COUNT
     }
 }
 

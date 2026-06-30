@@ -5,6 +5,7 @@ import com.phdev.quantofalta.domain.model.Event
 import com.phdev.quantofalta.domain.model.FormatTier
 
 class PremiumRequiredException : Exception("Format requires active Premium subscription")
+class EventLimitExceededException : Exception("Limite de 5 eventos para esta categoria excedido no plano gratuito. Conclua, exclua ou libere espaço para continuar.")
 class MissingReferenceDateException : Exception("Format requires a reference date")
 
 class SaveEventUseCase(

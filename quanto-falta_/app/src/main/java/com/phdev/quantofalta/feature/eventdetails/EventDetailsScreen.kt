@@ -22,6 +22,12 @@ import androidx.compose.material.icons.filled.Unarchive
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.RestartAlt
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -32,10 +38,13 @@ import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -95,15 +104,53 @@ fun EventDetailsScreen(
     val isPremium by viewModel.isPremium.collectAsStateWithLifecycle()
     var isAuthenticated by remember { mutableStateOf(false) }
     var authError by remember { mutableStateOf(false) }
+    var retryTrigger by remember { mutableIntStateOf(0) }
     var premiumFeatureToExplain by remember { mutableStateOf<PremiumFeatureInfo?>(null) }
 
     if (event == null) {
-        Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background))
+        Scaffold(
+            topBar = {
+                AppTopBar(
+                    title = "",
+                    navigationIcon = {
+                        IconButton(onClick = onBack) {
+                            Icon(Icons.Filled.ArrowBack, contentDescription = "Voltar")
+                        }
+                    }
+                )
+            },
+            containerColor = MaterialTheme.colorScheme.background
+        ) { paddingValues ->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues)
+                    .padding(horizontal = AppSpacing.large),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(modifier = Modifier.height(AppSpacing.medium))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonIcon(size = 80.dp)
+                Spacer(modifier = Modifier.height(AppSpacing.mediumLarge))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonText(width = 200.dp, height = 36.dp)
+                Spacer(modifier = Modifier.height(AppSpacing.extraSmall))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonText(width = 140.dp, height = 20.dp)
+                Spacer(modifier = Modifier.height(AppSpacing.huge))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonText(width = 160.dp, height = 112.dp)
+                Spacer(modifier = Modifier.height(8.dp))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonText(width = 80.dp, height = 32.dp)
+                Spacer(modifier = Modifier.height(AppSpacing.mediumLarge))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonBox(modifier = Modifier.width(100.dp).height(32.dp), shape = AppShapes.pill)
+                Spacer(modifier = Modifier.height(AppSpacing.extraLarge))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonText(width = 120.dp, height = 20.dp)
+                Spacer(modifier = Modifier.height(AppSpacing.small))
+                com.phdev.quantofalta.core.designsystem.components.SkeletonBox(modifier = Modifier.fillMaxWidth().height(8.dp), shape = AppShapes.pill)
+            }
+        }
         return
     }
 
-    LaunchedEffect(event.isPrivate, isPremium, isAuthenticated) {
-        if (event.isPrivate && isPremium && !isAuthenticated) {
+    LaunchedEffect(event.isPrivate, isPremium, isAuthenticated, retryTrigger) {
+        if (event.isPrivate && !isAuthenticated) {
             val activity = context.getActivity()
             if (activity != null) {
                 val biometricManager = BiometricManager.from(context)
@@ -114,7 +161,6 @@ fun EventDetailsScreen(
                             override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
                                 super.onAuthenticationError(errorCode, errString)
                                 authError = true
-                                onBack() // Go back if auth fails/cancelled
                             }
                             override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                                 super.onAuthenticationSucceeded(result)
@@ -132,12 +178,14 @@ fun EventDetailsScreen(
                         .build()
                     biometricPrompt.authenticate(promptInfo)
                 } else {
-                    isAuthenticated = true // Fallback if biometrics aren't available
+                    authError = true
+                    onBack()
                 }
             } else {
-                isAuthenticated = true
+                authError = true
+                onBack()
             }
-        } else if (!event.isPrivate || !isPremium) {
+        } else if (!event.isPrivate) {
             isAuthenticated = true
         }
     }
@@ -145,7 +193,39 @@ fun EventDetailsScreen(
     if (!isAuthenticated) {
         Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background), contentAlignment = Alignment.Center) {
             if (authError) {
-                Text("Erro de autenticação", color = MaterialTheme.colorScheme.error)
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Icon(
+                        imageVector = Icons.Filled.Lock,
+                        contentDescription = null,
+                        modifier = Modifier.size(48.dp),
+                        tint = MaterialTheme.colorScheme.outline
+                    )
+                    Spacer(modifier = Modifier.height(AppSpacing.medium))
+                    Text(
+                        text = "Evento bloqueado",
+                        style = AppTypography.headlineMedium,
+                        color = MaterialTheme.colorScheme.onBackground
+                    )
+                    Spacer(modifier = Modifier.height(AppSpacing.small))
+                    Text(
+                        text = "Use a biometria ou senha do dispositivo para visualizar.",
+                        style = AppTypography.bodyMedium,
+                        color = MaterialTheme.colorScheme.outline,
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(AppSpacing.large))
+                    Row(horizontalArrangement = Arrangement.spacedBy(AppSpacing.medium)) {
+                        androidx.compose.material3.OutlinedButton(onClick = onBack) {
+                            Text("Voltar")
+                        }
+                        Button(onClick = { 
+                            authError = false
+                            retryTrigger++ 
+                        }) {
+                            Text("Desbloquear")
+                        }
+                    }
+                }
             } else {
                 CircularProgressIndicator()
             }
@@ -204,6 +284,8 @@ fun EventDetailsScreen(
         )
     }
 
+    var showMenu by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             AppTopBar(
@@ -226,26 +308,56 @@ fun EventDetailsScreen(
                     IconButton(onClick = { onNavigate(Screen.CreateEvent.createRoute(eventId)) }) {
                         Icon(Icons.Filled.Edit, contentDescription = "Editar")
                     }
-                    IconButton(onClick = {
-                        try {
-                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                        } catch (e: Exception) {}
-                        viewModel.toggleArchived(eventId, !event.isArchived)
-                    }) {
-                        Icon(if (event.isArchived) Icons.Filled.Unarchive else Icons.Filled.Archive, contentDescription = if (event.isArchived) "Desarquivar" else "Arquivar")
-                    }
-                    IconButton(onClick = {
-                        try {
-                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                        } catch (e: Exception) {}
-                        viewModel.toggleCompleted(eventId, !event.isCompleted)
-                    }) {
-                        Icon(if (event.isCompleted) Icons.Filled.RestartAlt else Icons.Filled.Check, contentDescription = if (event.isCompleted) "Reativar" else "Concluir")
-                    }
-                    IconButton(onClick = {
-                        showDeleteDialog = true
-                    }) {
-                        Icon(Icons.Filled.Delete, contentDescription = "Deletar")
+                    Box {
+                        IconButton(onClick = { showMenu = !showMenu }) {
+                            Icon(Icons.Filled.MoreVert, contentDescription = "Mais opções")
+                        }
+                        DropdownMenu(
+                            expanded = showMenu,
+                            onDismissRequest = { showMenu = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(if (event.isPinned) "Remover destaque" else "Destacar") },
+                                leadingIcon = { 
+                                    Icon(
+                                        Icons.Filled.Star, 
+                                        contentDescription = null,
+                                        tint = if (event.isPinned) MaterialTheme.colorScheme.primary else androidx.compose.material3.LocalContentColor.current
+                                    ) 
+                                },
+                                onClick = { 
+                                    showMenu = false
+                                    try { haptic.performHapticFeedback(HapticFeedbackType.LongPress) } catch (e: Exception) {}
+                                    viewModel.togglePin(eventId) 
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(if (event.isArchived) "Desarquivar" else "Arquivar") },
+                                leadingIcon = { Icon(if (event.isArchived) Icons.Filled.Unarchive else Icons.Filled.Archive, contentDescription = null) },
+                                onClick = { 
+                                    showMenu = false
+                                    try { haptic.performHapticFeedback(HapticFeedbackType.LongPress) } catch (e: Exception) {}
+                                    viewModel.toggleArchived(eventId, !event.isArchived)
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text(if (event.isCompleted) "Reativar" else "Concluir") },
+                                leadingIcon = { Icon(if (event.isCompleted) Icons.Filled.RestartAlt else Icons.Filled.Check, contentDescription = null) },
+                                onClick = { 
+                                    showMenu = false
+                                    try { haptic.performHapticFeedback(HapticFeedbackType.LongPress) } catch (e: Exception) {}
+                                    viewModel.toggleCompleted(eventId, !event.isCompleted)
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Excluir", color = MaterialTheme.colorScheme.error) },
+                                leadingIcon = { Icon(Icons.Filled.Delete, contentDescription = null, tint = MaterialTheme.colorScheme.error) },
+                                onClick = { 
+                                    showMenu = false
+                                    showDeleteDialog = true
+                                }
+                            )
+                        }
                     }
                 }
             )
@@ -297,16 +409,30 @@ fun EventDetailsScreen(
             Spacer(modifier = Modifier.height(AppSpacing.huge))
             
             // Main Countdown
-            Text(
-                text = event.number,
-                style = AppTypography.displayLarge.copy(fontFeatureSettings = "tnum"),
-                color = event.color
-            )
-            Text(
-                text = event.units,
-                style = AppTypography.headlineMedium,
-                color = event.color
-            )
+            if (event.relationshipUiState != null || event.eventState != com.phdev.quantofalta.domain.model.EventState.ACTIVE) {
+                Text(
+                    text = event.primaryText,
+                    style = AppTypography.displayLarge.copy(
+                        fontSize = 48.sp,
+                        lineHeight = 48.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFeatureSettings = "tnum"
+                    ),
+                    color = event.color,
+                    textAlign = TextAlign.Center
+                )
+            } else {
+                Text(
+                    text = event.number,
+                    style = AppTypography.displayLarge.copy(fontFeatureSettings = "tnum"),
+                    color = event.color
+                )
+                Text(
+                    text = event.units,
+                    style = AppTypography.headlineMedium,
+                    color = event.color
+                )
+            }
             
             Spacer(modifier = Modifier.height(AppSpacing.mediumLarge))
             
@@ -326,84 +452,143 @@ fun EventDetailsScreen(
             
             Spacer(modifier = Modifier.height(AppSpacing.extraLarge))
             
-            // Progress Bar
-            val animatedProgress by animateFloatAsState(
-                targetValue = event.progress,
-                animationSpec = tween(500, easing = FastOutSlowInEasing),
-                label = "eventDetailsProgress"
-            )
-            
-            Text(
-                text = "${(event.progress * 100).toInt()}% concluído",
-                style = AppTypography.labelLarge,
-                color = MaterialTheme.colorScheme.outline
-            )
-            Spacer(modifier = Modifier.height(AppSpacing.small))
-            LinearProgressIndicator(
-                progress = { animatedProgress },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(8.dp)
-                    .clip(AppShapes.pill),
-                color = event.color,
-                trackColor = event.color.copy(alpha = 0.2f),
-                strokeCap = StrokeCap.Round
-            )
-            
-            Spacer(modifier = Modifier.height(AppSpacing.extraLarge))
-            
-            // Info Cards
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(AppSpacing.medium)
-            ) {
-                // Time Card
-                Card(
-                    modifier = Modifier.weight(1f),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                    shape = AppShapes.medium,
-                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            // Progress Bar and Info Cards
+            if (event.relationshipUiState == null) {
+                // Progress Bar
+                val animatedProgress by animateFloatAsState(
+                    targetValue = event.progress,
+                    animationSpec = tween(500, easing = FastOutSlowInEasing),
+                    label = "eventDetailsProgress"
+                )
+                
+                Text(
+                    text = "${(event.progress * 100).toInt()}% concluído",
+                    style = AppTypography.labelLarge,
+                    color = MaterialTheme.colorScheme.outline
+                )
+                Spacer(modifier = Modifier.height(AppSpacing.small))
+                LinearProgressIndicator(
+                    progress = { animatedProgress },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(8.dp)
+                        .clip(AppShapes.pill),
+                    color = event.color,
+                    trackColor = event.color.copy(alpha = 0.2f),
+                    strokeCap = StrokeCap.Round
+                )
+                
+                Spacer(modifier = Modifier.height(AppSpacing.extraLarge))
+                
+                // Info Cards
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(AppSpacing.medium)
                 ) {
-                    Column(
-                        modifier = Modifier.padding(AppSpacing.medium),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                    // Time Card
+                    Card(
+                        modifier = Modifier.weight(1f),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        shape = AppShapes.medium,
+                        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
                     ) {
-                        Text(
-                            text = "Horas restantes",
-                            style = AppTypography.bodyMedium,
-                            color = MaterialTheme.colorScheme.outline
-                        )
-                        Spacer(modifier = Modifier.height(AppSpacing.small))
-                        Text(
-                            text = event.totalHoursRemaining,
-                            style = AppTypography.headlineMedium,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
+                        Column(
+                            modifier = Modifier.padding(AppSpacing.medium),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = "Horas restantes",
+                                style = AppTypography.bodyMedium,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                            Spacer(modifier = Modifier.height(AppSpacing.small))
+                            Text(
+                                text = event.totalHoursRemaining,
+                                style = AppTypography.headlineMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                    }
+                    
+                    // Progress Card
+                    Card(
+                        modifier = Modifier.weight(1f),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        shape = AppShapes.medium,
+                        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(AppSpacing.medium),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = "Progresso total",
+                                style = AppTypography.bodyMedium,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                            Spacer(modifier = Modifier.height(AppSpacing.small))
+                            Text(
+                                text = "${(event.progress * 100).toInt()}%",
+                                style = AppTypography.headlineMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
                     }
                 }
-                
-                // Progress Card
-                Card(
-                    modifier = Modifier.weight(1f),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-                    shape = AppShapes.medium,
-                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            } else {
+                Spacer(modifier = Modifier.height(AppSpacing.large))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(AppSpacing.medium)
                 ) {
-                    Column(
-                        modifier = Modifier.padding(AppSpacing.medium),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                    // Time Card
+                    Card(
+                        modifier = Modifier.weight(1f),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        shape = AppShapes.medium,
+                        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
                     ) {
-                        Text(
-                            text = "Progresso total",
-                            style = AppTypography.bodyMedium,
-                            color = MaterialTheme.colorScheme.outline
-                        )
-                        Spacer(modifier = Modifier.height(AppSpacing.small))
-                        Text(
-                            text = "${(event.progress * 100).toInt()}%",
-                            style = AppTypography.headlineMedium,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
+                        Column(
+                            modifier = Modifier.padding(AppSpacing.medium),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = "Início",
+                                style = AppTypography.bodyMedium,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                            Spacer(modifier = Modifier.height(AppSpacing.small))
+                            Text(
+                                text = com.phdev.quantofalta.core.time.TimeUtils.formatDate(java.time.LocalDate.ofEpochDay(event.relationshipUiState.startEpochDay)),
+                                style = AppTypography.headlineMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                    }
+                    
+                    // Days Card
+                    Card(
+                        modifier = Modifier.weight(1f),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                        shape = AppShapes.medium,
+                        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(AppSpacing.medium),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = "Dias totais",
+                                style = AppTypography.bodyMedium,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                            Spacer(modifier = Modifier.height(AppSpacing.small))
+                            Text(
+                                text = event.relationshipUiState.stats.totalDays.toString(),
+                                style = AppTypography.headlineMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
                     }
                 }
             }
@@ -419,14 +604,15 @@ fun EventDetailsScreen(
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = com.phdev.quantofalta.core.utils.EventMessageProvider.getHighlightMessage(
+                    text = com.phdev.quantofalta.core.utils.AppCopyProvider.getHighlightMessage(
                         eventId = event.id,
                         iconName = event.iconName,
                         numberStr = event.number,
                         units = event.units,
-                        isCompleted = event.isCompleted,
+                        isCompleted = event.isCompleted || event.eventState == com.phdev.quantofalta.domain.model.EventState.COMPLETED,
                         isSoon = event.isSoon,
-                        rawTitle = event.title
+                        rawTitle = event.title,
+                        eventType = event.type
                     ),
                     style = AppTypography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -441,9 +627,17 @@ fun EventDetailsScreen(
                 Button(
                     onClick = {
                         try { haptic.performHapticFeedback(HapticFeedbackType.LongPress) } catch (e: Exception) {}
-                        viewModel.duplicateForNextYear(event.id) {
-                            onBack()
-                        }
+                        viewModel.duplicateForNextYear(
+                            id = event.id,
+                            onLimitReached = {
+                                premiumFeatureToExplain = PremiumFeatureInfo(
+                                    title = "Eventos ilimitados",
+                                    description = "O plano gratuito permite até cinco eventos ativos.",
+                                    icon = Icons.Filled.Star
+                                )
+                            },
+                            onComplete = onBack
+                        )
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -478,7 +672,7 @@ fun EventDetailsScreen(
                     if (isTimelineLocked) {
                         premiumFeatureToExplain = PremiumFeatureInfo(
                             title = "Histórico do Evento",
-                            description = "Veja a linha do tempo completa de edições, alertas e marcos alcançados.",
+                            description = "Veja a linha do tempo de criação, edições e mudanças de status do evento.",
                             icon = Icons.Filled.History
                         )
                     } else {

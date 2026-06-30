@@ -6,7 +6,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.phdev.quantofalta.ToContandoApplication
 import com.phdev.quantofalta.feature.home.HomeViewModel
-import com.phdev.quantofalta.feature.createevent.CreateEventViewModel
+import com.phdev.quantofalta.feature.standard.CreateEventViewModel
 import com.phdev.quantofalta.feature.eventdetails.EventDetailsViewModel
 import com.phdev.quantofalta.feature.completed.CompletedViewModel
 
@@ -21,11 +21,12 @@ object AppViewModelProvider {
                 app.container.entitlementManager
             )
         }
-    initializer {
+        initializer {
             val app = quantoFaltaApplication()
             CreateEventViewModel(
+                app,
                 app.container.eventRepository,
-                app.container.entitlementManager
+                app.container.permissionsUseCase
             )
         }
         initializer {
@@ -70,7 +71,30 @@ object AppViewModelProvider {
             com.phdev.quantofalta.feature.more.SyncViewModel(
                 app,
                 app.container.authManager,
-                app.container.database
+                app.container.database,
+                app.container.entitlementManager
+            )
+        }
+        initializer {
+            val app = quantoFaltaApplication()
+            com.phdev.quantofalta.feature.relationship.RelationshipViewModel(
+                app,
+                app.container.eventRepository,
+                app.container.permissionsUseCase
+            )
+        }
+        initializer {
+            val app = quantoFaltaApplication()
+            com.phdev.quantofalta.feature.finance.SalaryViewModel(
+                app.container.eventRepository,
+                app.container.analyticsManager,
+                app.container.permissionsUseCase
+            )
+        }
+        initializer {
+            val app = quantoFaltaApplication()
+            com.phdev.quantofalta.feature.celebration.CelebrationViewModel(
+                app.container.eventRepository
             )
         }
     }

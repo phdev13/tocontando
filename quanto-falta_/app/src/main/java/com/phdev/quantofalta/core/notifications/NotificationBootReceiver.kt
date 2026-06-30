@@ -4,8 +4,6 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.phdev.quantofalta.core.notifications.worker.NotificationReschedulerWorker
 
 class NotificationBootReceiver : BroadcastReceiver() {
@@ -20,8 +18,7 @@ class NotificationBootReceiver : BroadcastReceiver() {
             
             Log.d("BootReceiver", "Delega reagendamento ao WorkManager para não travar a main thread")
             
-            val request = OneTimeWorkRequestBuilder<NotificationReschedulerWorker>().build()
-            WorkManager.getInstance(context).enqueue(request)
+            NotificationReschedulerWorker.enqueue(context)
         }
     }
 }

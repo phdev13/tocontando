@@ -26,19 +26,29 @@ class AuthManager(context: Context) {
     fun getRefreshToken(): String? = prefs.getString("refresh_token", null)
     fun getUserId(): String? = prefs.getString("user_id", null)
     fun getDeviceId(): String? = prefs.getString("device_id", null)
+    fun getEmail(): String? = prefs.getString("email", null)
     
     fun getSyncCursor(): String = prefs.getString("sync_cursor", "") ?: ""
     fun saveSyncCursor(cursor: String) {
         prefs.edit().putString("sync_cursor", cursor).apply()
     }
+    
+    fun getSyncGeneration(): Int = prefs.getInt("sync_generation", 1)
+    fun saveSyncGeneration(generation: Int) {
+        prefs.edit().putInt("sync_generation", generation).apply()
+    }
 
-    fun saveTokens(accessToken: String, refreshToken: String, userId: String, deviceId: String) {
-        prefs.edit()
+    fun saveTokens(accessToken: String, refreshToken: String, userId: String, deviceId: String, email: String? = null) {
+        val editor = prefs.edit()
             .putString("access_token", accessToken)
             .putString("refresh_token", refreshToken)
             .putString("user_id", userId)
             .putString("device_id", deviceId)
-            .apply()
+        
+        if (email != null) {
+            editor.putString("email", email)
+        }
+        editor.apply()
     }
 
     fun clearAuth() {
@@ -47,8 +57,12 @@ class AuthManager(context: Context) {
 
     suspend fun requestOtp(email: String): Result<Unit> = withContext(Dispatchers.IO) {
         try {
+            val normalizedEmail = email.trim()
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(normalizedEmail).matches() || normalizedEmail.length > 254) {
+                return@withContext Result.failure(IllegalArgumentException("E-mail inválido"))
+            }
             val payload = JSONObject().apply {
-                put("email", email)
+                put("email", normalizedEmail)
             }
             val response = ApiClient.post("/api/v1/auth/otp/request", payload)
             if (response.isSuccess()) {
@@ -64,9 +78,17 @@ class AuthManager(context: Context) {
 
     suspend fun verifyOtp(email: String, code: String): Result<Unit> = withContext(Dispatchers.IO) {
         try {
+            val normalizedEmail = email.trim()
+            val normalizedCode = code.trim()
+            if (
+                !android.util.Patterns.EMAIL_ADDRESS.matcher(normalizedEmail).matches() ||
+                normalizedEmail.length > 254 ||
+                normalizedCode.length != 6 ||
+                normalizedCode.any { !it.isDigit() }
+            ) return@withContext Result.failure(IllegalArgumentException("Dados de verificação inválidos"))
             val payload = JSONObject().apply {
-                put("email", email)
-                put("code", code)
+                put("email", normalizedEmail)
+                put("code", normalizedCode)
                 put("device_name", "${Build.MANUFACTURER} ${Build.MODEL}")
             }
             val response = ApiClient.post("/api/v1/auth/otp/verify", payload)
@@ -76,7 +98,8 @@ class AuthManager(context: Context) {
                     json.getString("access_token"),
                     json.getString("refresh_token"),
                     json.getString("user_id"),
-                    json.getString("device_id")
+                    json.getString("device_id"),
+                    normalizedEmail
                 )
                 Result.success(Unit)
             } else {

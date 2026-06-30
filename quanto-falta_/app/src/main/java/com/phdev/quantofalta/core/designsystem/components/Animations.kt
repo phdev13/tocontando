@@ -1,6 +1,8 @@
 package com.phdev.quantofalta.core.designsystem.components
 
 import android.provider.Settings
+import android.app.ActivityManager
+import android.os.Build
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -22,20 +24,37 @@ import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+import android.content.Context
+
+object MotionConfig {
+    private var isReduced: Boolean? = null
+    
+    fun isReduced(context: Context): Boolean {
+        if (isReduced == null) {
+            isReduced = try {
+                val scale = Settings.Global.getFloat(
+                    context.contentResolver,
+                    Settings.Global.ANIMATOR_DURATION_SCALE,
+                    1.0f
+                )
+                val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as? ActivityManager
+                val lowRamDevice = activityManager?.isLowRamDevice == true
+                val smallMemoryClass = (activityManager?.memoryClass ?: Int.MAX_VALUE) <= 192
+                val oldAndroid = Build.VERSION.SDK_INT <= Build.VERSION_CODES.P
+                scale == 0f || lowRamDevice || smallMemoryClass || oldAndroid
+            } catch (e: Exception) {
+                false
+            }
+        }
+        return isReduced!!
+    }
+}
+
 @Composable
 fun isReducedMotionEnabled(): Boolean {
     val context = LocalContext.current
     return remember(context) {
-        try {
-            val scale = Settings.Global.getFloat(
-                context.contentResolver,
-                Settings.Global.ANIMATOR_DURATION_SCALE,
-                1.0f
-            )
-            scale == 0f
-        } catch (e: Exception) {
-            false
-        }
+        MotionConfig.isReduced(context)
     }
 }
 

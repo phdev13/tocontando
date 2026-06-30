@@ -47,5 +47,27 @@ val Colors = arrayOf(
     Color(0xFFFF9F0A), // Orange
     Color(0xFFFF453A), // Red
     Color(0xFFFF375F), // Pink
-    Color(0xFF32ADE6)  // Cyan
+    Color(0xFF32ADE6), // Cyan
+    
+    // Novas cores gratuitas (até a 15)
+    Color(0xFF00C7BE), // Teal
+    Color(0xFFFFD60A), // Yellow
+    Color(0xFF5856D6), // Indigo
+    Color(0xFF007AFF), // Azure
+    Color(0xFF30B0C7), // Light Blue
+    Color(0xFF8E8E93), // Gray
+    Color(0xFF14B8A6), // Emerald
+    Color(0xFFF59E0B), // Amber
+
+    // Cores Premium
+    Color(0xFFE11D48), // Rose
+    Color(0xFFC026D3), // Fuchsia
+    Color(0xFF9333EA), // Violet
+    Color(0xFF4F46E5), // Indigo Deep
+    Color(0xFF0284C7), // Light Blue Deep
+    Color(0xFF0D9488), // Teal Deep
+    Color(0xFF65A30D), // Lime
+    Color(0xFFEA580C), // Orange Deep
+    Color(0xFFB91C1C), // Red Deep
+    Color(0xFF475569)  // Slate
 )

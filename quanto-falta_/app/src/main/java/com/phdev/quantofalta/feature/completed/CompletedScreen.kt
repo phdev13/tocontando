@@ -29,6 +29,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.size
 import com.phdev.quantofalta.core.designsystem.components.AppBottomNav
+import com.phdev.quantofalta.core.designsystem.components.AdaptiveContent
 import com.phdev.quantofalta.core.designsystem.components.AppTopBar
 import com.phdev.quantofalta.core.designsystem.components.CompletedEventCard
 import com.phdev.quantofalta.core.designsystem.components.EmptyState
@@ -37,6 +38,7 @@ import androidx.compose.foundation.layout.Box
 import com.phdev.quantofalta.core.designsystem.theme.AppSpacing
 import com.phdev.quantofalta.core.designsystem.theme.AppTypography
 import com.phdev.quantofalta.core.navigation.Screen
+import com.phdev.quantofalta.domain.model.EventType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.phdev.quantofalta.core.AppViewModelProvider
@@ -50,23 +52,11 @@ fun CompletedScreen(
     viewModel: CompletedViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
     val completedEvents by viewModel.uiState.collectAsStateWithLifecycle()
-    val todayEvents = remember(completedEvents) { 
-        completedEvents.filter { event ->
-            event.date == "Concluído" // "Concluído" is the text used in toUiModel for past/done events
-            // We could improve it by looking at the actual date, but let's just divide by "today/soon" and "past"
-            // Wait, if it's done naturally, date="Concluído"
-            // If it was forced to complete? date is formatted normally.
-            true
-        }
-    }
-    
-    val nextDoneEvents = remember(completedEvents) { completedEvents.take(3) }
-    val olderDoneEvents = remember(completedEvents) { completedEvents.drop(3) }
     
     Scaffold(
         topBar = {
             AppTopBar(
-                title = "Concluídos",
+                title = "Memórias",
                 navigationIcon = {
                     IconButton(onClick = { onNavigate(Screen.Home.route) }) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "Voltar")
@@ -82,75 +72,89 @@ fun CompletedScreen(
         },
         containerColor = MaterialTheme.colorScheme.background
     ) { paddingValues ->
-        if (completedEvents.isEmpty()) {
+        if (completedEvents == null) {
+            AdaptiveContent(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                contentPadding = PaddingValues(AppSpacing.medium),
+                verticalArrangement = Arrangement.spacedBy(AppSpacing.medium)
+            ) {
+                item {
+                    Text(
+                        text = "Recentemente",
+                        style = AppTypography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onBackground
+                    )
+                    Spacer(modifier = Modifier.height(AppSpacing.small))
+                }
+                items(2) {
+                    com.phdev.quantofalta.core.designsystem.components.CompletedEventCardSkeleton(
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+                item {
+                    Spacer(modifier = Modifier.height(AppSpacing.medium))
+                    Text(
+                        text = "Anteriores",
+                        style = AppTypography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onBackground
+                    )
+                    Spacer(modifier = Modifier.height(AppSpacing.small))
+                }
+                items(4) {
+                    com.phdev.quantofalta.core.designsystem.components.CompletedEventCardSkeleton(
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            }
+            }
+        } else if (completedEvents!!.isEmpty()) {
+            AdaptiveContent(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
             Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
+                modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
             ) {
                 EmptyState(
-                    icon = getIconByName("VerifiedUser"),
-                    title = "Nenhum evento concluído",
-                    description = "Suas contagens regressivas concluídas, passadas ou marcadas como prontas aparecerão aqui.",
+                    icon = getIconByName("FavoriteBorder"),
+                    title = "Nenhuma memória guardada",
+                    description = "Os dias que chegaram e viraram memória aparecerão aqui.",
                     buttonText = "Ver Eventos Ativos",
                     onButtonClick = { onNavigate(Screen.Home.route) },
                     testTag = "completed_empty_state_timeline_button"
                 )
             }
+            }
         } else {
+            AdaptiveContent(modifier = Modifier.fillMaxSize().padding(paddingValues)) {
             LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues),
+                modifier = Modifier.fillMaxSize(),
                 contentPadding = PaddingValues(AppSpacing.medium),
                 verticalArrangement = Arrangement.spacedBy(AppSpacing.medium)
             ) {
-                // Section 1
-                if (nextDoneEvents.isNotEmpty()) {
-                    item {
+                completedEvents!!.forEach { (groupName, events) ->
+                    item(key = "header_$groupName") {
+                        if (groupName != completedEvents!!.keys.first()) {
+                            Spacer(modifier = Modifier.height(AppSpacing.medium))
+                        }
                         Text(
-                            text = "Recentemente",
+                            text = groupName,
                             style = AppTypography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onBackground
                         )
                         Spacer(modifier = Modifier.height(AppSpacing.small))
                     }
-                    items(nextDoneEvents, key = { it.id }) { event ->
-                        val index = nextDoneEvents.indexOf(event)
+                    items(events, key = { "completed_memories:${it.visualKey}" }) { event ->
+                        val index = events.indexOf(event)
                         CompletedEventCard(
-                            title = event.title,
-                            date = event.date,
-                            color = event.color,
-                            iconName = event.iconName,
-                            onClick = { onNavigate(Screen.EventDetails.createRoute(event.id)) },
+                            event = event,
+                            onClick = { 
+                                val route = detailRouteForCompleted(event)
+                                onNavigate(route) 
+                            },
                             modifier = Modifier.fadeSlideIn(delayMillis = (index * 40).coerceAtMost(240))
-                        )
-                    }
-                }
-
-                // Section 2
-                if (olderDoneEvents.isNotEmpty()) {
-                    item {
-                        Spacer(modifier = Modifier.height(AppSpacing.medium))
-                        Text(
-                            text = "Anteriores",
-                            style = AppTypography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onBackground
-                        )
-                        Spacer(modifier = Modifier.height(AppSpacing.small))
-                    }
-                    items(olderDoneEvents, key = { it.id }) { event ->
-                        val index = olderDoneEvents.indexOf(event)
-                        CompletedEventCard(
-                            title = event.title,
-                            date = event.date,
-                            color = event.color,
-                            iconName = event.iconName,
-                            onClick = { onNavigate(Screen.EventDetails.createRoute(event.id)) },
-                            modifier = Modifier.fadeSlideIn(delayMillis = ((index + 3) * 40).coerceAtMost(240))
                         )
                     }
                 }
@@ -168,6 +172,13 @@ fun CompletedScreen(
                     Spacer(modifier = Modifier.height(40.dp))
                 }
             }
+            }
         }
     }
+}
+
+private fun detailRouteForCompleted(event: com.phdev.quantofalta.domain.model.EventUiModel): String = when (event.type) {
+    EventType.STANDARD -> Screen.EventDetails.createRoute(event.id)
+    EventType.RELATIONSHIP -> Screen.RelationshipDetail.createRoute(event.id)
+    EventType.SALARY -> Screen.SalaryDetails.createRoute(event.id)
 }

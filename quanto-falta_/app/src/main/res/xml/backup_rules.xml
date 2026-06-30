@@ -4,4 +4,9 @@
     <include domain="sharedpref" path="."/>
     <!-- Exclude cache and temporary files implicitly by not including them -->
     <exclude domain="sharedpref" path="EncryptedSharedPreferences.xml"/>
+    <exclude domain="sharedpref" path="auth_prefs.xml"/>
+    <exclude domain="sharedpref" path="secret_entitlements_prefs.xml"/>
+    <exclude domain="sharedpref" path="fallback_entitlements_prefs.xml"/>
+    <exclude domain="sharedpref" path="AppConfigPrefs.xml"/>
+    <exclude domain="sharedpref" path="OtaDataStore.xml"/>
 </full-backup-content>

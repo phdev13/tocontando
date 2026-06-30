@@ -13,6 +13,18 @@ class NotificationReschedulerWorker(
     private val context: Context,
     workerParams: WorkerParameters
 ) : CoroutineWorker(context, workerParams) {
+    companion object {
+        private const val UNIQUE_NAME = "notification_reconciler"
+
+        fun enqueue(context: Context) {
+            val request = androidx.work.OneTimeWorkRequestBuilder<NotificationReschedulerWorker>().build()
+            androidx.work.WorkManager.getInstance(context).enqueueUniqueWork(
+                UNIQUE_NAME,
+                androidx.work.ExistingWorkPolicy.REPLACE,
+                request
+            )
+        }
+    }
 
     override suspend fun doWork(): Result {
         Log.d("ReschedulerWorker", "Iniciando reagendamento de notificações...")
@@ -58,6 +70,7 @@ class NotificationReschedulerWorker(
                 }
                 
                 NotificationScheduler.scheduleEventCompletion(context, event)
+                com.phdev.quantofalta.core.notifications.SmartNotificationManager.scheduleSmartNotifications(context, event)
 
                 val eventReminders = allReminders.filter { it.eventId == event.id }
                 for (reminderEntity in eventReminders) {

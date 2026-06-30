@@ -8,4 +8,5 @@
     android:configure="com.phdev.quantofalta.feature.widget.EventWidgetConfigurationActivity"
     android:initialLayout="@layout/glance_default_loading_layout"
     android:resizeMode="horizontal|vertical"
+    android:previewLayout="@layout/widget_preview_classic"
     android:widgetCategory="home_screen" />

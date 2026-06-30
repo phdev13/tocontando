@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 
 enum class NotificationStatus {
     SCHEDULED,
+    DISPATCHING,
     TRIGGERED,
     SNOOZED,
     CANCELLED,

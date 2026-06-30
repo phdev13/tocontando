@@ -6,8 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.phdev.quantofalta.core.notifications.worker.NotificationReschedulerWorker
 
 class AlarmPermissionReceiver : BroadcastReceiver() {
@@ -25,8 +23,7 @@ class AlarmPermissionReceiver : BroadcastReceiver() {
             }
             
             // Reagendar tudo usando o Worker, que vai reavaliar os fallbacks.
-            val request = OneTimeWorkRequestBuilder<NotificationReschedulerWorker>().build()
-            WorkManager.getInstance(context).enqueue(request)
+            NotificationReschedulerWorker.enqueue(context)
         }
     }
 }

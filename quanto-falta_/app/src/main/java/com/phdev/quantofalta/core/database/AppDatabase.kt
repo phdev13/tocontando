@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [EventEntity::class, EventReminderEntity::class, EventTimelineEntity::class, DeliveredMilestoneEntity::class, ScheduledNotificationEntity::class, PerformanceEntity::class, OutboxEntity::class], version = 10, exportSchema = false)
+@Database(entities = [EventEntity::class, EventReminderEntity::class, EventTimelineEntity::class, DeliveredMilestoneEntity::class, ScheduledNotificationEntity::class, PerformanceEntity::class, SyncOperationEntity::class], version = 18, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun eventDao(): EventDao
     abstract fun eventReminderDao(): EventReminderDao
@@ -16,7 +16,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun deliveredMilestoneDao(): DeliveredMilestoneDao
     abstract fun scheduledNotificationDao(): ScheduledNotificationDao
     abstract fun performanceDao(): PerformanceDao
-    abstract fun outboxDao(): OutboxDao
+    abstract fun syncOperationDao(): SyncOperationDao
     
     companion object {
         @Volatile
@@ -148,6 +148,98 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        val MIGRATION_10_11 = object : Migration(10, 11) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `relationshipType` TEXT")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `relationshipStartEpochDay` INTEGER")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `relationshipMonthlyEnabled` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `relationshipAnnualEnabled` INTEGER NOT NULL DEFAULT 1")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `relationshipMilestonesEnabled` INTEGER NOT NULL DEFAULT 1")
+            }
+        }
+
+        val MIGRATION_11_12 = object : Migration(11, 12) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryFrequency` TEXT")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryPaymentDay` INTEGER")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryPaymentDateEpochDay` INTEGER")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryCustomIntervalDays` INTEGER")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryWeekendRule` TEXT")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryShowBusinessDays` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryValue` REAL")
+            }
+        }
+
+        val MIGRATION_12_13 = object : Migration(12, 13) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                // Remove outbox
+                db.execSQL("DROP TABLE IF EXISTS `outbox`")
+                
+                // Add new fields to events
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `remoteId` TEXT")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `userId` TEXT")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `deviceId` TEXT NOT NULL DEFAULT ''")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `serverUpdatedAt` INTEGER")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `syncVersion` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `deletedByDeviceId` TEXT")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `deleteOperationId` TEXT")
+                
+                // Update syncState mapping if needed, old 'PENDING' usually becomes 'PENDING_UPDATE' or 'PENDING_CREATE'
+                // For safety, we map to PENDING_UPDATE.
+                db.execSQL("UPDATE `events` SET `syncState` = 'PENDING_UPDATE' WHERE `syncState` = 'PENDING'")
+
+                // Create sync_operations
+                db.execSQL(
+                    "CREATE TABLE IF NOT EXISTS `sync_operations` (" +
+                    "`operationId` TEXT NOT NULL, " +
+                    "`entityType` TEXT NOT NULL, " +
+                    "`entityId` TEXT NOT NULL, " +
+                    "`operationType` TEXT NOT NULL, " +
+                    "`payload` TEXT, " +
+                    "`status` TEXT NOT NULL, " +
+                    "`retryCount` INTEGER NOT NULL, " +
+                    "`lastError` TEXT, " +
+                    "`createdAt` INTEGER NOT NULL, " +
+                    "PRIMARY KEY(`operationId`))"
+                )
+            }
+        }
+
+        val MIGRATION_13_14 = object : Migration(13, 14) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `standardModeStyle` TEXT NOT NULL DEFAULT 'classic'")
+            }
+        }
+
+        val MIGRATION_14_15 = object : Migration(14, 15) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryModeStyle` TEXT NOT NULL DEFAULT 'next_salary'")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryGoalTarget` REAL")
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `salaryCustomPhrase` TEXT")
+            }
+        }
+
+        val MIGRATION_15_16 = object : Migration(15, 16) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `type` TEXT NOT NULL DEFAULT 'STANDARD'")
+                // Ensure existing records have correct types based on the old fallback logic
+                db.execSQL("UPDATE `events` SET `type` = 'SALARY' WHERE `salaryFrequency` IS NOT NULL")
+                db.execSQL("UPDATE `events` SET `type` = 'RELATIONSHIP' WHERE `relationshipType` IS NOT NULL")
+            }
+        }
+
+        val MIGRATION_16_17 = object : Migration(16, 17) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `relationshipModeStyle` TEXT NOT NULL DEFAULT 'heart'")
+            }
+        }
+
+        val MIGRATION_17_18 = object : Migration(17, 18) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE `events` ADD COLUMN `lastCelebrationEpochDay` INTEGER")
+            }
+        }
+
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
@@ -155,7 +247,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "quanto_falta_database"
                 )
-                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10)
+                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16, MIGRATION_16_17, MIGRATION_17_18)
                 .build()
                 INSTANCE = instance
                 instance

@@ -26,9 +26,10 @@ class AppContainer(private val context: Context) {
     val smartFeedbackManager by lazy { SmartFeedbackManager(context) }
     val themeManager by lazy { ThemeManager(context) }
     val introManager by lazy { IntroManager(context) }
-    val testersManager by lazy { TestersManager(context, analyticsManager) }
+    val testersManager by lazy { TestersManager(context) }
     val otaManager: OtaManager get() = OtaManager.getInstance(context)
     val entitlementManager by lazy { EntitlementManager(context) }
+    val permissionsUseCase by lazy { com.phdev.quantofalta.domain.usecase.PermissionsUseCase(entitlementManager) }
     val billingClientWrapper by lazy { BillingClientWrapper(context, entitlementManager) }
 
     // Repository: receives all DAO dependencies and the shared SmartFeedbackManager instance
@@ -38,9 +39,10 @@ class AppContainer(private val context: Context) {
             eventDao = database.eventDao(),
             eventReminderDao = database.eventReminderDao(),
             eventTimelineDao = database.eventTimelineDao(),
-            outboxDao = database.outboxDao(),
+            syncOperationDao = database.syncOperationDao(),
             smartFeedbackManager = smartFeedbackManager,
-            analyticsManager = analyticsManager
+            analyticsManager = analyticsManager,
+            entitlementManager = entitlementManager
         )
     }
 }

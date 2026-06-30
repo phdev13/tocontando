@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.android)
@@ -7,6 +9,18 @@ plugins {
   alias(libs.plugins.secrets)
 }
 
+val versionPropsFile = file("version.properties")
+val versionProps = Properties()
+if (versionPropsFile.exists()) {
+    versionPropsFile.inputStream().use { stream -> versionProps.load(stream) }
+} else {
+    versionProps["VERSION_CODE"] = "1"
+    versionProps["VERSION_NAME"] = "1.0"
+}
+
+val appVersionCode = (versionProps["VERSION_CODE"] as String).toInt()
+val appVersionName = versionProps["VERSION_NAME"] as String
+
 android {
   namespace = "com.phdev.quantofalta"
   compileSdk = 36
@@ -15,8 +29,8 @@ android {
     applicationId = "com.phdev.quantofalta"
     minSdk = 24
     targetSdk = 36
-    versionCode = 1
-    versionName = "1.0"
+    versionCode = appVersionCode
+    versionName = appVersionName
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -29,12 +43,16 @@ android {
       buildConfigField("String", "API_BASE_URL", "\"https://api.tocontando.com.br\"")
       buildConfigField("String", "SITE_BASE_URL", "\"https://tocontando.com.br\"")
       buildConfigField("String", "SHARE_BASE_URL", "\"https://share.tocontando.com.br\"")
+      buildConfigField("Boolean", "OTA_UPDATES_SUPPORTED", "false")
+      buildConfigField("String", "OTA_RELEASE_CHANNEL", "\"playstore\"")
     }
     create("website") {
       dimension = "distribution"
       buildConfigField("String", "API_BASE_URL", "\"https://api.tocontando.com.br\"")
       buildConfigField("String", "SITE_BASE_URL", "\"https://tocontando.com.br\"")
       buildConfigField("String", "SHARE_BASE_URL", "\"https://share.tocontando.com.br\"")
+      buildConfigField("Boolean", "OTA_UPDATES_SUPPORTED", "true")
+      buildConfigField("String", "OTA_RELEASE_CHANNEL", "\"stable\"")
     }
   }
 
@@ -50,7 +68,7 @@ android {
 
   buildTypes {
     release {
-      isCrunchPngs = true // usually helpful for size
+      isCrunchPngs = true
       isMinifyEnabled = true
       isShrinkResources = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -71,6 +89,7 @@ android {
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
+    isCoreLibraryDesugaringEnabled = true
   }
   kotlinOptions {
     jvmTarget = "11"
@@ -79,13 +98,16 @@ android {
     compose = true
     buildConfig = true
   }
+  composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    metricsDestination = layout.buildDirectory.dir("compose_compiler")
+  }
   testOptions { unitTests { isIncludeAndroidResources = true } }
 }
 
-composeCompiler {
-  reportsDestination = layout.buildDirectory.dir("compose_compiler")
-  metricsDestination = layout.buildDirectory.dir("compose_compiler")
-  enableStrongSkippingMode = true
+ksp {
+  arg("room.schemaLocation", "$projectDir/schemas")
+  arg("room.incremental", "true")
 }
 
 // Configure the Secrets Gradle Plugin to use .env and .env.example files
@@ -127,6 +149,7 @@ dependencies {
   implementation("androidx.glance:glance-material3:1.1.0")
   implementation("androidx.biometric:biometric:1.2.0-alpha05")
   implementation(libs.coil.compose)
+  implementation("com.vanniktech:android-image-cropper:4.6.0")
   // implementation(libs.converter.moshi)
   // implementation(libs.firebase.ai)
   implementation(libs.kotlinx.coroutines.android)
@@ -156,4 +179,27 @@ dependencies {
   implementation(libs.metricsPerformance)
   // "ksp"(libs.moshi.kotlin.codegen)
   implementation(libs.kotlinx.collections.immutable)
+  coreLibraryDesugaring(libs.desugar.jdk.libs)
+}
+
+tasks.register("bumpVersionCode") {
+  group = "versioning"
+  description = "Incrementa VERSION_CODE em app/version.properties antes de publicar um APK OTA."
+
+  doLast {
+    val props = Properties()
+    if (versionPropsFile.exists()) {
+      versionPropsFile.inputStream().use { props.load(it) }
+    }
+
+    val currentCode = props.getProperty("VERSION_CODE", "1").toInt()
+    props.setProperty("VERSION_CODE", (currentCode + 1).toString())
+    props.setProperty("VERSION_NAME", props.getProperty("VERSION_NAME", "1.0"))
+
+    versionPropsFile.outputStream().use { output ->
+      props.store(output, "Auto-incremented by Gradle")
+    }
+
+    println("VERSION_CODE ${currentCode} -> ${currentCode + 1}")
+  }
 }

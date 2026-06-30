@@ -25,7 +25,6 @@ import androidx.compose.ui.res.painterResource
 import coil.compose.AsyncImage
 import com.phdev.quantofalta.R
 import com.phdev.quantofalta.ToContandoApplication
-import com.phdev.quantofalta.core.analytics.AnalyticsEvent
 import com.phdev.quantofalta.core.testers.Tester
 import com.phdev.quantofalta.core.testers.TestersState
 import kotlinx.coroutines.launch
@@ -33,19 +32,16 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TestersScreen(
-    onBack: () -> Unit,
-    onNavigate: (String) -> Unit
+    onBack: () -> Unit
 ) {
     val context = LocalContext.current
     val appContainer = (context.applicationContext as ToContandoApplication).container
     val testersManager = appContainer.testersManager
-    val analyticsManager = appContainer.analyticsManager
     val coroutineScope = rememberCoroutineScope()
 
     val state by testersManager.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
-        analyticsManager.track(AnalyticsEvent.TestersScreenOpened)
         coroutineScope.launch {
             testersManager.loadAndSync()
         }
@@ -64,11 +60,7 @@ fun TestersScreen(
                     containerColor = MaterialTheme.colorScheme.background,
                     titleContentColor = MaterialTheme.colorScheme.onBackground
                 ),
-                actions = {
-                    IconButton(onClick = { onNavigate(com.phdev.quantofalta.core.navigation.Screen.Diagnostics.route) }) {
-                        Icon(Icons.Default.Warning, contentDescription = "Diagnostics")
-                    }
-                }
+                actions = {}
             )
         }
     ) { paddingValues ->
@@ -154,7 +146,7 @@ fun TestersScreen(
                                     }
                                 }
                             }
-                            items(currentState.testers, key = { it.id }) { tester ->
+                            items(currentState.testers, key = { "tester_${it.id}" }) { tester ->
                                 TesterCard(tester)
                             }
                             item {

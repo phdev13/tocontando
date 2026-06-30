@@ -68,6 +68,35 @@ object ApiClient {
         }
     }
 
+    /**
+     * GET from a path and return the raw HTTP response.
+     */
+    suspend fun get(path: String, headers: Map<String, String> = emptyMap()): Response = withContext(Dispatchers.IO) {
+        val url = URL("$baseUrl$path")
+        val conn = url.openConnection() as HttpURLConnection
+        try {
+            conn.connectTimeout = CONNECT_TIMEOUT_MS
+            conn.readTimeout    = READ_TIMEOUT_MS
+            conn.requestMethod  = "GET"
+            conn.setRequestProperty("Accept", "application/json")
+            headers.forEach { (key, value) ->
+                conn.setRequestProperty(key, value)
+            }
+
+            val status = conn.responseCode
+            val stream = if (status >= 400) (conn.errorStream ?: conn.inputStream) else conn.inputStream
+            val body   = stream.bufferedReader(Charsets.UTF_8).use { it.readText() }
+
+            Log.d(TAG, "GET $path -> $status")
+            Response(status, body)
+        } catch (e: IOException) {
+            Log.w(TAG, "GET $path failed: ${e.message}")
+            throw e
+        } finally {
+            conn.disconnect()
+        }
+    }
+
 
     fun unwrapDataObject(body: String): JSONObject {
         val root = runCatching { JSONObject(body) }.getOrNull() ?: return JSONObject()

@@ -89,7 +89,7 @@ fun TimelineBottomSheet(
                 LazyColumn(
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    itemsIndexed(timeline) { index, entry ->
+                    itemsIndexed(timeline, key = { _, entry -> "timeline_${entry.id}" }) { index, entry ->
                         val isLast = index == timeline.lastIndex
                         TimelineItem(entry = entry, isLast = isLast)
                     }

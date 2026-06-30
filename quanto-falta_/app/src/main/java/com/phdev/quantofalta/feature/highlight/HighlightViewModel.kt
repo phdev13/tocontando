@@ -15,7 +15,7 @@ import com.phdev.quantofalta.domain.model.dateMillis
 
 sealed interface HighlightUiState {
     object Loading : HighlightUiState
-    data class Success(val event: EventUiModel) : HighlightUiState
+    data class Success(val events: List<EventUiModel>) : HighlightUiState
     object Empty : HighlightUiState
 }
 
@@ -37,19 +37,37 @@ class HighlightViewModel(
     }
 
     private fun buildStateFlow(id: String): StateFlow<HighlightUiState> {
-        val eventFlow = if (id == "1" || id.isBlank()) {
+        val eventsFlow = if (id == "1" || id.isBlank()) {
             repository.getAllEvents().map { events ->
-                val now = System.currentTimeMillis()
-                events.filter { !it.isArchived && !it.isCompleted && it.dateMillis > now }
-                    .minByOrNull { it.dateMillis }
+                val active = events.filter { !it.isArchived }
+                val pinned = active.filter { it.isPinned }
+                if (pinned.isNotEmpty()) {
+                    pinned.sortedWith(
+                        compareBy<com.phdev.quantofalta.domain.model.Event> { it.type.ordinal }
+                            .thenBy { it.targetDate.toEpochDay() }
+                    )
+                } else {
+                    // Se não tiver nenhum pino, pegamos os auto-destacados de cada modo (igual na Home)
+                    val activeIncomplete = active.filter { !it.isCompleted }
+                    val standardFirst = activeIncomplete.filter { it.type == com.phdev.quantofalta.domain.model.EventType.STANDARD }
+                        .minByOrNull { it.targetDate.toEpochDay() }
+                    val relFirst = activeIncomplete.filter { it.type == com.phdev.quantofalta.domain.model.EventType.RELATIONSHIP }
+                        .minByOrNull { it.createdAtMillis }
+                    val salaryFirst = activeIncomplete.filter { it.type == com.phdev.quantofalta.domain.model.EventType.SALARY }
+                        .minByOrNull { it.createdAtMillis }
+                    listOfNotNull(standardFirst, relFirst, salaryFirst)
+                }
             }
         } else {
-            repository.getEventById(id)
+            repository.getEventById(id).map { event -> event?.let(::listOf).orEmpty() }
         }
 
-        return combine(eventFlow, ticker) { event, currentMillis ->
-            if (event != null) {
-                HighlightUiState.Success(event.toUiModel(java.time.Instant.ofEpochMilli(currentMillis), application))
+        return combine(eventsFlow, ticker) { events, currentMillis ->
+            val uiEvents = events.map { event ->
+                event.toUiModel(java.time.Instant.ofEpochMilli(currentMillis), application)
+            }
+            if (uiEvents.isNotEmpty()) {
+                HighlightUiState.Success(uiEvents)
             } else {
                 HighlightUiState.Empty
             }

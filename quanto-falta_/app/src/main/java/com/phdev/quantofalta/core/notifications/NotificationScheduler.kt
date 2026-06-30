@@ -12,93 +12,70 @@ import com.phdev.quantofalta.core.database.ScheduledNotificationEntity
 import com.phdev.quantofalta.core.database.NotificationStatus
 import com.phdev.quantofalta.core.notifications.model.EventReminder
 import com.phdev.quantofalta.core.notifications.model.TriggerType
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 object NotificationScheduler {
     private const val TAG = "NotificationScheduler"
 
-    fun scheduleReminder(context: Context, event: EventEntity, reminder: EventReminder) {
+    suspend fun scheduleReminder(context: Context, event: EventEntity, reminder: EventReminder) {
         if (!reminder.enabled) return
         
         val triggerTimeMillis = calculateTriggerTime(event, reminder)
         if (triggerTimeMillis <= System.currentTimeMillis()) return
 
-        CoroutineScope(Dispatchers.IO).launch {
-            scheduleInternal(
-                context = context,
-                id = reminder.id,
-                eventId = event.id,
-                triggerTimeMillis = triggerTimeMillis,
-                type = "REMINDER",
-                action = "ACTION_DISPATCH_REMINDER",
-                extraKey = "EXTRA_REMINDER_ID",
-                extraValue = reminder.id
-            )
-        }
+        scheduleInternal(context, reminder.id, event.id, triggerTimeMillis, "REMINDER",
+            "ACTION_DISPATCH_REMINDER", "EXTRA_REMINDER_ID", reminder.id)
     }
 
-    fun cancelReminder(context: Context, reminderId: String) {
+    suspend fun cancelReminder(context: Context, reminderId: String) {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val pendingIntent = getPendingIntentForCancel(context, reminderId.hashCode(), "ACTION_DISPATCH_REMINDER")
+        val pendingIntent = getPendingIntentForCancel(context, NotificationIds.fromKey("reminder:$reminderId"), "ACTION_DISPATCH_REMINDER")
         alarmManager.cancel(pendingIntent)
         
-        CoroutineScope(Dispatchers.IO).launch {
-            AppDatabase.getDatabase(context).scheduledNotificationDao().deleteById(reminderId)
-        }
+        AppDatabase.getDatabase(context).scheduledNotificationDao().deleteById(reminderId)
     }
 
-    fun scheduleEventCompletion(context: Context, event: EventEntity) {
+    suspend fun scheduleEventCompletion(context: Context, event: EventEntity) {
         if (event.isCompleted || event.isArchived) return
         val dateMillis = getEventMillis(event)
         if (dateMillis <= System.currentTimeMillis()) return
 
         val scheduleId = "COMPLETION_${event.id}"
-
-        CoroutineScope(Dispatchers.IO).launch {
-            scheduleInternal(
-                context = context,
-                id = scheduleId,
-                eventId = event.id,
-                triggerTimeMillis = dateMillis,
-                type = "COMPLETION",
-                action = "ACTION_EVENT_COMPLETED",
-                extraKey = "EXTRA_EVENT_ID",
-                extraValue = event.id
-            )
+        val hasExactReminder = AppDatabase.getDatabase(context).eventReminderDao()
+            .getRemindersForEventSync(event.id)
+            .any { it.enabled && it.triggerType == TriggerType.EXACT.name }
+        if (hasExactReminder) {
+            cancelEventCompletion(context, event.id)
+            return
         }
+
+        scheduleInternal(context, scheduleId, event.id, dateMillis, "COMPLETION",
+            "ACTION_EVENT_COMPLETED", "EXTRA_EVENT_ID", event.id)
     }
 
-    fun cancelEventCompletion(context: Context, eventId: String) {
+    suspend fun cancelEventCompletion(context: Context, eventId: String) {
         val scheduleId = "COMPLETION_$eventId"
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val pendingIntent = getPendingIntentForCancel(context, scheduleId.hashCode(), "ACTION_EVENT_COMPLETED")
+        val pendingIntent = getPendingIntentForCancel(context, NotificationIds.fromKey("completion:$eventId"), "ACTION_EVENT_COMPLETED")
         alarmManager.cancel(pendingIntent)
         
-        CoroutineScope(Dispatchers.IO).launch {
-            AppDatabase.getDatabase(context).scheduledNotificationDao().deleteById(scheduleId)
-        }
+        AppDatabase.getDatabase(context).scheduledNotificationDao().deleteById(scheduleId)
     }
 
-    fun scheduleSnooze(context: Context, reminderId: String, eventId: String, delayMillis: Long = 30 * 60 * 1000L) {
+    suspend fun scheduleSnooze(context: Context, reminderId: String, eventId: String, delayMillis: Long = 30 * 60 * 1000L) {
         val triggerTimeMillis = System.currentTimeMillis() + delayMillis
-        
-        CoroutineScope(Dispatchers.IO).launch {
-            val db = AppDatabase.getDatabase(context).scheduledNotificationDao()
-            db.incrementSnooze(reminderId)
-            
-            scheduleInternal(
-                context = context,
-                id = reminderId,
-                eventId = eventId,
-                triggerTimeMillis = triggerTimeMillis,
-                type = "REMINDER",
-                action = "ACTION_DISPATCH_REMINDER",
-                extraKey = "EXTRA_REMINDER_ID",
-                extraValue = reminderId
-            )
-        }
+        val db = AppDatabase.getDatabase(context).scheduledNotificationDao()
+        db.incrementSnooze(reminderId)
+
+        scheduleInternal(
+            context = context,
+            id = reminderId,
+            eventId = eventId,
+            triggerTimeMillis = triggerTimeMillis,
+            type = "REMINDER",
+            action = "ACTION_DISPATCH_REMINDER",
+            extraKey = "EXTRA_REMINDER_ID",
+            extraValue = reminderId
+        )
     }
 
     private suspend fun scheduleInternal(
@@ -124,6 +101,7 @@ object NotificationScheduler {
             if (action == "ACTION_DISPATCH_REMINDER") {
                 putExtra("EXTRA_EVENT_ID", eventId)
             }
+            putExtra("EXTRA_TRIGGER_AT", triggerTimeMillis)
         }
 
         val flags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -134,7 +112,7 @@ object NotificationScheduler {
 
         val pendingIntent = PendingIntent.getBroadcast(
             context,
-            id.hashCode(),
+            NotificationIds.fromKey("${type.lowercase()}:$id"),
             intent,
             flags
         )
@@ -192,6 +170,20 @@ object NotificationScheduler {
             Log.d(TAG, "Agendado: $id para $triggerTimeMillis (Exato: $canScheduleExact)")
         } catch (e: SecurityException) {
             Log.e(TAG, "Falha de permissão ao agendar: ${e.message}")
+            AppDatabase.getDatabase(context).scheduledNotificationDao().insertOrUpdate(
+                ScheduledNotificationEntity(
+                    id = id,
+                    eventId = eventId,
+                    triggerAt = triggerTimeMillis,
+                    type = type,
+                    status = NotificationStatus.FAILED.name,
+                    isExact = false,
+                    snoozeCount = 0,
+                    scheduledAt = System.currentTimeMillis(),
+                    lastTriggeredAt = null,
+                    lastError = e.message
+                )
+            )
         }
     }
 

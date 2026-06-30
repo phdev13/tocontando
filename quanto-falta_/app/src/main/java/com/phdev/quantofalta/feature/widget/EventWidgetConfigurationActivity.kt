@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.state.updateAppWidgetState
-import com.phdev.quantofalta.domain.model.dateMillis
+import com.phdev.quantofalta.domain.model.toUiModel
 import com.phdev.quantofalta.ToContandoApplication
 import com.phdev.quantofalta.core.designsystem.components.AdaptiveIcon
 import com.phdev.quantofalta.core.designsystem.theme.AppTheme
@@ -38,15 +38,12 @@ import com.phdev.quantofalta.core.designsystem.theme.AppTypography
 import com.phdev.quantofalta.core.time.TimeUtils
 import com.phdev.quantofalta.data.repository.EventRepository
 import com.phdev.quantofalta.domain.model.Event
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.flow.first
+import androidx.lifecycle.lifecycleScope
 
 class EventWidgetConfigurationActivity : ComponentActivity() {
 
     private lateinit var eventRepository: EventRepository
-    private var isPremium by mutableStateOf(false)
     private var appWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID
 
     @OptIn(ExperimentalMaterial3Api::class)
@@ -55,11 +52,6 @@ class EventWidgetConfigurationActivity : ComponentActivity() {
         
         val app = (applicationContext as ToContandoApplication)
         eventRepository = app.container.eventRepository
-        val entitlementManager = app.container.entitlementManager
-
-        GlobalScope.launch {
-            isPremium = entitlementManager.hasActivePremium.first()
-        }
 
         setResult(RESULT_CANCELED)
 
@@ -75,11 +67,27 @@ class EventWidgetConfigurationActivity : ComponentActivity() {
 
         setContent {
             val themeMode by app.container.themeManager.themeState.collectAsState(initial = com.phdev.quantofalta.core.designsystem.theme.AppThemeMode.SYSTEM)
+            // Collect isPremium reactively so the UI updates immediately if the
+            // user purchases a plan while this Activity is open.
+            val isPremium by app.container.entitlementManager.hasActivePremium
+                .collectAsState(initial = false)
+
+            
+            val widgetManager = remember { AppWidgetManager.getInstance(this@EventWidgetConfigurationActivity) }
+            val providerInfo = remember { widgetManager.getAppWidgetInfo(appWidgetId) }
+            val providerClass = providerInfo?.provider?.className
+            
+            val isMicro = providerClass == MicroWidgetReceiver::class.java.name
+            val isHero = providerClass == HeroWidgetReceiver::class.java.name
+            val isList = providerClass == ListWidgetReceiver::class.java.name
+            val isClassic = providerClass == EventWidgetReceiver::class.java.name
+            
             AppTheme(themeMode = themeMode) {
                 val allEvents by eventRepository.getAllEvents().collectAsState(initial = emptyList())
                 val events = remember(allEvents) { allEvents.filter { !it.isPrivate } }
                 var selectedEvent by remember { mutableStateOf<Event?>(null) }
-                var selectedTheme by remember { mutableStateOf(com.phdev.quantofalta.feature.widget.state.WidgetTheme.FULLSCREEN) }
+                
+                // Only unit mode selection remains
                 var selectedUnit by remember { mutableStateOf(com.phdev.quantofalta.feature.widget.state.WidgetUnitMode.AUTO) }
 
                 Scaffold(
@@ -94,8 +102,8 @@ class EventWidgetConfigurationActivity : ComponentActivity() {
                             actions = {
                                 if (selectedEvent != null) {
                                     Button(
-                                        onClick = { onSaveConfiguration(selectedEvent!!.id, selectedTheme, selectedUnit) },
-                                        enabled = isPremium || selectedTheme == com.phdev.quantofalta.feature.widget.state.WidgetTheme.COMPACT, // Free users can only use Compact? Let's say all widgets are premium.
+                                        onClick = { onSaveConfiguration(selectedEvent!!.id, com.phdev.quantofalta.feature.widget.state.WidgetTheme.COMPACT, selectedUnit) },
+                                        enabled = isPremium || isMicro,
                                         colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
                                         modifier = Modifier.padding(end = 8.dp)
                                     ) {
@@ -131,22 +139,21 @@ class EventWidgetConfigurationActivity : ComponentActivity() {
                                 .fillMaxSize()
                                 .padding(padding)
                         ) {
-                            // Preview Area
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(250.dp)
-                                    .background(Color.Black.copy(alpha = 0.05f)),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                WidgetPreviewMockup(
-                                    event = selectedEvent!!,
-                                    themeStr = selectedTheme,
-                                    unitMode = selectedUnit
-                                )
-                            }
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(250.dp)
+                                        .background(Color.Transparent),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    WidgetPreviewMockup(
+                                        event = selectedEvent!!,
+                                        unitMode = selectedUnit,
+                                        isMicro = isMicro
+                                    )
+                                }
 
-                            if (!isPremium) {
+                            if (!isPremium && !isMicro) {
                                 Box(
                                     modifier = Modifier
                                         .fillMaxWidth()
@@ -162,26 +169,7 @@ class EventWidgetConfigurationActivity : ComponentActivity() {
                             }
 
                             Text(
-                                "2. Tema do Widget",
-                                style = AppTypography.titleMedium,
-                                modifier = Modifier.padding(16.dp)
-                            )
-                            Row(
-                                modifier = Modifier
-                                    .horizontalScroll(rememberScrollState())
-                                    .padding(horizontal = 16.dp),
-                                horizontalArrangement = Arrangement.spacedBy(12.dp)
-                            ) {
-                                ThemeChip("Minimalista", com.phdev.quantofalta.feature.widget.state.WidgetTheme.MINIMALIST, selectedTheme) { selectedTheme = it }
-                                ThemeChip("Transparente", com.phdev.quantofalta.feature.widget.state.WidgetTheme.TRANSPARENT, selectedTheme) { selectedTheme = it }
-                                ThemeChip("Compacto", com.phdev.quantofalta.feature.widget.state.WidgetTheme.COMPACT, selectedTheme) { selectedTheme = it }
-                                ThemeChip("Premium Full", com.phdev.quantofalta.feature.widget.state.WidgetTheme.FULLSCREEN, selectedTheme) { selectedTheme = it }
-                            }
-
-                            Spacer(modifier = Modifier.height(16.dp))
-
-                            Text(
-                                "3. Unidade de Tempo",
+                                "2. Unidade de Tempo",
                                 style = AppTypography.titleMedium,
                                 modifier = Modifier.padding(16.dp)
                             )
@@ -203,25 +191,36 @@ class EventWidgetConfigurationActivity : ComponentActivity() {
         }
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun onSaveConfiguration(eventId: String, theme: com.phdev.quantofalta.feature.widget.state.WidgetTheme, unit: com.phdev.quantofalta.feature.widget.state.WidgetUnitMode) {
         val glanceId = GlanceAppWidgetManager(this).getGlanceIdBy(appWidgetId)
         
-        GlobalScope.launch {
+        lifecycleScope.launch {
             updateAppWidgetState(this@EventWidgetConfigurationActivity, glanceId) { prefs ->
                 prefs[EventWidget.eventIdKey] = eventId
                 prefs[EventWidget.themeKey] = theme.name
                 prefs[EventWidget.unitModeKey] = unit.name
             }
-            EventWidget().update(this@EventWidgetConfigurationActivity, glanceId)
+            
+            val widgetManager = AppWidgetManager.getInstance(this@EventWidgetConfigurationActivity)
+            val providerInfo = widgetManager.getAppWidgetInfo(appWidgetId)
+            val providerClass = providerInfo?.provider?.className
+            
+            val widgetInstance = when (providerClass) {
+                MicroWidgetReceiver::class.java.name -> MicroWidget()
+                HeroWidgetReceiver::class.java.name -> HeroWidget()
+                ListWidgetReceiver::class.java.name -> ListWidget()
+                else -> EventWidget()
+            }
+            
+            widgetInstance.update(this@EventWidgetConfigurationActivity, glanceId)
             WidgetUpdateScheduler(this@EventWidgetConfigurationActivity).updateAllWidgets()
+            
+            val resultValue = Intent().apply {
+                putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
+            }
+            setResult(RESULT_OK, resultValue)
+            finish()
         }
-
-        val resultValue = Intent().apply {
-            putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-        }
-        setResult(RESULT_OK, resultValue)
-        finish()
     }
 }
 
@@ -273,79 +272,113 @@ fun EventSelectionItem(event: Event, onClick: () -> Unit) {
 }
 
 @Composable
-fun WidgetPreviewMockup(event: Event, themeStr: com.phdev.quantofalta.feature.widget.state.WidgetTheme, unitMode: com.phdev.quantofalta.feature.widget.state.WidgetUnitMode) {
-    val currentMillis = System.currentTimeMillis()
-    val isDone = event.isCompleted || currentMillis >= event.dateMillis
-    val displayUnit = if (unitMode == com.phdev.quantofalta.feature.widget.state.WidgetUnitMode.AUTO && !isDone) TimeUtils.getAutoUnit(event.dateMillis, currentMillis) else if(unitMode == com.phdev.quantofalta.feature.widget.state.WidgetUnitMode.AUTO) "dias" else unitMode.name.lowercase()
+fun WidgetPreviewMockup(event: Event, unitMode: com.phdev.quantofalta.feature.widget.state.WidgetUnitMode, isMicro: Boolean) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val isPremiumCardsEnabled = com.phdev.quantofalta.core.config.AppConfigManager.isPremiumCardsEnabled(context)
+    val uiModel = remember(event) { event.toUiModel(context = context) }
     
-    // Convert to portuguese for preview
-    val displayUnitPt = when(displayUnit.lowercase()) {
-        "days" -> "dias"
-        "months" -> "meses"
-        "years" -> "anos"
-        else -> displayUnit
-    }
-    
-    val numberStr = if (isDone) "0" else TimeUtils.calculateDifference(event.dateMillis, currentMillis, displayUnit).toString()
-    val eventColor = Color(event.colorArgb)
+    val isDone = uiModel.isCompleted || uiModel.eventState == com.phdev.quantofalta.domain.model.EventState.COMPLETED
+    val eventColor = uiModel.color
+    val textColor = Color.White
 
-    Box(
-        modifier = Modifier
-            .size(160.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        Box(modifier = Modifier.fillMaxSize().background(Color(0xFF333333)).clip(RoundedCornerShape(24.dp)))
+    val backgroundModifier = Modifier.background(eventColor)
 
-        when (themeStr) {
-            com.phdev.quantofalta.feature.widget.state.WidgetTheme.MINIMALIST -> {
-                if (isDone) {
-                    Text("A DATA CHEGOU! 🎉", color = eventColor, fontSize = 16.sp, fontWeight = FontWeight.Bold, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
-                } else {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(numberStr, color = Color.White, fontSize = 42.sp, fontWeight = FontWeight.Bold)
-                        Text(displayUnitPt.uppercase(), color = eventColor, fontSize = 14.sp, fontWeight = FontWeight.Medium)
-                    }
-                }
+    if (isMicro) {
+        Box(
+            modifier = Modifier
+                .size(100.dp)
+                .clip(RoundedCornerShape(24.dp))
+                .then(backgroundModifier)
+        ) {
+            if (isPremiumCardsEnabled && uiModel.coverImageUri != null) {
+                coil.compose.AsyncImage(
+                    model = uiModel.coverImageUri,
+                    contentDescription = null,
+                    contentScale = androidx.compose.ui.layout.ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+                Box(modifier = Modifier.fillMaxSize().background(Color.Black.copy(alpha = 0.4f)))
             }
-            com.phdev.quantofalta.feature.widget.state.WidgetTheme.TRANSPARENT -> {
-                if (isDone) {
-                    Text("🎉 Concluído!", color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                } else {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(numberStr, color = Color.White, fontSize = 48.sp, fontWeight = FontWeight.Bold)
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(displayUnitPt.uppercase(), color = Color.White.copy(alpha = 0.8f), fontSize = 16.sp)
-                    }
-                }
-            }
-            com.phdev.quantofalta.feature.widget.state.WidgetTheme.COMPACT -> {
+            
+            Box(modifier = Modifier.fillMaxSize().padding(12.dp)) {
                 Box(
-                    modifier = Modifier.fillMaxSize().padding(16.dp).clip(RoundedCornerShape(16.dp)).background(eventColor),
-                    contentAlignment = Alignment.Center
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.TopStart
                 ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(if (isDone) "🎉" else numberStr, color = Color.White, fontSize = 28.sp, fontWeight = FontWeight.Bold)
-                        Text(if (isDone) "Concluído" else displayUnitPt, color = Color.White.copy(alpha = 0.8f), fontSize = 12.sp)
+                    Text(
+                        text = uiModel.title,
+                        color = textColor,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 1
+                    )
+                }
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(top = 12.dp)) {
+                        Text(if (isDone) "🎉" else uiModel.primaryText, color = textColor, fontSize = 28.sp, fontWeight = FontWeight.Bold)
+                        Text(uiModel.secondaryText.uppercase(), color = textColor.copy(alpha = 0.85f), fontSize = 10.sp, fontWeight = FontWeight.Bold)
                     }
                 }
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
+                    Box(modifier = Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)).background(textColor))
+                }
             }
-            com.phdev.quantofalta.feature.widget.state.WidgetTheme.FULLSCREEN -> {
-                Box(
-                    modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(24.dp)).background(eventColor),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(16.dp)) {
-                        if (isDone) {
-                            Text("✨", fontSize = 32.sp)
-                            Text("É HOJE!", color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Bold)
-                            Text(event.title, color = Color.White.copy(alpha = 0.9f), fontSize = 14.sp)
-                        } else {
-                            Text(event.title, color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Medium, textAlign = androidx.compose.ui.text.style.TextAlign.Center, maxLines = 1)
-                            Spacer(modifier = Modifier.height(16.dp))
-                            Text(numberStr, color = Color.White, fontSize = 56.sp, fontWeight = FontWeight.Bold)
-                            Text(displayUnitPt.uppercase(), color = Color.White.copy(alpha = 0.8f), fontSize = 14.sp, fontWeight = FontWeight.Medium)
-                        }
+        }
+    } else {
+        Box(
+            modifier = Modifier
+                .size(160.dp)
+                .clip(RoundedCornerShape(24.dp))
+                .then(backgroundModifier)
+        ) {
+            if (isPremiumCardsEnabled && uiModel.coverImageUri != null) {
+                coil.compose.AsyncImage(
+                    model = uiModel.coverImageUri,
+                    contentDescription = null,
+                    contentScale = androidx.compose.ui.layout.ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+                Box(modifier = Modifier.fillMaxSize().background(Color.Black.copy(alpha = 0.4f)))
+            }
+            
+            Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+                Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = uiModel.title,
+                        style = androidx.compose.ui.text.TextStyle(color = textColor, fontSize = 14.sp, fontWeight = FontWeight.Bold),
+                        maxLines = 1,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Box(
+                        modifier = Modifier
+                            .clip(CircleShape)
+                            .background(Color.Black.copy(alpha = 0.2f))
+                            .padding(6.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(if (isDone) "🎉" else "⏳", fontSize = 12.sp)
                     }
+                }
+                
+                Spacer(modifier = Modifier.weight(1f))
+                
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    Text(
+                        text = uiModel.primaryText,
+                        style = androidx.compose.ui.text.TextStyle(color = textColor, fontSize = 42.sp, fontWeight = FontWeight.Bold)
+                    )
+                    Text(
+                        text = uiModel.secondaryText.uppercase(),
+                        style = androidx.compose.ui.text.TextStyle(color = textColor.copy(alpha = 0.85f), fontSize = 12.sp, fontWeight = FontWeight.Bold),
+                        maxLines = 1
+                    )
+                }
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                Box(modifier = Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)).background(textColor.copy(alpha = 0.3f))) {
+                    Box(modifier = Modifier.fillMaxWidth(0.6f).height(4.dp).clip(RoundedCornerShape(2.dp)).background(textColor))
                 }
             }
         }

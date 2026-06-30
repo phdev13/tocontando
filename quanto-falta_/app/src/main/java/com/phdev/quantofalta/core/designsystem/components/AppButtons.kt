@@ -24,7 +24,7 @@ fun PrimaryButton(
     val interactionSource = remember { MutableInteractionSource() }
     
     Button(
-        onClick = onClick,
+        onClick = {}, // Handled by bounceClick
         enabled = enabled,
         interactionSource = interactionSource,
         colors = ButtonDefaults.buttonColors(
@@ -32,7 +32,7 @@ fun PrimaryButton(
             contentColor = MaterialTheme.colorScheme.onPrimary
         ),
         modifier = modifier
-            .pressScale(interactionSource, enabled = enabled, scaleOnPress = 0.97f)
+            .bounceClick(enabled = enabled, useHaptic = true, onClick = onClick)
             .fillMaxWidth()
             .height(56.dp)
     ) {

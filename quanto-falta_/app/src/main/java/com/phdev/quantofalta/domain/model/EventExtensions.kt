@@ -7,7 +7,13 @@ import kotlin.math.min
 
 val Event.dateMillis: Long
     get() {
-        val time = this.targetTime ?: java.time.LocalTime.MIDNIGHT
+        if (this.isSalaryEvent()) {
+            val uiState = com.phdev.quantofalta.core.finance.SalaryCalculator.calculate(this, java.time.LocalDate.now(java.time.ZoneId.of(this.zoneId)))
+            return java.time.LocalDate.ofEpochDay(uiState.nextPaymentEpochDay)
+                .atTime(java.time.LocalTime.of(23, 59, 59))
+                .atZone(java.time.ZoneId.of(this.zoneId)).toInstant().toEpochMilli()
+        }
+        val time = this.targetTime ?: java.time.LocalTime.of(23, 59, 59)
         return this.targetDate.atTime(time).atZone(java.time.ZoneId.of(this.zoneId)).toInstant().toEpochMilli()
     }
 

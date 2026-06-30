@@ -22,4 +22,7 @@ interface EventTimelineDao {
     
     @Query("DELETE FROM event_timeline WHERE eventId = :eventId")
     suspend fun deleteTimelineForEvent(eventId: String)
+
+    @Query("DELETE FROM event_timeline")
+    suspend fun deleteAllTimeline()
 }

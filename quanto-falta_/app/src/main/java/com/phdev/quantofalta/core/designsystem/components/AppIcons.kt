@@ -209,20 +209,10 @@ fun AdaptiveIcon(
     contentDescription: String? = null,
     tint: Color = LocalContentColor.current
 ) {
-    val isCup = com.phdev.quantofalta.core.time.TimeUtils.isWorldCupActive()
-    if (isCup) {
-        androidx.compose.foundation.Image(
-            painter = androidx.compose.ui.res.painterResource(id = com.phdev.quantofalta.R.drawable.ic_copa),
-            contentDescription = contentDescription,
-            modifier = modifier,
-            colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(tint)
-        )
-    } else {
-        Icon(
-            imageVector = getIconByName(iconName),
-            contentDescription = contentDescription,
-            modifier = modifier,
-            tint = tint
-        )
-    }
+    Icon(
+        imageVector = getIconByName(iconName),
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint
+    )
 }

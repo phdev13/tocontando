@@ -12,12 +12,15 @@ object TimeUtils {
     // These are reused across all toUiModel() calls triggered by the ticker.
     private val ptBR = Locale("pt", "BR")
     private val dateFormatter = SimpleDateFormat("dd 'de' MMMM 'de' yyyy", ptBR)
+    private val localDateFormatter = java.time.format.DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy", ptBR)
     private val timeFormatter = SimpleDateFormat("HH:mm", ptBR)
     private val timelineFormatter = SimpleDateFormat("dd/MM/yy 'às' HH:mm", Locale.getDefault())
 
     fun formatDate(millis: Long): String {
         return synchronized(dateFormatter) { dateFormatter.format(Date(millis)) }
     }
+
+    fun formatDate(date: java.time.LocalDate): String = date.format(localDateFormatter)
 
     fun formatTime(millis: Long): String {
         return synchronized(timeFormatter) { timeFormatter.format(Date(millis)) }
@@ -118,6 +121,29 @@ object TimeUtils {
             "horas" -> 60_000L
             else -> 300_000L
         }
+    }
+
+    private val shortDateFormatter = SimpleDateFormat("EEE, dd/MM", ptBR)
+
+    fun formatShortDate(millis: Long): String {
+        return synchronized(shortDateFormatter) { 
+            shortDateFormatter.format(Date(millis)).replaceFirstChar { if (it.isLowerCase()) it.titlecase(ptBR) else it.toString() }
+        }
+    }
+
+    fun isTomorrow(targetMillis: Long, currentMillis: Long = System.currentTimeMillis()): Boolean {
+        val targetCal = java.util.Calendar.getInstance(ptBR).apply { timeInMillis = targetMillis }
+        val currentCal = java.util.Calendar.getInstance(ptBR).apply { timeInMillis = currentMillis }
+        currentCal.add(java.util.Calendar.DAY_OF_YEAR, 1)
+        return targetCal.get(java.util.Calendar.YEAR) == currentCal.get(java.util.Calendar.YEAR) &&
+               targetCal.get(java.util.Calendar.DAY_OF_YEAR) == currentCal.get(java.util.Calendar.DAY_OF_YEAR)
+    }
+
+    fun isToday(targetMillis: Long, currentMillis: Long = System.currentTimeMillis()): Boolean {
+        val targetCal = java.util.Calendar.getInstance(ptBR).apply { timeInMillis = targetMillis }
+        val currentCal = java.util.Calendar.getInstance(ptBR).apply { timeInMillis = currentMillis }
+        return targetCal.get(java.util.Calendar.YEAR) == currentCal.get(java.util.Calendar.YEAR) &&
+               targetCal.get(java.util.Calendar.DAY_OF_YEAR) == currentCal.get(java.util.Calendar.DAY_OF_YEAR)
     }
 
     fun isWorldCupActive(): Boolean {

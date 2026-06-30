@@ -28,6 +28,7 @@ fun CustomColorPickerSheet(
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
     var currentColor by remember { mutableStateOf(initialColor) }
     var hexInput by remember { mutableStateOf(colorToHex(initialColor)) }
+    val isHexValid = hexInput.length == 6 && hexInput.all { it.isDigit() || it in 'A'..'F' }
 
     // HSV representation for sliders
     var hsvArray by remember { mutableStateOf(colorToHSV(initialColor)) }
@@ -68,6 +69,8 @@ fun CustomColorPickerSheet(
                     value = hexInput,
                     onValueChange = { newValue ->
                         hexInput = newValue.uppercase()
+                            .filter { it.isDigit() || it in 'A'..'F' }
+                            .take(6)
                         val parsedColor = hexToColorOrNull(hexInput)
                         if (parsedColor != null) {
                             currentColor = parsedColor
@@ -76,6 +79,10 @@ fun CustomColorPickerSheet(
                     },
                     label = { Text("Hexadecimal") },
                     singleLine = true,
+                    isError = hexInput.isNotEmpty() && !isHexValid,
+                    supportingText = if (hexInput.isNotEmpty() && !isHexValid) {
+                        { Text("Informe 6 caracteres hexadecimais.") }
+                    } else null,
                     modifier = Modifier.weight(1f),
                     prefix = { Text("#") }
                 )
@@ -153,6 +160,7 @@ fun CustomColorPickerSheet(
                     onDismiss()
                 },
                 modifier = Modifier.fillMaxWidth(),
+                enabled = isHexValid,
                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
             ) {
                 Text("Confirmar Cor", style = AppTypography.labelLarge.copy(fontWeight = FontWeight.Bold))

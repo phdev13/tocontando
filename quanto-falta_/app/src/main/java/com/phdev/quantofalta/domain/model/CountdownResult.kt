@@ -1,7 +1,10 @@
 package com.phdev.quantofalta.domain.model
 
+import androidx.compose.runtime.Immutable
+
 enum class ProgressState { NOT_STARTED, IN_PROGRESS, COMPLETED }
 
+@Immutable
 sealed class CountdownResult {
     // Gratuito
     data class Days(val days: Long, val direction: CountdownDirection) : CountdownResult()

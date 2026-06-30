@@ -24,6 +24,13 @@ interface ScheduledNotificationDao {
     @Query("UPDATE scheduled_notifications SET status = :status, lastTriggeredAt = :triggeredAt WHERE id = :id")
     suspend fun updateStatus(id: String, status: String, triggeredAt: Long?)
 
+    @Query("""
+        UPDATE scheduled_notifications
+        SET status = 'DISPATCHING'
+        WHERE id = :id AND triggerAt = :triggerAt AND status = 'SCHEDULED'
+    """)
+    suspend fun claimForDispatching(id: String, triggerAt: Long): Int
+
     @Query("UPDATE scheduled_notifications SET snoozeCount = snoozeCount + 1, status = 'SNOOZED' WHERE id = :id")
     suspend fun incrementSnooze(id: String)
 

@@ -8,16 +8,14 @@ import com.phdev.quantofalta.core.database.PerformanceDao
 import com.phdev.quantofalta.core.database.PerformanceEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.util.UUID
-import java.util.concurrent.Executors
 
 data class JankFrameData(
     val screenName: String,
     val totalFrames: Long = 0,
-    val jankFrames: Long = 0
+    val jankFrames: Long = 0,
+    val totalJankDurationMs: Long = 0
 )
 
 /**
@@ -32,8 +30,8 @@ class JankStatsAggregator(
     private var jankStats: JankStats? = null
     private val scope = CoroutineScope(Dispatchers.IO)
     private val runId = UUID.randomUUID().toString()
-
-    private val aggregatedData = MutableStateFlow<Map<String, JankFrameData>>(emptyMap())
+    private val lock = Any()
+    private val aggregatedData = mutableMapOf<String, JankFrameData>()
 
     init {
         if (isDiagnosticsEnabled) {
@@ -48,15 +46,15 @@ class JankStatsAggregator(
             jankStats = JankStats.createAndTrack(activity.window) { frameData ->
                 val state = frameData.states.find { it.key == "Screen" }?.value ?: "UnknownScreen"
                 val isJank = frameData.isJank
-                
-                scope.launch {
-                    aggregatedData.update { currentMap ->
-                        val current = currentMap[state] ?: JankFrameData(state)
-                        currentMap + (state to current.copy(
-                            totalFrames = current.totalFrames + 1, 
-                            jankFrames = current.jankFrames + if (isJank) 1 else 0
-                        ))
-                    }
+
+                synchronized(lock) {
+                    val current = aggregatedData[state] ?: JankFrameData(state)
+                    aggregatedData[state] = current.copy(
+                        totalFrames = current.totalFrames + 1,
+                        jankFrames = current.jankFrames + if (isJank) 1 else 0,
+                        totalJankDurationMs = current.totalJankDurationMs +
+                            if (isJank) frameData.frameDurationUiNanos / 1_000_000 else 0L
+                    )
                 }
             }
             jankStats?.isTrackingEnabled = true
@@ -82,12 +80,15 @@ class JankStatsAggregator(
 
     private fun flushToDatabase() {
         if (!isDiagnosticsEnabled) return
-        val currentData = aggregatedData.value
+        val currentData = synchronized(lock) {
+            if (aggregatedData.isEmpty()) return
+            aggregatedData.values.toList().also { aggregatedData.clear() }
+        }
         if (currentData.isEmpty()) return
 
         scope.launch {
             val now = System.currentTimeMillis()
-            currentData.values.forEach { data ->
+            currentData.forEach { data ->
                 if (data.jankFrames > 0) {
                     performanceDao.insertMetric(
                         PerformanceEntity(
@@ -97,14 +98,12 @@ class JankStatsAggregator(
                             interaction = null,
                             totalFrames = data.totalFrames,
                             jankFrames = data.jankFrames,
-                            durationMs = 0,
+                            durationMs = (data.totalJankDurationMs / data.jankFrames).coerceAtLeast(1),
                             createdAtMillis = now
                         )
                     )
                 }
             }
-            // Clear memory after flush
-            aggregatedData.value = emptyMap()
         }
     }
 }

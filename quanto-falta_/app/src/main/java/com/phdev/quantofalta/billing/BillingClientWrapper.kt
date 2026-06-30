@@ -108,31 +108,36 @@ class BillingClientWrapper(
     private fun queryProducts() {
         runWhenReady {
             coroutineScope.launch {
-                _billingStatus.value = BillingStatus.LoadingProduct
-                val inappParams = QueryProductDetailsParams.newBuilder()
-                    .setProductList(
-                        listOf(
-                            QueryProductDetailsParams.Product.newBuilder()
-                                .setProductId(LIFETIME_PRODUCT_ID)
-                                .setProductType(BillingClient.ProductType.INAPP)
-                                .build()
+                try {
+                    _billingStatus.value = BillingStatus.LoadingProduct
+                    val inappParams = QueryProductDetailsParams.newBuilder()
+                        .setProductList(
+                            listOf(
+                                QueryProductDetailsParams.Product.newBuilder()
+                                    .setProductId(LIFETIME_PRODUCT_ID)
+                                    .setProductType(BillingClient.ProductType.INAPP)
+                                    .build()
+                            )
                         )
-                    )
-                    .build()
+                        .build()
 
-                val inappResult = billingClient.queryProductDetails(inappParams)
-                if (inappResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    _products.value = inappResult.productDetailsList ?: emptyList()
-                    _billingStatus.value = if (_products.value.isEmpty()) {
-                        BillingStatus.ProductUnavailable
+                    val inappResult = billingClient.queryProductDetails(inappParams)
+                    if (inappResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                        _products.value = inappResult.productDetailsList ?: emptyList()
+                        _billingStatus.value = if (_products.value.isEmpty()) {
+                            BillingStatus.ProductUnavailable
+                        } else {
+                            BillingStatus.Idle
+                        }
                     } else {
-                        BillingStatus.Idle
+                        _products.value = emptyList()
+                        _billingStatus.value = BillingStatus.ConnectionFailed(
+                            inappResult.billingResult.debugMessage.ifBlank { "Produto indisponível no momento." }
+                        )
                     }
-                } else {
+                } catch (e: Exception) {
                     _products.value = emptyList()
-                    _billingStatus.value = BillingStatus.ConnectionFailed(
-                        inappResult.billingResult.debugMessage.ifBlank { "Produto indisponível no momento." }
-                    )
+                    _billingStatus.value = BillingStatus.ConnectionFailed("Erro interno ao consultar produtos: ${e.message}")
                 }
             }
         }
@@ -141,58 +146,62 @@ class BillingClientWrapper(
     fun queryPurchases(isUserRestore: Boolean = false) {
         runWhenReady {
             coroutineScope.launch {
-                if (isUserRestore) _billingStatus.value = BillingStatus.Restoring
+                try {
+                    if (isUserRestore) _billingStatus.value = BillingStatus.Restoring
 
-                val subsResult = billingClient.queryPurchasesAsync(
-                    QueryPurchasesParams.newBuilder().setProductType(BillingClient.ProductType.SUBS).build()
-                )
-                val inappResult = billingClient.queryPurchasesAsync(
-                    QueryPurchasesParams.newBuilder().setProductType(BillingClient.ProductType.INAPP).build()
-                )
+                    val subsResult = billingClient.queryPurchasesAsync(
+                        QueryPurchasesParams.newBuilder().setProductType(BillingClient.ProductType.SUBS).build()
+                    )
+                    val inappResult = billingClient.queryPurchasesAsync(
+                        QueryPurchasesParams.newBuilder().setProductType(BillingClient.ProductType.INAPP).build()
+                    )
 
-                if (
-                    subsResult.billingResult.responseCode != BillingClient.BillingResponseCode.OK &&
-                    inappResult.billingResult.responseCode != BillingClient.BillingResponseCode.OK
-                ) {
-                    _billingStatus.value = BillingStatus.ConnectionFailed("Não foi possível consultar suas compras.")
-                    return@launch
-                }
-
-                val allPurchases = mutableListOf<Purchase>()
-                if (subsResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    allPurchases.addAll(subsResult.purchasesList)
-                }
-                if (inappResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    allPurchases.addAll(inappResult.purchasesList)
-                }
-
-                _purchases.value = allPurchases
-
-                val activePurchases = allPurchases.filter { purchase ->
-                    purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
-                        purchase.products.any { it == LIFETIME_PRODUCT_ID || it in LEGACY_SUBSCRIPTION_PRODUCT_IDS }
-                }
-
-                if (activePurchases.isEmpty()) {
-                    if (isUserRestore) _billingStatus.value = BillingStatus.RestoreEmpty
-                    return@launch
-                }
-
-                var restored = false
-                for (purchase in activePurchases) {
-                    val result = verifyPurchaseOnServer(purchase)
-                    if (result.success) {
-                        entitlementManager.addEntitlement(result.toEntitlement(purchase))
-                        if (!purchase.isAcknowledged) acknowledgePurchase(purchase)
-                        restored = true
+                    if (
+                        subsResult.billingResult.responseCode != BillingClient.BillingResponseCode.OK &&
+                        inappResult.billingResult.responseCode != BillingClient.BillingResponseCode.OK
+                    ) {
+                        _billingStatus.value = BillingStatus.ConnectionFailed("Não foi possível consultar suas compras.")
+                        return@launch
                     }
-                }
 
-                _billingStatus.value = when {
-                    restored && isUserRestore -> BillingStatus.RestoreCompleted
-                    restored -> BillingStatus.AlreadyPremium
-                    isUserRestore -> BillingStatus.PurchaseFailed("Nenhuma compra válida foi confirmada pelo servidor.")
-                    else -> BillingStatus.Idle
+                    val allPurchases = mutableListOf<Purchase>()
+                    if (subsResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                        allPurchases.addAll(subsResult.purchasesList)
+                    }
+                    if (inappResult.billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                        allPurchases.addAll(inappResult.purchasesList)
+                    }
+
+                    _purchases.value = allPurchases
+
+                    val activePurchases = allPurchases.filter { purchase ->
+                        purchase.purchaseState == Purchase.PurchaseState.PURCHASED &&
+                            purchase.products.any { it == LIFETIME_PRODUCT_ID || it in LEGACY_SUBSCRIPTION_PRODUCT_IDS }
+                    }
+
+                    if (activePurchases.isEmpty()) {
+                        if (isUserRestore) _billingStatus.value = BillingStatus.RestoreEmpty
+                        return@launch
+                    }
+
+                    var restored = false
+                    for (purchase in activePurchases) {
+                        val result = verifyPurchaseOnServer(purchase)
+                        if (result.success) {
+                            entitlementManager.addEntitlement(result.toEntitlement(purchase))
+                            if (!purchase.isAcknowledged) acknowledgePurchase(purchase)
+                            restored = true
+                        }
+                    }
+
+                    _billingStatus.value = when {
+                        restored && isUserRestore -> BillingStatus.RestoreCompleted
+                        restored -> BillingStatus.AlreadyPremium
+                        isUserRestore -> BillingStatus.PurchaseFailed("Nenhuma compra válida foi confirmada pelo servidor.")
+                        else -> BillingStatus.Idle
+                    }
+                } catch (e: Exception) {
+                    _billingStatus.value = BillingStatus.ConnectionFailed("Erro inesperado ao verificar compras: ${e.message}")
                 }
             }
         }
@@ -202,8 +211,10 @@ class BillingClientWrapper(
 
     private suspend fun verifyPurchaseOnServer(purchase: Purchase): ServerVerificationResult = withContext(Dispatchers.IO) {
         try {
-            val installationId = context.getSharedPreferences("privacy_prefs", Context.MODE_PRIVATE)
-                .getString("installation_id", "unknown_${System.currentTimeMillis()}") ?: "unknown"
+            val installationId = android.provider.Settings.Secure.getString(
+                context.contentResolver,
+                android.provider.Settings.Secure.ANDROID_ID
+            ) ?: "unknown"
                 
             val urlStr = try {
                 BuildConfig::class.java.getField("API_BASE_URL").get(null) as String
