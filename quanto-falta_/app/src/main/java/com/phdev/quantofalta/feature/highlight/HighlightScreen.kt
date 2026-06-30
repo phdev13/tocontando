@@ -113,6 +113,7 @@ fun HighlightScreen(
                         .padding(start = AppSpacing.small, top = AppSpacing.small)
                         .align(Alignment.TopStart)
                         .size(48.dp)
+                        .clip(CircleShape)
                 ) {
                     // Camada de blur separada atrás do conteúdo — glassmorphism correto
                     Box(
@@ -245,7 +246,14 @@ private fun HighlightHeroPage(
 
     Box(
         modifier = modifier
-            .background(Color.Black)
+            .background(
+                Brush.verticalGradient(
+                    colors = listOf(
+                        event.color,
+                        Color.Black
+                    )
+                )
+            )
             .fadeSlideIn()
     ) {
         if (hasCover) {
@@ -291,7 +299,9 @@ private fun HighlightHeroPage(
             HighlightModePill(type = event.type)
             Spacer(modifier = Modifier.height(AppSpacing.large))
             Box(
-                modifier = Modifier.size(116.dp),
+                modifier = Modifier
+                    .size(116.dp)
+                    .clip(CircleShape),
                 contentAlignment = Alignment.Center
             ) {
                 // Glassmorphism correto: blur em camada separada atrás do border/clip
@@ -470,6 +480,20 @@ private fun HighlightNumbers(event: EventUiModel) {
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(AppSpacing.mediumLarge))
+            Text(
+                text = event.title,
+                style = AppTypography.headlineMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    shadow = Shadow(
+                        color = Color.Black.copy(alpha = 0.35f),
+                        offset = Offset(0f, 2f),
+                        blurRadius = 4f
+                    )
+                ),
+                color = Color.White,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(AppSpacing.small))
             Text(
                 text = com.phdev.quantofalta.core.utils.AppCopyProvider.getHighlightMessage(
                     eventId = event.id,

@@ -183,7 +183,7 @@ fun HomeScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { handleCreateNavigation(currentMode, "") },
+                onClick = handleAddEvent,
                 containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = MaterialTheme.colorScheme.onPrimary
             ) {
@@ -268,13 +268,6 @@ private fun HomeTopBar(
                     overflow = TextOverflow.Ellipsis
                 )
             }
-            HomeTopBarButton(
-                icon = Icons.Default.Add,
-                contentDescription = "Criar contagem",
-                onClick = onAdd,
-                containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.72f),
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
-            )
             HomeTopBarButton(
                 icon = Icons.Default.Settings,
                 contentDescription = "Configuracoes",

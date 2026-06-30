@@ -452,10 +452,14 @@ object AppCopyProvider {
 
         return when {
             units.equals("segundos", ignoreCase = true) ||
+            units.equals("segundo", ignoreCase = true) ||
             units.equals("minutos",  ignoreCase = true) ||
-            units.equals("horas",    ignoreCase = true) -> TemporalBucket.TODAY
+            units.equals("minuto",  ignoreCase = true) ||
+            units.equals("horas",    ignoreCase = true) ||
+            units.equals("hora",    ignoreCase = true) -> TemporalBucket.TODAY
 
-            units.equals("dias", ignoreCase = true) -> when {
+            units.equals("dias", ignoreCase = true) ||
+            units.equals("dia", ignoreCase = true) -> when {
                 value == 0        -> TemporalBucket.TODAY
                 value in 1..7     -> TemporalBucket.VERY_SOON
                 value in 8..30    -> TemporalBucket.SOON
@@ -463,20 +467,24 @@ object AppCopyProvider {
                 else              -> TemporalBucket.VERY_DISTANT
             }
 
-            units.equals("semanas", ignoreCase = true) -> when {
+            units.equals("semanas", ignoreCase = true) ||
+            units.equals("semana", ignoreCase = true) -> when {
                 value <= 1        -> TemporalBucket.VERY_SOON
                 value in 2..4     -> TemporalBucket.SOON
                 value in 5..26    -> TemporalBucket.DISTANT
                 else              -> TemporalBucket.VERY_DISTANT
             }
 
-            units.equals("meses", ignoreCase = true) -> when {
+            units.equals("meses", ignoreCase = true) ||
+            units.equals("mês", ignoreCase = true) ||
+            units.equals("mes", ignoreCase = true) -> when {
                 value <= 1        -> TemporalBucket.SOON
                 value in 2..6     -> TemporalBucket.DISTANT
                 else              -> TemporalBucket.VERY_DISTANT
             }
 
-            units.equals("anos", ignoreCase = true) -> TemporalBucket.VERY_DISTANT
+            units.equals("anos", ignoreCase = true) ||
+            units.equals("ano", ignoreCase = true) -> TemporalBucket.VERY_DISTANT
 
             else -> if (isSoon) TemporalBucket.SOON else TemporalBucket.DISTANT
         }
