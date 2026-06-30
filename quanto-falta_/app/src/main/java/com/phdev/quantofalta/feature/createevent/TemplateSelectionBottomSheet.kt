@@ -63,9 +63,10 @@ fun TemplateSelectionBottomSheet(
         containerColor = MaterialTheme.colorScheme.surface,
         dragHandle = { BottomSheetDefaults.DragHandle() }
     ) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
+        com.phdev.quantofalta.core.designsystem.components.AdaptiveContent {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
                 .padding(horizontal = AppSpacing.large)
                 .padding(bottom = AppSpacing.huge)
         ) {
@@ -260,7 +261,7 @@ fun TemplateSelectionBottomSheet(
                 columns = GridCells.Fixed(3),
                 horizontalArrangement = Arrangement.spacedBy(AppSpacing.medium),
                 verticalArrangement = Arrangement.spacedBy(AppSpacing.medium),
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().heightIn(max = 350.dp)
             ) {
                 items(defaultTemplates) { template ->
                     val color = try {
@@ -324,6 +325,7 @@ fun TemplateSelectionBottomSheet(
                         )
                     }
                 }
+            }
             }
         }
     }

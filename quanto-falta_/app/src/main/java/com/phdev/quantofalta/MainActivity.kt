@@ -203,14 +203,16 @@ class MainActivity : FragmentActivity() {
                     }
 
                     com.phdev.quantofalta.core.time.ProvideScreenTicker {
-                        AppNavigation(
-                            eventToOpen = initialEventToOpen,
-                            onEventOpened = { initialEventToOpen = null },
-                            navController = navController,
-                            onScreenChange = { screenName ->
-                                jankStatsAggregator?.setScreenState(screenName)
-                            }
-                        )
+                        com.phdev.quantofalta.core.designsystem.components.AdaptiveContent {
+                            AppNavigation(
+                                eventToOpen = initialEventToOpen,
+                                onEventOpened = { initialEventToOpen = null },
+                                navController = navController,
+                                onScreenChange = { screenName ->
+                                    jankStatsAggregator?.setScreenState(screenName)
+                                }
+                            )
+                        }
                     }
 
                     // ─── OTA Modal ─────────────────────────────────────────────────

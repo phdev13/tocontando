@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-val AppContentMaxWidth = 720.dp
+val AppContentMaxWidth = 600.dp
 val AppWideContentMaxWidth = 1040.dp
 
 @Composable
